@@ -1,11 +1,10 @@
 #ifndef DOM_PRESENTATION_H
 #define DOM_PRESENTATION_H
 
-#include "TP1/dominios/abstractDOM.hpp"
+#include "abstractDOM.hpp"
 
 class CodigoEvento : public Abstracts::Codigo{
   private:
-    string codigo;
 
   public:
 
@@ -13,7 +12,6 @@ class CodigoEvento : public Abstracts::Codigo{
 
 class Data : public Abstracts::Data{
   private:
-    string data;
 
   public:
 
