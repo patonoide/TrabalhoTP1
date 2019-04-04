@@ -10,7 +10,7 @@ namespace Abstracts{
     private:
       string data;
     public:
-      virtual void setData(string data);
+      virtual void setData(string) throw () ;
       virtual string getData();
   };
 
@@ -18,15 +18,16 @@ namespace Abstracts{
     private:
       string codigo;
     public:
-      virtual void setCodigo(string codigo);
+      virtual void setCodigo(string) throw();
       virtual string getCodigo();
       
   };
+
   class Numero{
     private:
       int numero;
     public:
-      virtual void setNumero(int numero);
+      virtual void setNumero(int) throw();
       virtual int getNumero();
 
   };
