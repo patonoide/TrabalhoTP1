@@ -1,12 +1,11 @@
 #ifndef DOM_TICKET_H
 #define DOM_TICKET_H
 
-#include <iostream>   // Incluindo biblioteca para uso de string
-using namespace std;
+#include "TP1/dominios/abstractDOM.hpp"
 
-class CodigoApresentacao{
+
+class CodigoApresentacao : public Abstracts::Codigo{
 	private:
-    string codigo;
 
   public:
   

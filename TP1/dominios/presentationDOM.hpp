@@ -1,10 +1,9 @@
 #ifndef DOM_PRESENTATION_H
 #define DOM_PRESENTATION_H
 
-#include <iostream>   // Incluindo biblioteca para uso de string
-using namespace std;
+#include "TP1/dominios/abstractDOM.hpp"
 
-class CodigoEvento{
+class CodigoEvento : public Abstracts::Codigo{
   private:
     string codigo;
 
@@ -12,7 +11,7 @@ class CodigoEvento{
 
 };
 
-class Data{
+class Data : public Abstracts::Data{
   private:
     string data;
 
@@ -32,13 +31,15 @@ class Preco{
     float preco;
 
   public:
+
+
 };
 
-class NumeroSala{
+class NumeroSala :public Abstracts::Numero{
   private:
-    int numero;
 
   public:
+
 };
 
 class Disponibilidade{

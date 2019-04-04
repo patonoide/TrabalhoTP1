@@ -1,28 +1,24 @@
 #ifndef DOM_CREDITCARD_H
 #define DOM_CREDITCARD_H
 
-#include <iostream>   // Incluindo biblioteca para uso de string
-using namespace std;
+#include "TP1/dominios/abstractDOM.hpp"
 
-class DataValidade{
+class DataValidade : public Abstracts::Data{
   private:
-    string data;
 
   public:
 
 };
-class CodigoSeguranca{
+class CodigoSeguranca : public Abstracts::Codigo{
   private:
-    string codigo;
 
   public:
 
     
 };
-class NumeroCartao{
+class NumeroCartao : public Abstracts::Numero{
   private:
-    int numero;
-    
+
   public:
 
 };
