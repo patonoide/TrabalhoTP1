@@ -8,7 +8,12 @@ PathToDom = TP1/dominios/
 PathToTests = TP1/testes/
 
 CompileFull = ${Compiler} ${Flags}
-AllDomObj = ${PathToObj}ticketDOM.o
+
+# Botar todos os .o's dos dominios aqui, seguindo o padrão
+# Caso adicione algum .o adicione a compilação dele junto as outras, seguindo também o padrão:
+#${PathToObj}'nome_do_dom'DOM.o: ${PathToDom}'nome_do_dom'.cpp ${PathToDom}'nome_do_dom'.hpp
+#	$(call compile_obj,'nome_do_dom'.cpp,'nome_do_dom'.o)
+AllDomObj = ${PathToObj}ticketDOM.o ${PathToObj}creditcardDOM.o
 
 define compile_obj
     ${CompileFull} ${MakeObj} ${PathToDom}$(1) -o ${PathToObj}$(2) 
@@ -19,7 +24,7 @@ all:
 
 ####### Compilando Testes ########
 testes: CompileDominios ${PathToObj}maintestes.o
-	${CompileFull} ${PathToObj}ticketDOM.o ${PathToObj}main.o  -o teste
+	${CompileFull} ${AllDomObj} ${PathToObj}main.o  -o teste
 	@echo '### Terminada compilação dos testes ###'
 
 ### Compila os dominios ###
@@ -36,5 +41,8 @@ ${PathToObj}maintestes.o: ${PathToTests}main.cpp
 ## Compilando ticket ##
 ${PathToObj}ticketDOM.o: ${PathToDom}ticketDOM.cpp ${PathToDom}ticketDOM.hpp
 	$(call compile_obj,ticketDOM.cpp,ticketDOM.o)
+
+${PathToObj}creditcardDOM.o: ${PathToDom}creditcardDOM.cpp ${PathToDom}creditcardDOM.hpp
+	$(call compile_obj,creditcardDOM.cpp,creditcardDOM.o)
 
 #############################################################
