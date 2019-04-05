@@ -16,7 +16,7 @@ namespace Abstracts{
     private:
       string data;
     public:
-      virtual void setData(string) throw(invalid_argument){};
+      virtual void setData(string);// throw(invalid_argument){};
       virtual string getData()=0;
   };
 
@@ -24,7 +24,7 @@ namespace Abstracts{
     private:
       string codigo;
     public:
-      virtual void setCodigo(string) throw(invalid_argument){};
+      virtual void setCodigo(string);// throw(invalid_argument){};
       virtual string getCodigo()=0;
       
   };
@@ -33,7 +33,7 @@ namespace Abstracts{
     private:
       int numero;
     public:
-      virtual void setNumero(int) throw(invalid_argument){};
+      virtual void setNumero(int);// throw(invalid_argument){};
       virtual int getNumero()=0;
 
   };

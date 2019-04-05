@@ -1,7 +1,7 @@
 #include "creditcard_DOM.hpp"
 
 // Metodos de DataValidade
-void DataValidade::setData(string) throw(invalid_argument){
+void DataValidade::setData(string){// throw(invalid_argument){
     return;
 }
 string DataValidade::getData(){
@@ -10,7 +10,7 @@ string DataValidade::getData(){
 
 //Metodos de codigo de segurança
 
-void CodigoSeguranca::setCodigo(string) throw(invalid_argument){
+void CodigoSeguranca::setCodigo(string){// throw(invalid_argument){
 
 }
 string CodigoSeguranca::getCodigo(){
@@ -19,7 +19,7 @@ string CodigoSeguranca::getCodigo(){
 
 //Metodos de numero do cartão
 
-void NumeroCartao::setNumero(int) throw(invalid_argument){
+void NumeroCartao::setNumero(int){// throw(invalid_argument){
     return;
 }
 int NumeroCartao::getNumero(){

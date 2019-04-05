@@ -6,7 +6,7 @@
 class CodigoEvento : public Abstracts::Codigo{
   private:
   public:
-    void setCodigo(string) throw(invalid_argument);
+    void setCodigo(string);// throw(invalid_argument);
     string getCodigo();
 
 };
@@ -14,7 +14,7 @@ class CodigoEvento : public Abstracts::Codigo{
 class Data : public Abstracts::Data{
   private:
   public:
-    void setData(string) throw(invalid_argument);
+    void setData(string);// throw(invalid_argument);
     string getData();
 };
 
@@ -35,7 +35,7 @@ class Preco{
 class NumeroSala :public Abstracts::Numero{
   private:
   public:
-  void setNumero(int) throw(invalid_argument);
+  void setNumero(int);// throw(invalid_argument);
   int getNumero();
 
 };

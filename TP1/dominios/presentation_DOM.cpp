@@ -1,7 +1,7 @@
 #include "presentation_DOM.hpp"
 
 // Metodos de CodigoEvento
-void CodigoEvento::setCodigo(string) throw(invalid_argument){
+void CodigoEvento::setCodigo(string){// throw(invalid_argument){
 
 }
 string CodigoEvento::getCodigo(){
@@ -10,7 +10,7 @@ string CodigoEvento::getCodigo(){
 
 
 // Metodos de Data
-void Data::setData(string) throw(invalid_argument){
+void Data::setData(string){// throw(invalid_argument){
 
 }
 string Data::getData(){
@@ -18,7 +18,7 @@ string Data::getData(){
 }
 
 // Metodos de NumeroSala
-void NumeroSala::setNumero(int) throw(invalid_argument){
+void NumeroSala::setNumero(int){// throw(invalid_argument){
 
 }
 int NumeroSala::getNumero(){

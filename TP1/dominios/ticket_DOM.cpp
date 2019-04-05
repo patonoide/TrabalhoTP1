@@ -1,6 +1,6 @@
 #include "ticket_DOM.hpp"
 
-void CodigoApresentacao::setCodigo(string codigo) throw(invalid_argument){
+void CodigoApresentacao::setCodigo(string codigo){// throw(invalid_argument){
     return;
 }
 
