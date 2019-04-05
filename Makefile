@@ -13,7 +13,7 @@ CompileFull = ${Compiler} ${Flags}
 # Caso adicione algum .o adicione a compilação dele junto as outras, seguindo também o padrão:
 #${PathToObj}'nome_do_dom'DOM.o: ${PathToDom}'nome_do_dom'.cpp ${PathToDom}'nome_do_dom'.hpp
 #	$(call compile_obj,'nome_do_dom'.cpp,'nome_do_dom'.o)
-AllDomObj = ${PathToObj}ticketDOM.o ${PathToObj}creditcardDOM.o ${PathToObj}presentationDOM.o
+AllDomObj = ${PathToObj}ticket_DOM.o ${PathToObj}creditcard_DOM.o ${PathToObj}presentation_DOM.o
 
 define compile_obj
     ${CompileFull} ${MakeObj} ${PathToDom}$(1) -o ${PathToObj}$(2) 
@@ -28,7 +28,7 @@ testes: CompileDominios ${PathToObj}maintestes.o
 	@echo '### Terminada compilação dos testes ###'
 
 ### Compila os dominios ###
-CompileDominios: ${PathToDom}abstractDOM.hpp ${AllDomObj}
+CompileDominios: ${PathToDom}abstract_DOM.hpp ${AllDomObj}
 	@echo '### Terminada compilação dos Dominios ###'
 
 
@@ -39,14 +39,14 @@ ${PathToObj}maintestes.o: ${PathToTests}main.cpp
 	${CompileFull} ${MakeObj} ${PathToTests}main.cpp -o ${PathToObj}maintestes.o
 
 ## Compilando ticket ##
-${PathToObj}ticketDOM.o: ${PathToDom}ticketDOM.cpp ${PathToDom}ticketDOM.hpp
-	$(call compile_obj,ticketDOM.cpp,ticketDOM.o)
+${PathToObj}ticket_DOM.o: ${PathToDom}ticket_DOM.cpp ${PathToDom}ticket_DOM.hpp
+	$(call compile_obj,ticket_DOM.cpp,ticket_DOM.o)
 
-${PathToObj}creditcardDOM.o: ${PathToDom}creditcardDOM.cpp ${PathToDom}creditcardDOM.hpp
-	$(call compile_obj,creditcardDOM.cpp,creditcardDOM.o)
+${PathToObj}creditcard_DOM.o: ${PathToDom}creditcard_DOM.cpp ${PathToDom}creditcard_DOM.hpp
+	$(call compile_obj,creditcard_DOM.cpp,creditcard_DOM.o)
 
-${PathToObj}presentationDOM.o: ${PathToDom}presentationDOM.cpp ${PathToDom}presentationDOM.hpp
-	$(call compile_obj,presentationDOM.cpp,presentationDOM.o)
+${PathToObj}presentation_DOM.o: ${PathToDom}presentation_DOM.cpp ${PathToDom}presentation_DOM.hpp
+	$(call compile_obj,presentation_DOM.cpp,presentation_DOM.o)
 
 
 #############################################################
