@@ -13,7 +13,7 @@ CompileFull = ${Compiler} ${Flags}
 # Caso adicione algum .o adicione a compilação dele junto as outras, seguindo também o padrão:
 #${PathToObj}'nome_do_dom'DOM.o: ${PathToDom}'nome_do_dom'.cpp ${PathToDom}'nome_do_dom'.hpp
 #	$(call compile_obj,'nome_do_dom'.cpp,'nome_do_dom'.o)
-AllDomObj = ${PathToObj}ticketDOM.o ${PathToObj}creditcardDOM.o
+AllDomObj = ${PathToObj}ticketDOM.o ${PathToObj}creditcardDOM.o ${PathToObj}presentationDOM.o
 
 define compile_obj
     ${CompileFull} ${MakeObj} ${PathToDom}$(1) -o ${PathToObj}$(2) 
@@ -44,5 +44,9 @@ ${PathToObj}ticketDOM.o: ${PathToDom}ticketDOM.cpp ${PathToDom}ticketDOM.hpp
 
 ${PathToObj}creditcardDOM.o: ${PathToDom}creditcardDOM.cpp ${PathToDom}creditcardDOM.hpp
 	$(call compile_obj,creditcardDOM.cpp,creditcardDOM.o)
+
+${PathToObj}presentationDOM.o: ${PathToDom}presentationDOM.cpp ${PathToDom}presentationDOM.hpp
+	$(call compile_obj,presentationDOM.cpp,presentationDOM.o)
+
 
 #############################################################
