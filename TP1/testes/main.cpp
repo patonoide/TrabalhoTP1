@@ -1,4 +1,4 @@
-#include "../dominios/ticketDOM.hpp"
+#include "../dominios/ticket_DOM.hpp"
 
 int main(int argc, char const *argv[])
 {

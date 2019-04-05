@@ -1,7 +1,7 @@
 #ifndef DOM_CREDITCARD_H
 #define DOM_CREDITCARD_H
 
-#include "abstractDOM.hpp"
+#include "abstract_DOM.hpp"
 
 class DataValidade : public Abstracts::Data{
   private:

@@ -1,7 +1,7 @@
 #ifndef DOM_TICKET_H
 #define DOM_TICKET_H
 
-#include "abstractDOM.hpp"
+#include "abstract_DOM.hpp"
 
 class CodigoApresentacao : public Abstracts::Codigo{
 	private:
