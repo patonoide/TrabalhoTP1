@@ -1,8 +1,7 @@
-#include "../dominios/ticket_DOM.hpp"
+#include "testes.hpp"
 
+void Testes::CodigoApresentacao_SetComValorErrado(){ // throw(invalid_argument);
 
+    throw invalid_argument("CodigoApresentacao_SetComValorErrado: Terminado com falha.");
 
-void TestesIngresso(){
-    
 }
-
