@@ -30,6 +30,10 @@ endef
 
 all:
 	@echo 'não implementado'
+	@echo "'make testes' para criar arquivo de testes"
+
+clean:
+	rm -f TP1/bin/*.o
 
 ####### Compilando Testes ########
 testes: CompileDominios CompileTestes ${PathToObj}maintestes.o

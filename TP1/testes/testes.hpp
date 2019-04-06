@@ -23,6 +23,7 @@ namespace Testes{
         void logAllErros();                     // Mostra todos os erros no terminal
     };
 
+    /********* Arquivos principais de testes *********/
 
     void RodarTestes_Ticket();
 

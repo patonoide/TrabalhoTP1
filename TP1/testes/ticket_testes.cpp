@@ -2,13 +2,13 @@
 #include<iostream>      // Notificações no console
 
 
-void CodigoApresentacao_SetComValorErrado(Testes::Erros* erros){ // throw(invalid_argument);
+void CodigoApresentacao_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argument);
     CodigoApresentacao Testando;
     // Testando se o metodo retorna erro corretamente
     try{
         Testando.setCodigo("codigo invalido");
         std::cout << "x";
-        erros->adicionaErro("Não retornando erro em: CodigoApresentacao_SetComValorErrado");
+        erros->adicionaErro("Não retornando erro em: CodigoApresentacao_SetValorErrado");
     }
     catch(std::invalid_argument){
         std::cout << ".";
@@ -18,7 +18,7 @@ void CodigoApresentacao_SetComValorErrado(Testes::Erros* erros){ // throw(invali
     // Testando se metodo fez o set invalido
     if(retorno == "codigo invalido"){
         std::cout << "x";
-        erros->adicionaErro("Codigo inválido foi setado em: CodigoApresentacao_SetComValorErrado");
+        erros->adicionaErro("Codigo inválido foi setado em: CodigoApresentacao_SetValorErrado");
     }
     else{
         std::cout << ".";
@@ -26,7 +26,7 @@ void CodigoApresentacao_SetComValorErrado(Testes::Erros* erros){ // throw(invali
 
 }
 
-void CodigoApresentacao_SetComValorCerto(Testes::Erros* erros){
+void CodigoApresentacao_SetValorCerto(Testes::Erros* erros){
     int errors=0;
     CodigoApresentacao Testando;
     
@@ -37,7 +37,7 @@ void CodigoApresentacao_SetComValorCerto(Testes::Erros* erros){
     }
     catch(std::invalid_argument){
         std::cout << "x";
-        erros->adicionaErro("Código válido retornou erro: CodigoApresentacao_SetComValorCerto");
+        erros->adicionaErro("Código válido retornou erro: CodigoApresentacao_SetValorCerto");
         errors+=1;
     }
 
@@ -48,16 +48,23 @@ void CodigoApresentacao_SetComValorCerto(Testes::Erros* erros){
     }
     else{
         std::cout << "x";
-        erros->adicionaErro("Código válido não está sendo efetivado em: CodigoApresentacao_SetComValorCerto");
+        erros->adicionaErro("Código válido não está sendo efetivado em: CodigoApresentacao_SetValorCerto");
         errors+=1;
     }
 }
 
 void Testes::RodarTestes_Ticket(){
+    // Criando instancia que irá armazenar os erros
     Testes::Erros erros;
+
+    // Começando os testes
     std::cout << "\n==> Inicio dos testes de Ingresso\n";
-    CodigoApresentacao_SetComValorErrado(&erros);
-    CodigoApresentacao_SetComValorCerto(&erros);
+
+    /***** Chamando funções de testes *****/
+    CodigoApresentacao_SetValorErrado(&erros);
+    CodigoApresentacao_SetValorCerto(&erros);
+
+    // Mostrando resultado no terminal
     erros.logAllErros();
 
     std::cout << "\n==>Fim dos testes de Ingresso\n";
