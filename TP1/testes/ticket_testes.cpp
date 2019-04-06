@@ -1,5 +1,4 @@
 #include "testes.hpp"
-#include<iostream>      // Notificações no console
 
 
 void CodigoIngresso_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argument);
