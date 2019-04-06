@@ -12,14 +12,6 @@ namespace Abstracts{
   // Pois se não não são consideradas classes puramente abstratas
   // reference: https://en.wikibooks.org/wiki/C%2B%2B_Programming/Classes/Abstract_Classes
   
-  class Data{
-    private:
-      string data;
-    public:
-      virtual void setData(string)=0;// throw(invalid_argument){};
-      virtual string getData()=0;
-  };
-
   class Codigo{
     protected:
       string codigo;

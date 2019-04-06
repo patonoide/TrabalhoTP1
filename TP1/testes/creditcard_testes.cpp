@@ -162,7 +162,7 @@ void Testes::RodarTestes_CreditCard(){
     Testes::Erros erros;
 
     // Começando os testes
-    std::cout << "\n==> Inicio dos testes de Seguranca\n";
+    std::cout << "\n==> Inicio dos testes de Cartão de Credito\n";
 
     /***** Chamando funções de testes *****/
         //Dominio Codigo de segurança
@@ -182,7 +182,7 @@ void Testes::RodarTestes_CreditCard(){
     // Mostrando resultado no terminal
     erros.logAllErros();
 
-    std::cout << "\n==>Fim dos testes de Seguranca\n";
+    std::cout << "\n==>Fim dos testes de Cartão de Credito\n";
 
 
 }

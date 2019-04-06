@@ -11,8 +11,9 @@ class CodigoApresentacao : public Abstracts::Codigo{
 
 };
 
-class Data : public Abstracts::Data{
+class Data{
   private:
+    string data;
   public:
     void setData(string);// throw(invalid_argument);
     string getData();

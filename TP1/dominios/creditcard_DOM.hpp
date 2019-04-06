@@ -3,8 +3,9 @@
 
 #include "abstract_DOM.hpp"
 
-class DataValidade : public Abstracts::Data{
+class DataValidade{
   private:
+    string data;
   public:
     void setData(string);// throw(invalid_argument);
     string getData();
