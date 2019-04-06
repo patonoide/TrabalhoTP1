@@ -157,6 +157,27 @@ void DataValidade_SetComTamanhoInvalido(Testes::Erros* erros){
     }
 }
 
+void DataValidade_GetMesAno(Testes::Erros* erros){
+    DataValidade Testando;
+    string ValidValue = "04/18";
+    try{
+        Testando.setData(ValidValue);
+    }
+    catch(std::invalid_argument){
+        erros->adicionaErro("Código válido retornando erro em: DataValidade_GetMesAno");
+    }
+
+    if(Testando.getData() != ValidValue){
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_GetMesAno");
+    }
+    if(Testando.getMes() != ValidValue.substr(0,2)){
+        erros->adicionaErro("Retorno incorreto para mes em: DataValidade_GetMesAno");
+    }
+    if(Testando.getAno() != ValidValue.substr(3,2)){
+        erros->adicionaErro("Retorno incorreto para ano em: DataValidade_GetMesAno");
+    }
+}
+
 void Testes::RodarTestes_CreditCard(){
     // Criando instancia que irá armazenar os erros
     Testes::Erros erros;

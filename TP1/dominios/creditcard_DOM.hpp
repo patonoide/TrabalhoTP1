@@ -6,9 +6,14 @@
 class DataValidade{
   private:
     string data;
+    string mes;
+    string ano;
+    void validarData(string);
   public:
     void setData(string);// throw(invalid_argument);
     string getData();
+    string getMes();
+    string getAno();
 };
 
 
