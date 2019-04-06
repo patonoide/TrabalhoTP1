@@ -101,6 +101,20 @@ void DataValidade_SetFormatoErrado(Testes::Erros* erros){
     }
 }
 
+void DataValidade_SetForaDoRange(Testes::Erros* erros){
+    DataValidade Testando;
+    string invalidFormat = "99/99";
+    try{
+        Testando.setData(invalidFormat);
+        erros->adicionaErro("Código inválido não retornando erro em: DataValidade_SetForaDoRange");
+    }
+    catch(std::invalid_argument){}
+
+    if(Testando.getData() != invalidFormat){
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetForaDoRange");
+    }
+}
+
 void Testes::RodarTestes_CreditCard(){
     // Criando instancia que irá armazenar os erros
     Testes::Erros erros;
@@ -116,6 +130,7 @@ void Testes::RodarTestes_CreditCard(){
 
     DataValidade_SetValorCerto(&erros);
     DataValidade_SetFormatoErrado(&erros);
+    DataValidade_SetForaDoRange(&erros);
 
     // Mostrando resultado no terminal
     erros.logAllErros();
