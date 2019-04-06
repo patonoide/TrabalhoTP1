@@ -1,6 +1,6 @@
 #Variables
 Compiler = g++ 
-Flags = -Wall -pedantic
+Flags = -Wall -pedantic -std=c++11
 MakeObj = -c 
 
 PathToObj = TP1/bin/
@@ -10,7 +10,7 @@ PathToTests = TP1/testes/
 CompileFull = ${Compiler} ${Flags}
 
 # Botar todos os .o's dos dominios aqui, seguindo o padrão
-AllDomObj = ${PathToObj}ticket_DOM.o ${PathToObj}creditcard_DOM.o ${PathToObj}presentation_DOM.o
+AllDomObj = ${PathToObj}ticket_DOM.o ${PathToObj}creditcard_DOM.o ${PathToObj}presentation_DOM.o ${PathToObj}abstract_DOM.o
 # Caso adicione algum .o adicione a compilação dele junto as outras, seguindo também o padrão:
 #${PathToObj}'nome_do_dom'.o: ${PathToDom}'nome_do_dom'.cpp ${PathToDom}''nome_do_dom'.hpp
 #	$(call compile_obj_dom,'nome_do_dom'.cpp,'nome_do_dom'.o)
@@ -62,6 +62,8 @@ ${PathToObj}creditcard_DOM.o: ${PathToDom}creditcard_DOM.cpp ${PathToDom}creditc
 ${PathToObj}presentation_DOM.o: ${PathToDom}presentation_DOM.cpp ${PathToDom}presentation_DOM.hpp ${PathToDom}abstract_DOM.hpp
 	$(call compile_obj_dom,presentation_DOM.cpp,presentation_DOM.o)
 
+${PathToObj}abstract_DOM.o: ${PathToDom}abstract_DOM.cpp ${PathToDom}abstract_DOM.hpp
+	$(call compile_obj_dom,abstract_DOM.cpp,abstract_DOM.o)
 
 #############################################################
 

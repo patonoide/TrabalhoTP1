@@ -1,10 +1,10 @@
 #include "presentation_DOM.hpp"
 
-// Metodos de CodigoEvento
-void CodigoEvento::setCodigo(string){// throw(invalid_argument){
+// Metodos de CodigoApresentacao
+void CodigoApresentacao::setCodigo(string){// throw(invalid_argument){
 
 }
-string CodigoEvento::getCodigo(){
+string CodigoApresentacao::getCodigo(){
     return "to implement";
 }
 

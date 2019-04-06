@@ -10,7 +10,7 @@ void Testes::Erros::adicionaErro(string descricao){
 // Após mostrar mensagem no terminal
 void Testes::Erros::logAllErros(){
     if(this->total == 0){
-        std::cout << "Tudo OK\n";
+        std::cout << "\nTudo OK\n";
     }
     else{
         std::cout << "\n[Log dos Erros]:\n";

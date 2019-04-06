@@ -21,12 +21,14 @@ namespace Abstracts{
   };
 
   class Codigo{
-    private:
+    protected:
       string codigo;
+      int TAMANHO;
+      void validarCodigo(string);
     public:
-      virtual void setCodigo(string)=0;// throw(invalid_argument){};
-      virtual string getCodigo()=0;
-      
+      int MaxTam();
+      void setCodigo(string);// throw(invalid_argument){};
+      string getCodigo();
   };
 
   class Numero{

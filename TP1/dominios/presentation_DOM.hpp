@@ -3,7 +3,7 @@
 
 #include "abstract_DOM.hpp"
 
-class CodigoEvento : public Abstracts::Codigo{
+class CodigoApresentacao : public Abstracts::Codigo{
   private:
   public:
     void setCodigo(string);// throw(invalid_argument);

@@ -3,11 +3,11 @@
 
 #include "abstract_DOM.hpp"
 
-class CodigoApresentacao : public Abstracts::Codigo{
-	private:
+class CodigoIngresso : public Abstracts::Codigo{
+  private:
+    static const int TAMANHO = 5;
   public:
-    void setCodigo(string);// throw(invalid_argument);
-    string getCodigo(); 
+    
 };
 
 #endif
