@@ -13,12 +13,12 @@ void Testes::Erros::logAllErros(){
         std::cout << "\nTudo OK\n";
     }
     else{
-        std::cout << "\n[Log dos Erros]:\n";
+        std::cout << "\nContagem total de erros foi de: " << this->total <<"\n";
+        std::cout << "[Log dos Erros]:\n";
         while( !this->todosErros.empty() ){
             std::cout<<"-> " << this->todosErros.front() << "\n";
             this->todosErros.pop_front();
         }
-        std::cout << "Contagem total de erros foi de: " << this->total <<"\n";
         this->total = 0;
     }
 

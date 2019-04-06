@@ -93,11 +93,16 @@ void CodigoSeguranca_SetValorComTamanhoErrado(Testes::Erros* erros){
 
 void DataValidade_SetValorCerto(Testes::Erros* erros){
     DataValidade Testando;
+    string ValidValue = "04/18";
     try{
-        Testando.setData("04/18");
+        Testando.setData(ValidValue);
     }
     catch(std::invalid_argument){
         erros->adicionaErro("Código válido retornando erro em: DataValidade_SetValorCerto");
+    }
+
+    if(Testando.getData() != ValidValue){
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetValorCerto");
     }
 }
 
@@ -114,6 +119,7 @@ void Testes::RodarTestes_CreditCard(){
     CodigoSeguranca_SetValorComCaracteres(&erros);
     CodigoSeguranca_SetValorComTamanhoErrado(&erros);
 
+    DataValidade_SetValorCerto(&erros);
     // Mostrando resultado no terminal
     erros.logAllErros();
 
