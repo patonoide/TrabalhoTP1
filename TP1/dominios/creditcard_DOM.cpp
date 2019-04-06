@@ -8,15 +8,6 @@ string DataValidade::getData(){
     return "deu ruim";
 }
 
-//Metodos de codigo de segurança
-
-void CodigoSeguranca::setCodigo(string){// throw(invalid_argument){
-
-}
-string CodigoSeguranca::getCodigo(){
-    return "deu ruim";
-}
-
 //Metodos de numero do cartão
 
 void NumeroCartao::setNumero(int){// throw(invalid_argument){

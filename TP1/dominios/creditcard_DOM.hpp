@@ -12,11 +12,10 @@ class DataValidade : public Abstracts::Data{
 
 
 class CodigoSeguranca : public Abstracts::Codigo{
-  private:
   public:
-    void setCodigo(string);// throw(invalid_argument);
-    string getCodigo();
-    
+    CodigoSeguranca(){
+      TAMANHO = 3;
+    }
 };
 
 
