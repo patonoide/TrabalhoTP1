@@ -4,10 +4,10 @@
 #include "abstract_DOM.hpp"
 
 class CodigoIngresso : public Abstracts::Codigo{
-  private:
-    static const int TAMANHO = 5;
   public:
-    
+    CodigoIngresso(){
+      TAMANHO = 5;
+    }
 };
 
 #endif
