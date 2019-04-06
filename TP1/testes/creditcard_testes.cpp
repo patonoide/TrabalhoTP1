@@ -1,6 +1,6 @@
 #include "testes.hpp"
 
-
+/****** Testes de Codigo de Segurança ********/
 void CodigoSeguranca_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argument);
     CodigoSeguranca Testando;
     // Testando se o metodo retorna erro corretamente
@@ -72,6 +72,7 @@ void CodigoSeguranca_SetValorComTamanhoErrado(Testes::Erros* erros){
 
 }
 
+/****** Testes de Data de Validade ********/
 void DataValidade_SetValorCerto(Testes::Erros* erros){
     DataValidade Testando;
     string ValidValue = "04/18";
@@ -178,6 +179,10 @@ void DataValidade_GetMesAno(Testes::Erros* erros){
     }
 }
 
+/****** Testes de Numero do cartão ********/
+
+
+/****** Rodar todos os testes desse arquivo ********/
 void Testes::RodarTestes_CreditCard(){
     // Criando instancia que irá armazenar os erros
     Testes::Erros erros;
@@ -200,7 +205,10 @@ void Testes::RodarTestes_CreditCard(){
     DataValidade_SetComSemValorObrigatorio(&erros);
     DataValidade_SetComTamanhoInvalido(&erros);
     DataValidade_GetMesAno(&erros);
+        
+        // Dominio Numero Cartao
 
+    
     // Mostrando resultado no terminal
     erros.logAllErros();
 
