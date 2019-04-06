@@ -199,6 +199,7 @@ void Testes::RodarTestes_CreditCard(){
     DataValidade_SetComLetra(&erros);
     DataValidade_SetComSemValorObrigatorio(&erros);
     DataValidade_SetComTamanhoInvalido(&erros);
+    DataValidade_GetMesAno(&erros);
 
     // Mostrando resultado no terminal
     erros.logAllErros();
