@@ -4,8 +4,8 @@
 
 int main(int argc, char const *argv[]){
 
-    Testes::RodarTestes_Ticket();
-    Testes::RodarTestes_CreditCard();
+    ExecTest::Testes_Ticket();
+    ExecTest::Testes_CreditCard();
 
     std::cout << "Fim dos testes\n";
     return 0;

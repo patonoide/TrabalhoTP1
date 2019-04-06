@@ -8,25 +8,33 @@
 #include <list>
 #include <iostream>
 
-// Criando o namespace para conter todas as declarações de testes
-namespace Testes{
+// Classe que cuida de armazenamento e log de erros.
+class Testes{
+    protected:
+        int total;
+        int totalErros;
+        std::list<string> todosErros;
+    public:
+    Testes(){
+        this->total = 0;
+        this->totalErros = 0;
+    }               // Inicializando variaveis dps da criação da instancia
+    int getTotal(){return this->total;}     // Retorna total de erros
+    void adicionaErro(string);              // Salva uma string descrição um erro
+    void logAllErros();                     // Mostra todos os erros no terminal
+    void adicionaSucesso();                 // Adiciona um teste em que houve sucesso
+    int totalTestes();                      // Retorna total de testes
+};
 
-    // Classe que cuida de armazenamento e log de erros.
-    class Erros{
-        private:
-            int total;
-            std::list<string> todosErros;
-        public:
-        Erros(){this->total = 0;}               // Inicializando variaveis dps da criação da instancia
-        int getTotal(){return this->total;}     // Retorna total de erros
-        void adicionaErro(string);              // Salva uma string descrição um erro
-        void logAllErros();                     // Mostra todos os erros no terminal
-    };
+/********* Arquivos principais de testes *********/
+namespace ExecTest
+{
+    
+    void Testes_Ticket();
+    void Testes_CreditCard();
 
-    /********* Arquivos principais de testes *********/
+} // ExecTest
 
-    void RodarTestes_Ticket();
-    void RodarTestes_CreditCard();
-}
+
 
 #endif
