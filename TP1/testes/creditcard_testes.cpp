@@ -17,7 +17,7 @@ void CodigoSeguranca_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argu
     }
 }
 
-void CodigoSeguranca_SetValorCerto(Testes::Erros* erros){
+void CodigoSeguranca_SetValorValido(Testes::Erros* erros){
     CodigoSeguranca Testando;
     
     // Testando se o metodo não retorna erro com codigo valido
@@ -25,13 +25,13 @@ void CodigoSeguranca_SetValorCerto(Testes::Erros* erros){
         Testando.setCodigo("012");
     }
     catch(std::invalid_argument){
-        erros->adicionaErro("Código válido retornou erro: CodigoSeguranca_SetValorCerto");
+        erros->adicionaErro("Código válido retornou erro: CodigoSeguranca_SetValorValido");
     }
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
     if(retorno != "012"){
-        erros->adicionaErro("Código válido não está sendo efetivado em: CodigoSeguranca_SetValorCerto");
+        erros->adicionaErro("Código válido não está sendo efetivado em: CodigoSeguranca_SetValorValido");
     }
 }
 
@@ -73,18 +73,18 @@ void CodigoSeguranca_SetValorComTamanhoErrado(Testes::Erros* erros){
 }
 
 /****** Testes de Data de Validade ********/
-void DataValidade_SetValorCerto(Testes::Erros* erros){
+void DataValidade_SetValorValido(Testes::Erros* erros){
     DataValidade Testando;
     string ValidValue = "04/18";
     try{
         Testando.setData(ValidValue);
     }
     catch(std::invalid_argument){
-        erros->adicionaErro("Código válido retornando erro em: DataValidade_SetValorCerto");
+        erros->adicionaErro("Código válido retornando erro em: DataValidade_SetValorValido");
     }
 
     if(Testando.getData() != ValidValue){
-        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetValorCerto");
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetValorValido");
     }
 }
 
@@ -180,7 +180,9 @@ void DataValidade_GetMesAno(Testes::Erros* erros){
 }
 
 /****** Testes de Numero do cartão ********/
-
+void NumeroCartao_SetValorValido(){
+    
+}
 
 /****** Rodar todos os testes desse arquivo ********/
 void Testes::RodarTestes_CreditCard(){
@@ -193,12 +195,12 @@ void Testes::RodarTestes_CreditCard(){
     /***** Chamando funções de testes *****/
         //Dominio Codigo de segurança
     CodigoSeguranca_SetValorErrado(&erros);
-    CodigoSeguranca_SetValorCerto(&erros);
+    CodigoSeguranca_SetValorValido(&erros);
     CodigoSeguranca_SetValorComCaracteres(&erros);
     CodigoSeguranca_SetValorComTamanhoErrado(&erros);
 
         // Dominio Data de validade
-    DataValidade_SetValorCerto(&erros);
+    DataValidade_SetValorValido(&erros);
     DataValidade_SetFormatoErrado(&erros);
     DataValidade_SetForaDoRange(&erros);
     DataValidade_SetComLetra(&erros);
