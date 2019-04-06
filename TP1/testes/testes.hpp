@@ -17,29 +17,10 @@ namespace Testes{
             int total;
             std::list<string> todosErros;
         public:
-        Erros(){
-            this->total = 0;
-        }
-        int getTotal(){
-            return this->total;
-        }
-        void adicionaErro(string descricao){
-            this->total+=1;
-            this->todosErros.push_back(descricao);
-        }
-        void logAllErros(){
-            if(this->total == 0){
-                std::cout << "Tudo OK\n";
-            }
-            else{
-                std::cout << "\n[Log dos Erros]:\n";
-                while( !this->todosErros.empty() ){
-                    std::cout<<"-> " << this->todosErros.front() << "\n";
-                    this->todosErros.pop_front();
-                }
-                std::cout << "Contagem total de erros foi de: " << this->total <<"\n";
-            }
-        }
+        Erros(){this->total = 0;}               // Inicializando variaveis dps da criação da instancia
+        int getTotal(){return this->total;}     // Retorna total de erros
+        void adicionaErro(string);              // Salva uma string descrição um erro
+        void logAllErros();                     // Mostra todos os erros no terminal
     };
 
 
