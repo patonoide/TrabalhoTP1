@@ -115,6 +115,48 @@ void DataValidade_SetForaDoRange(Testes::Erros* erros){
     }
 }
 
+void DataValidade_SetComLetra(Testes::Erros* erros){
+    DataValidade Testando;
+    string invalidFormat = "aa/bb";
+    try{
+        Testando.setData(invalidFormat);
+        erros->adicionaErro("Código inválido não retornando erro em: DataValidade_SetComLetra");
+    }
+    catch(std::invalid_argument){}
+
+    if(Testando.getData() != invalidFormat){
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetComLetra");
+    }
+}
+
+void DataValidade_SetComSemValorObrigatorio(Testes::Erros* erros){
+    DataValidade Testando;
+    string invalidFormat = "1012";
+    try{
+        Testando.setData(invalidFormat);
+        erros->adicionaErro("Código inválido não retornando erro em: SetComSemValorObrigatorio");
+    }
+    catch(std::invalid_argument){}
+
+    if(Testando.getData() != invalidFormat){
+        erros->adicionaErro("Código válido não sendo efetivado em: SetComSemValorObrigatorio");
+    }
+}
+
+void DataValidade_SetComTamanhoInvalido(Testes::Erros* erros){
+    DataValidade Testando;
+    string invalidFormat = "01/123";
+    try{
+        Testando.setData(invalidFormat);
+        erros->adicionaErro("Código inválido não retornando erro em: DataValidade_SetComTamanhoInvalido");
+    }
+    catch(std::invalid_argument){}
+
+    if(Testando.getData() != invalidFormat){
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetComTamanhoInvalido");
+    }
+}
+
 void Testes::RodarTestes_CreditCard(){
     // Criando instancia que irá armazenar os erros
     Testes::Erros erros;
@@ -123,14 +165,19 @@ void Testes::RodarTestes_CreditCard(){
     std::cout << "\n==> Inicio dos testes de Seguranca\n";
 
     /***** Chamando funções de testes *****/
+        //Dominio Codigo de segurança
     CodigoSeguranca_SetValorErrado(&erros);
     CodigoSeguranca_SetValorCerto(&erros);
     CodigoSeguranca_SetValorComCaracteres(&erros);
     CodigoSeguranca_SetValorComTamanhoErrado(&erros);
 
+        // Dominio Data de validade
     DataValidade_SetValorCerto(&erros);
     DataValidade_SetFormatoErrado(&erros);
     DataValidade_SetForaDoRange(&erros);
+    DataValidade_SetComLetra(&erros);
+    DataValidade_SetComSemValorObrigatorio(&erros);
+    DataValidade_SetComTamanhoInvalido(&erros);
 
     // Mostrando resultado no terminal
     erros.logAllErros();
