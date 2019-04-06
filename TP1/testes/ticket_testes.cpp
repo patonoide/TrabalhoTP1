@@ -1,6 +1,6 @@
 #include "testes.hpp"
 
-
+/******* Testes de Codigo de Ingresso ********/
 void CodigoIngresso_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argument);
     CodigoIngresso Testando;
     string codInvalido = "codigo invalido";
@@ -74,7 +74,7 @@ void CodigoIngresso_SetValorComTamanhoErrado(Testes::Erros* erros){
     }
 }
 
-
+/****** Rodando todos os testes dessa entidade ********/
 void Testes::RodarTestes_Ticket(){
     // Criando instancia que irá armazenar os erros
     Testes::Erros erros;
