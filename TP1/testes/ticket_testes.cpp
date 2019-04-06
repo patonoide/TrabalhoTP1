@@ -8,7 +8,7 @@ void CodigoApresentacao_SetValorErrado(Testes::Erros* erros){ // throw(invalid_a
     try{
         Testando.setCodigo("codigo invalido");
         std::cout << "x";
-        erros->adicionaErro("Não retornando erro em: CodigoApresentacao_SetValorErrado");
+        erros->adicionaErro("Codigo invalido não retornou erro em: CodigoApresentacao_SetValorErrado");
     }
     catch(std::invalid_argument){
         std::cout << ".";
@@ -27,31 +27,80 @@ void CodigoApresentacao_SetValorErrado(Testes::Erros* erros){ // throw(invalid_a
 }
 
 void CodigoApresentacao_SetValorCerto(Testes::Erros* erros){
-    int errors=0;
     CodigoApresentacao Testando;
     
     // Testando se o metodo não retorna erro com codigo valido
     try{
-        Testando.setCodigo("012345678");
+        Testando.setCodigo("01234");
         std::cout << ".";
     }
     catch(std::invalid_argument){
         std::cout << "x";
         erros->adicionaErro("Código válido retornou erro: CodigoApresentacao_SetValorCerto");
-        errors+=1;
     }
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
-    if(retorno == "012345678"){
+    if(retorno == "01234"){
         std::cout << ".";
     }
     else{
         std::cout << "x";
         erros->adicionaErro("Código válido não está sendo efetivado em: CodigoApresentacao_SetValorCerto");
-        errors+=1;
     }
 }
+
+void CodigoApresentacao_SetValorComCaracteres(Testes::Erros* erros){
+    
+    CodigoApresentacao Testando;
+    
+    // Testando se o metodo não deixa entrar letras
+    try{
+        Testando.setCodigo("01X34");
+        std::cout << "x";
+        erros->adicionaErro("Código inválido não retornou erro: CodigoApresentacao_SetValorComCaracteres");
+    }
+    catch(std::invalid_argument){
+        std::cout << ".";
+    }
+
+    string retorno = Testando.getCodigo();
+    // Testando se metodo fez o set
+    if(retorno == "01X34"){
+        std::cout << "x";
+        erros->adicionaErro("Código inválido está sendo efetivado em: CodigoApresentacao_SetValorComCaracteres");
+    }
+    else{
+        std::cout << ".";
+    }
+}
+
+
+void CodigoApresentacao_SetValorComTamanhoErrado(Testes::Erros* erros){
+    
+    CodigoApresentacao Testando;
+    
+    // Testando se o metodo não deixa entrar letras
+    try{
+        Testando.setCodigo("012345");
+        std::cout << "x";
+        erros->adicionaErro("Código inválido não retornou erro: CodigoApresentacao_SetValorComTamanhoErrado");
+    }
+    catch(std::invalid_argument){
+        std::cout << "x";
+    }
+
+    string retorno = Testando.getCodigo();
+    // Testando se metodo fez o set
+    if(retorno == "012345"){
+        std::cout << "x";
+        erros->adicionaErro("Código inválido está sendo efetivado em: CodigoApresentacao_SetValorComTamanhoErrado");
+    }
+    else{
+        std::cout << ".";
+    }
+}
+
 
 void Testes::RodarTestes_Ticket(){
     // Criando instancia que irá armazenar os erros
@@ -63,6 +112,8 @@ void Testes::RodarTestes_Ticket(){
     /***** Chamando funções de testes *****/
     CodigoApresentacao_SetValorErrado(&erros);
     CodigoApresentacao_SetValorCerto(&erros);
+    CodigoApresentacao_SetValorComCaracteres(&erros);
+    CodigoApresentacao_SetValorComTamanhoErrado(&erros);
 
     // Mostrando resultado no terminal
     erros.logAllErros();
