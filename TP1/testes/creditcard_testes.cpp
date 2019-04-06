@@ -96,8 +96,8 @@ void DataValidade_SetFormatoErrado(Testes::Erros* erros){
     }
     catch(std::invalid_argument){}
 
-    if(Testando.getData() != invalidFormat){
-        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetFormatoErrado");
+    if(Testando.getData() == invalidFormat){
+        erros->adicionaErro("Código inválido sendo efetivado em: DataValidade_SetFormatoErrado");
     }
 }
 
@@ -110,8 +110,8 @@ void DataValidade_SetForaDoRange(Testes::Erros* erros){
     }
     catch(std::invalid_argument){}
 
-    if(Testando.getData() != invalidFormat){
-        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetForaDoRange");
+    if(Testando.getData() == invalidFormat){
+        erros->adicionaErro("Código inválido sendo efetivado em: DataValidade_SetForaDoRange");
     }
 }
 
@@ -124,8 +124,8 @@ void DataValidade_SetComLetra(Testes::Erros* erros){
     }
     catch(std::invalid_argument){}
 
-    if(Testando.getData() != invalidFormat){
-        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetComLetra");
+    if(Testando.getData() == invalidFormat){
+        erros->adicionaErro("Código inválido sendo efetivado em: DataValidade_SetComLetra");
     }
 }
 
@@ -138,8 +138,8 @@ void DataValidade_SetComSemValorObrigatorio(Testes::Erros* erros){
     }
     catch(std::invalid_argument){}
 
-    if(Testando.getData() != invalidFormat){
-        erros->adicionaErro("Código válido não sendo efetivado em: SetComSemValorObrigatorio");
+    if(Testando.getData() == invalidFormat){
+        erros->adicionaErro("Código inválido sendo efetivado em: SetComSemValorObrigatorio");
     }
 }
 
@@ -152,8 +152,8 @@ void DataValidade_SetComTamanhoInvalido(Testes::Erros* erros){
     }
     catch(std::invalid_argument){}
 
-    if(Testando.getData() != invalidFormat){
-        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetComTamanhoInvalido");
+    if(Testando.getData() == invalidFormat){
+        erros->adicionaErro("Código inválido sendo efetivado em: DataValidade_SetComTamanhoInvalido");
     }
 }
 
