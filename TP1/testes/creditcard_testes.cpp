@@ -6,20 +6,15 @@ void CodigoSeguranca_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argu
     // Testando se o metodo retorna erro corretamente
     try{
         Testando.setCodigo("codigo invalido");
-        
         erros->adicionaErro("Codigo invalido não retornou erro em: CodigoSeguranca_SetValorErrado");
     }
-    catch(std::invalid_argument){
-    
-    }
+    catch(std::invalid_argument){}
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set invalido
-    if(retorno == "codigo invalido"){
-        
+    if(retorno == "codigo invalido"){ 
         erros->adicionaErro("Codigo inválido foi setado em: CodigoSeguranca_SetValorErrado");
     }
-
 }
 
 void CodigoSeguranca_SetValorCerto(Testes::Erros* erros){
@@ -28,20 +23,14 @@ void CodigoSeguranca_SetValorCerto(Testes::Erros* erros){
     // Testando se o metodo não retorna erro com codigo valido
     try{
         Testando.setCodigo("012");
-    
     }
     catch(std::invalid_argument){
-        
         erros->adicionaErro("Código válido retornou erro: CodigoSeguranca_SetValorCerto");
     }
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
-    if(retorno == "012"){
-    
-    }
-    else{
-        
+    if(retorno != "012"){
         erros->adicionaErro("Código válido não está sendo efetivado em: CodigoSeguranca_SetValorCerto");
     }
 }
@@ -53,21 +42,14 @@ void CodigoSeguranca_SetValorComCaracteres(Testes::Erros* erros){
     // Testando se o metodo não deixa entrar letras
     try{
         Testando.setCodigo("01X");
-        
         erros->adicionaErro("Código inválido não retornou erro: CodigoSeguranca_SetValorComCaracteres");
     }
-    catch(std::invalid_argument){
-    
-    }
+    catch(std::invalid_argument){}
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
     if(retorno == "01X"){
-        
         erros->adicionaErro("Código inválido está sendo efetivado em: CodigoSeguranca_SetValorComCaracteres");
-    }
-    else{
-    
     }
 }
 
@@ -80,8 +62,7 @@ void CodigoSeguranca_SetValorComTamanhoErrado(Testes::Erros* erros){
         Testando.setCodigo("012345");
         erros->adicionaErro("Código inválido não retornou erro: CodigoSeguranca_SetValorComTamanhoErrado");
     }
-    catch(std::invalid_argument){
-    }
+    catch(std::invalid_argument){}
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
@@ -106,6 +87,20 @@ void DataValidade_SetValorCerto(Testes::Erros* erros){
     }
 }
 
+void DataValidade_SetFormatoErrado(Testes::Erros* erros){
+    DataValidade Testando;
+    string invalidFormat = "04x18";
+    try{
+        Testando.setData(invalidFormat);
+        erros->adicionaErro("Código inválido não retornando erro em: DataValidade_SetFormatoErrado");
+    }
+    catch(std::invalid_argument){}
+
+    if(Testando.getData() != invalidFormat){
+        erros->adicionaErro("Código válido não sendo efetivado em: DataValidade_SetFormatoErrado");
+    }
+}
+
 void Testes::RodarTestes_CreditCard(){
     // Criando instancia que irá armazenar os erros
     Testes::Erros erros;
@@ -120,6 +115,8 @@ void Testes::RodarTestes_CreditCard(){
     CodigoSeguranca_SetValorComTamanhoErrado(&erros);
 
     DataValidade_SetValorCerto(&erros);
+    DataValidade_SetFormatoErrado(&erros);
+
     // Mostrando resultado no terminal
     erros.logAllErros();
 

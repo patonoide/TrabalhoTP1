@@ -10,17 +10,13 @@ void CodigoIngresso_SetValorErrado(Testes::Erros* erros){ // throw(invalid_argum
         Testando.setCodigo(codInvalido);
         erros->adicionaErro("Codigo invalido não retornou erro em: CodigoIngresso_SetValorErrado");
     }
-    catch(std::invalid_argument){
-    }
+    catch(std::invalid_argument){}
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set invalido
     if(retorno == codInvalido){
         erros->adicionaErro("Codigo inválido foi setado em: CodigoIngresso_SetValorErrado");
     }
-    else{
-    }
-
 }
 
 void CodigoIngresso_SetValorCerto(Testes::Erros* erros){
@@ -50,8 +46,7 @@ void CodigoIngresso_SetValorComCaracteres(Testes::Erros* erros){
         Testando.setCodigo(codInvalido);
         erros->adicionaErro("Código inválido não retornou erro: CodigoIngresso_SetValorComCaracteres");
     }
-    catch(std::invalid_argument){
-    }
+    catch(std::invalid_argument){}
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
@@ -70,8 +65,7 @@ void CodigoIngresso_SetValorComTamanhoErrado(Testes::Erros* erros){
         Testando.setCodigo(codInvalido);
         erros->adicionaErro("Código inválido não retornou erro: CodigoIngresso_SetValorComTamanhoErrado");
     }
-    catch(std::invalid_argument){
-    }
+    catch(std::invalid_argument){}
 
     string retorno = Testando.getCodigo();
     // Testando se metodo fez o set
