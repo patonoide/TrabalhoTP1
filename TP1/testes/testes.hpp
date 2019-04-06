@@ -26,7 +26,7 @@ namespace Testes{
     /********* Arquivos principais de testes *********/
 
     void RodarTestes_Ticket();
-
+    void RodarTestes_CreditCard();
 }
 
 #endif
