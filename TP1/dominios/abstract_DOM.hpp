@@ -1,8 +1,8 @@
 #ifndef DOM_ABSTRACT_H
 #define DOM_ABSTRACT_H
 
-#include <iostream>   // Incluindo biblioteca para uso de string
-using namespace std;
+#include<string>   // Incluindo biblioteca para uso de string
+using std::string;
 
 // Criando Classes puramente abstratas para servirem de base 
 // Com uma interface padronizada
