@@ -3,8 +3,19 @@
 
 #include "abstract_DOM.hpp"
 
+class Abstracts::Codigo;
+class Abstracts::Numero;
+
+/**
+ * @brief Classe representante do Dominio codigo de aprensentação
+ */
 class CodigoApresentacao : public Abstracts::Codigo{
   public:
+    /**
+     * @brief Constrói uma nova instacia do Codigo Seguranca, 
+     * com o tamanho do codigo sendo como 4. 
+     * 
+     */
     CodigoApresentacao(){
       TAMANHO = 4;
     }

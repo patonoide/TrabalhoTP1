@@ -1,6 +1,11 @@
 #include "creditcard_DOM.hpp"
 #include <iostream>
-// Metodos de DataValidade
+/**
+ * @param toValidate string a ser validada
+ * 
+ * Aborta com erro std::invalid_params caso string esteja fora do padrão descrito:
+ * "Formato XX/YY onde XX é número de 01 a 12 e YY é número de 00 a 99."
+ */
 void DataValidade::validarData(string toValidate){
 
     // Validando formato
@@ -32,6 +37,10 @@ void DataValidade::validarData(string toValidate){
         throw std::invalid_argument("Mês deve ser entre 01 e 12");
     }
 }
+
+/**
+ * @param data string a ser efetivada
+ */
 void DataValidade::setData(string data){// throw(invalid_argument){
     this->validarData(data);
     this->mes = data.substr(0,2);
@@ -39,15 +48,19 @@ void DataValidade::setData(string data){// throw(invalid_argument){
     this->data = data;
     return;
 }
+
 string DataValidade::getData(){
     return this->data;
 }
+
 string DataValidade::getAno(){
     return this->ano;
 }
+
 string DataValidade::getMes(){
     return this->mes;
 }
+
 // Metodos de numero do cartão
 
 void NumeroCartao::setNumero(string toSet){// throw(invalid_argument){
