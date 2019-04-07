@@ -1,14 +1,5 @@
 #include "presentation_DOM.hpp"
 
-// Metodos de CodigoApresentacao
-void CodigoApresentacao::setCodigo(string){// throw(invalid_argument){
-
-}
-string CodigoApresentacao::getCodigo(){
-    return "to implement";
-}
-
-
 // Metodos de Data
 void Data::setData(string){// throw(invalid_argument){
 
