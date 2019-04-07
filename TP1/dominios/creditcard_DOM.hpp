@@ -25,11 +25,12 @@ class CodigoSeguranca : public Abstracts::Codigo{
 };
 
 
-class NumeroCartao : public Abstracts::Numero{
+class NumeroCartao{
   private:
+    string numero;
   public:
-    void setNumero(int);// throw(invalid_argument);
-    int getNumero();
+    void setNumero(string);// throw(invalid_argument);
+    string getNumero();
 };
 
 

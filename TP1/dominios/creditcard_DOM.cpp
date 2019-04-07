@@ -50,9 +50,9 @@ string DataValidade::getMes(){
 }
 // Metodos de numero do cartão
 
-void NumeroCartao::setNumero(int){// throw(invalid_argument){
+void NumeroCartao::setNumero(string toSet){// throw(invalid_argument){
     return;
 }
-int NumeroCartao::getNumero(){
-    return 100;
+string NumeroCartao::getNumero(){
+    return "não implementado";
 }

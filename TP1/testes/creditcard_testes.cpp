@@ -80,7 +80,43 @@ void DataValidade_GetMesAno(Testes* t, string valorValido){
 
 /****** Testes de Numero do cartão ********/
 void NumeroCartao_SetValorValido(Testes* t, string valorValido){
+    NumeroCartao Testando;
+    // Tenta efetivar valor passado:
+    try{
+        Testando.setNumero(valorValido);
+        t->adicionaSucesso();
+    }
+    catch(std::invalid_argument){
+        t->adicionaErro("NumeroCartao_SetValorValido: Numero \""+valorValido+"\" supostamente válido retorna erro.");
+    }
 
+    // Tenta acessar valor salvo
+    if(Testando.getNumero() == valorValido){
+        t->adicionaSucesso();
+    }
+    else{
+        t->adicionaErro("NumeroCartao_SetValorValido: Numero \""+valorValido+" \"  supostamente válido não foi salvo.");
+    }
+}
+
+void NumeroCartao_SetValorInvalido(Testes* t, string valorInvalido){
+    NumeroCartao Testando;
+    // Tenta efetivar valor passado:
+    try{
+        Testando.setNumero(valorInvalido);
+        t->adicionaErro("NumeroCartao_SetvalorInvalido: Numero \""+valorInvalido+"\" supostamente inválido não retorna erro.");
+    }
+    catch(std::invalid_argument){
+        t->adicionaSucesso();
+    }
+
+    // Tenta acessar valor salvo
+    if(Testando.getNumero() == valorInvalido){
+        t->adicionaErro("NumeroCartao_SetvalorInvalido: Numero \""+valorInvalido+" \"  supostamente inválido foi salvo.");
+    }
+    else{
+        t->adicionaSucesso();
+    }
 }
 
 /****** Rodar todos os testes desse arquivo ********/
@@ -111,7 +147,12 @@ void ExecTest::Testes_CreditCard(){
     DataValidade_GetMesAno(&creditcard_tests, "04/18");                 // Testando um valor valido
         
         // Dominio Numero Cartao
-
+    //TODO: Terminar de elaborar esses testes
+    // https://en.wikipedia.org/wiki/Luhn_algorithm
+    //NumeroCartao_SetValorValido(&creditcard_tests, 1);
+    NumeroCartao_SetValorInvalido(&creditcard_tests,"1");                // Valor inválido: tamanho menor
+    NumeroCartao_SetValorInvalido(&creditcard_tests,"12345678901234567");// Valor inválido: tamanho maior
+    NumeroCartao_SetValorInvalido(&creditcard_tests,"xx3456789012345xx");// Valor inválido: tamanho maior
     
     // Mostrando resultado no terminal
     creditcard_tests.logAllErros();
