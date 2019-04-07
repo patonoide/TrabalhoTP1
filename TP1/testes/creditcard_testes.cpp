@@ -93,20 +93,22 @@ void ExecTest::Testes_CreditCard(){
 
     /***** Chamando funções de testes *****/
         //Dominio Codigo de segurança
-    CodigoSeguranca_SetValorValido(&creditcard_tests, "012");
-    CodigoSeguranca_SetValorErrado(&creditcard_tests, "qualquercoisa");
-    CodigoSeguranca_SetValorErrado(&creditcard_tests, "0x2");
-    CodigoSeguranca_SetValorErrado(&creditcard_tests, "0123");
+    CodigoSeguranca_SetValorValido(&creditcard_tests, "012");           // Testando um valor valido
+    CodigoSeguranca_SetValorErrado(&creditcard_tests, "qualquercoisa"); // Valor invalido: absurdo
+    CodigoSeguranca_SetValorErrado(&creditcard_tests, "0x2");           // Valor invalido: caracter
+    CodigoSeguranca_SetValorErrado(&creditcard_tests, "0123");          // Valor invalido: tamanho maior
+    CodigoSeguranca_SetValorErrado(&creditcard_tests, "01");            // Valor invalido: tamanho menor
+    CodigoSeguranca_SetValorErrado(&creditcard_tests, "-012");          // Valor invalido: negativo
 
         // Dominio Data de validade
-    DataValidade_SetValorValido(&creditcard_tests, "01/18");
-    DataValidade_SetValorInvalido(&creditcard_tests, "qualquercoisa");
-    DataValidade_SetValorInvalido(&creditcard_tests, "99/99");
-    DataValidade_SetValorInvalido(&creditcard_tests, "0418");
-    DataValidade_SetValorInvalido(&creditcard_tests, "aa/bb");
-    DataValidade_SetValorInvalido(&creditcard_tests, "1012");
-    DataValidade_SetValorInvalido(&creditcard_tests, "01/123");
-    DataValidade_GetMesAno(&creditcard_tests, "04/18");
+    DataValidade_SetValorValido(&creditcard_tests, "01/18");            // Testando um valor valido
+    DataValidade_SetValorInvalido(&creditcard_tests, "qualquercoisa");  // Valor invalido: absurdo
+    DataValidade_SetValorInvalido(&creditcard_tests, "99/99");          // Valor invalido: mes fora do alcance
+    DataValidade_SetValorInvalido(&creditcard_tests, "0418");           // Valor invalido: formato XXXX
+    DataValidade_SetValorInvalido(&creditcard_tests, "aa/bb");          // Valor invalido: caracter
+    DataValidade_SetValorInvalido(&creditcard_tests, "10 12");          // Valor invalido: formato XX XX
+    DataValidade_SetValorInvalido(&creditcard_tests, "01/123");         // Valor invalido: ano fora do alcance
+    DataValidade_GetMesAno(&creditcard_tests, "04/18");                 // Testando um valor valido
         
         // Dominio Numero Cartao
 

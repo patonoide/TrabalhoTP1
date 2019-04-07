@@ -41,12 +41,13 @@ void ExecTest::Testes_Ticket(){
     std::cout << "\n==> Inicio dos testes de Ingresso\n";
 
     /***** Chamando funções de testes *****/
-    CodigoIngresso_SetValorValido(&ticket_tests, "01234");
-    CodigoIngresso_SetValorInvalido(&ticket_tests, "qualquercoisa");//totalmente errado
-    CodigoIngresso_SetValorInvalido(&ticket_tests, "0x234");//com caracter
-    CodigoIngresso_SetValorInvalido(&ticket_tests, "012345");//tamanho maior
-    CodigoIngresso_SetValorInvalido(&ticket_tests, "0123");//tamanho menor
-    CodigoIngresso_SetValorInvalido(&ticket_tests, "     ");//tamanho certo mas só contem espaços
+    CodigoIngresso_SetValorValido(&ticket_tests, "01234");              // Valor Valido
+    CodigoIngresso_SetValorInvalido(&ticket_tests, "qualquercoisa");    // Valor invalido: absurdo
+    CodigoIngresso_SetValorInvalido(&ticket_tests, "0x234");            // Valor invalido: caracter
+    CodigoIngresso_SetValorInvalido(&ticket_tests, "012345");           // Valor invalido: tamanho maior 
+    CodigoIngresso_SetValorInvalido(&ticket_tests, "0123");             // Valor invalido: tamanho menor
+    CodigoIngresso_SetValorInvalido(&ticket_tests, "     ");            // Valor invalido: espaços em branco
+    CodigoIngresso_SetValorInvalido(&ticket_tests, "01234  ");          // Valor invalido: espaços em branco
 
     // Mostrando resultado no terminal
     ticket_tests.logAllErros();
