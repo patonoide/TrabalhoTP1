@@ -35,7 +35,7 @@ void TUCodigoSeguranca::runTestes(){
     Testes codigo_testes;
 
     // Começando os testes
-    std::cout << "\n==> Inicio dos testes de Ingresso\n";
+    std::cout << "\n==> Inicio dos testes de CodigoSeguranca\n";
 
     /***** Chamando funções de testes *****/
     TUCodigoSeguranca::SetValorValido(&codigo_testes, "012");           // Testando um valor valido
@@ -48,7 +48,7 @@ void TUCodigoSeguranca::runTestes(){
     // Mostrando resultado no terminal
     codigo_testes.logAllErros();
     std::cout << "Foram feitos " << codigo_testes.totalTestes() << " testes.";
-    std::cout << "\n==>Fim dos testes de Ingresso\n";
+    std::cout << "\n==>Fim dos testes de CodigoSeguranca\n";
 }
 
 /****** Testes de Data de Validade ********/
@@ -104,7 +104,7 @@ void TUDataValidade::runTestes(){
     Testes data_testes;
 
     // Começando os testes
-    std::cout << "\n==> Inicio dos testes de Ingresso\n";
+    std::cout << "\n==> Inicio dos testes de Data de Validade \n";
 
     /***** Chamando funções de testes *****/
         // Dominio Data de validade
@@ -120,7 +120,7 @@ void TUDataValidade::runTestes(){
     // Mostrando resultado no terminal
     data_testes.logAllErros();
     std::cout << "Foram feitos " << data_testes.totalTestes() << " testes.";
-    std::cout << "\n==>Fim dos testes de Ingresso\n";
+    std::cout << "\n==>Fim dos testes de Data de Validade \n";
 }
 
 /****** Testes de Numero do cartão ********/
@@ -169,7 +169,7 @@ void TUNumeroCartao::runTestes(){
     Testes codigo_testes;
 
     // Começando os testes
-    std::cout << "\n==> Inicio dos testes de Ingresso\n";
+    std::cout << "\n==> Inicio dos testes de  Numero do cartão\n";
 
     /***** Chamando funções de testes *****/
     TUNumeroCartao::SetValorInvalido(&codigo_testes,"1");                // Valor inválido: tamanho menor
@@ -179,5 +179,5 @@ void TUNumeroCartao::runTestes(){
     // Mostrando resultado no terminal
     codigo_testes.logAllErros();
     std::cout << "Foram feitos " << codigo_testes.totalTestes() << " testes.";
-    std::cout << "\n==>Fim dos testes de Ingresso\n";
+    std::cout << "\n==>Fim dos testes de  Numero do cartão\n";
 }
