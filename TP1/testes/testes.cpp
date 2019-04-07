@@ -7,6 +7,27 @@ void Testes::adicionaErro(string descricao){
     this->todosErros.push_back(descricao);
 }
 
+bool Testes::stringIsEq(string a, string b, string message){
+    if(a == b){
+        this->adicionaSucesso();
+        return true;
+    }
+    else{
+        this->adicionaErro(message);
+        return false;
+    }
+}
+bool Testes::stringIsNotEq(string a, string b, string message){
+    if(a != b){
+        this->adicionaSucesso();
+        return true;
+    }
+    else{
+        this->adicionaErro(message);
+        return false;
+    }
+}
+
 // Passa por todos os elementos da lista e desaloca-os
 // Após mostrar mensagem no terminal
 void Testes::logAllErros(){
