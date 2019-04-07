@@ -49,16 +49,5 @@ class Testes{
 
 };          // end of class Testes
 
-/********* Funções principais de testes *********/
-namespace ExecTest
-{
-    
-    void Testes_Ticket();           ///< Roda todos os testes dos dominios de Ticket
-    void Testes_CreditCard();       ///< Roda todos os testes dos dominios de CreditCard
-    void Testes_Presentation();
-
-} // ExecTest
-
-
 
 #endif
