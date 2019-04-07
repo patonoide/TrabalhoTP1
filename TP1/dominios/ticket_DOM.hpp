@@ -2,7 +2,6 @@
 #define DOM_TICKET_H
 
 #include "abstract_DOM.hpp"
-class Abstracts::Codigo;
 
 /**
  * @brief Classe representante do Dominio codigo de Ingresso

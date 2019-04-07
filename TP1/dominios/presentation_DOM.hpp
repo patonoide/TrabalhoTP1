@@ -3,8 +3,6 @@
 
 #include "abstract_DOM.hpp"
 
-class Abstracts::Codigo;
-class Abstracts::Numero;
 
 /**
  * @brief Classe representante do Dominio codigo de aprensentação
