@@ -1,6 +1,6 @@
 #ifndef TESTE_UNIDADE_H
 #define TESTE_UNIDADE_H
-#include "testes.hpp"
+#include "../testes.hpp"
 
 /// Classe para Teste de Unidade de CodigoIngresso;
 class TUCodigoIngresso{
