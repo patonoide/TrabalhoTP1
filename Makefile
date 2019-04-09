@@ -19,7 +19,7 @@ define compile_obj_dom
 endef
 
 # Botar todos os .o's dos testes aqui, seguindo o padrão
-AllTestObj = ${PathToObj}ticket_testes.o ${PathToObj}creditcard_testes.o ${PathToObj}presentation_testes.o ${PathToObj}testes.o 
+AllTestObj = ${PathToObj}testeUnidade.o ${PathToObj}ticket_testes.o ${PathToObj}creditcard_testes.o ${PathToObj}presentation_testes.o ${PathToObj}testes.o
 # Caso adicione algum .o adicione a compilação dele junto as outras, seguindo também o padrão:
 #${PathToObj}'nome_do_teste'.o: ${PathToTests}'nome_do_teste'.cpp ${PathToTests}testes.hpp
 #	$(call compile_obj_test,'nome_do_teste'.cpp,'nome_do_teste'.o)
@@ -76,6 +76,9 @@ ${PathToObj}maintestes.o: ${PathToTests}main.cpp
 
 ${PathToObj}testes.o: ${PathToTests}testes.cpp ${PathToTests}testes.hpp
 	$(call compile_obj_test,testes.cpp,testes.o)
+
+${PathToObj}testeUnidade.o: ${PathToTests}dominios/testeUnidade.cpp ${PathToTests}testes.hpp
+	$(call compile_obj_test,dominios/testeUnidade.cpp,testeUnidade.o)
 
 #Testes de Dominios
 ${PathToObj}ticket_testes.o: ${PathToTests}dominios/ticket_testes.cpp ${PathToTests}testes.hpp

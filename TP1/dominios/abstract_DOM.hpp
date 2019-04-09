@@ -13,28 +13,30 @@ namespace Abstracts{
   // reference: https://en.wikibooks.org/wiki/C%2B%2B_Programming/Classes/Abstract_Classes
   
   /**
+   * @brief Classe para padronizar todos os dominios
+   */
+  class Dominio{
+    protected:
+      string valor;                   ///< Atributo Primário
+      virtual void validarValor(string aValidar)=0;    ///< Verifica se parametro passado é valido, devolvendo erro std::invalid_argument caso não seja
+    public:
+      virtual void setValor(string str)=0;  ///< Verifica se string é válida, e salva-o no atributo valor
+      virtual string getValor()=0;      ///< Retorna valor
+  };
+  
+  /**
    * @brief Classe Base para criação de codigos
    */
-  class Codigo{
+  class Codigo : public Dominio{
     protected:
-      string codigo;              ///< Atributo Primário
       int TAMANHO;                ///< Tamanho do código
-      void validarCodigo(string); ///< Verifica se parametro passado é valido, devolvendo erro std::invalid_argument caso não seja
+      void validarValor(string aValidar); ///< Verifica se parametro passado é valido, devolvendo erro std::invalid_argument caso não seja
     public:
+      static const string classname;
       int MaxTam();               ///< Retorna váriavel de instancia TAMANHO
-      void setCodigo(string str); ///< Verifica se string é válida, e salva-o no atributo codigo
-      string getCodigo();         ///< Retorna valor do codigo
+      void setValor(string str); 
+      string getValor();         ///< Retorna valor do codigo
   };
-
-  class Numero{
-    private:
-      int numero;
-    public:
-      virtual void setNumero(int)=0;// throw(invalid_argument){};
-      virtual int getNumero()=0;
-
-  };
-
 } // Abstracts
 
 #endif

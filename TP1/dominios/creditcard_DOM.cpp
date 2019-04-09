@@ -1,12 +1,14 @@
 #include "creditcard_DOM.hpp"
 #include <iostream>
+
+/************** DATA VALIDADE ***************/
 /**
  * @param toValidate string a ser validada
  * 
  * Aborta com erro std::invalid_params caso string esteja fora do padrão descrito:
  * "Formato XX/YY onde XX é número de 01 a 12 e YY é número de 00 a 99."
  */
-void DataValidade::validarData(string toValidate){
+void DataValidade::validarValor(string toValidate){
 
     // Validando formato
     if(!std::isdigit(toValidate[0]) || !std::isdigit(toValidate[1])){
@@ -41,16 +43,18 @@ void DataValidade::validarData(string toValidate){
 /**
  * @param data string a ser efetivada
  */
-void DataValidade::setData(string data){// throw(invalid_argument){
-    this->validarData(data);
+void DataValidade::setValor(string data){// throw(invalid_argument){
+    this->validarValor(data);
     this->mes = data.substr(0,2);
     this->ano = data.substr(3,2);
-    this->data = data;
+    this->valor = data;
     return;
 }
 
-string DataValidade::getData(){
-    return this->data;
+const string DataValidade::classname = "Data de Validade";
+
+string DataValidade::getValor(){
+    return this->valor;
 }
 
 string DataValidade::getAno(){
@@ -61,11 +65,20 @@ string DataValidade::getMes(){
     return this->mes;
 }
 
-// Metodos de numero do cartão
+/************** CODIGO SEGURANCA ***************/
+const string CodigoSeguranca::classname = "Codigo de Segurança";
 
-void NumeroCartao::setNumero(string toSet){// throw(invalid_argument){
+
+/************** NUMERO CARTAO ***************/
+const string NumeroCartao::classname = "Numero de cartao";
+
+void NumeroCartao::validarValor(string aValidar){
     return;
 }
-string NumeroCartao::getNumero(){
+
+void NumeroCartao::setValor(string toSet){// throw(invalid_argument){
+    return;
+}
+string NumeroCartao::getValor(){
     return "não implementado";
 }
