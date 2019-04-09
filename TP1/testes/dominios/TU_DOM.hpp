@@ -54,9 +54,21 @@ class TUCodigoApresentacao{
         void SetValorInvalido(string codInvalido);
         void SetValorValido(string codValido);
     public:
-        
+
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
+};
+
+//Classe para teste de Unidade de Faixa etária;
+class TUFaixa{
+    private:
+        Testes estado;
+        void SetValorInvalido(string valorInvalido);
+        void SetValorValido(string valorValido);
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+
 };
 
 #endif

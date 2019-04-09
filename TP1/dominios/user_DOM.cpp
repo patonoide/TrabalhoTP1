@@ -20,11 +20,11 @@ void Cpf::validarCpf(string cpf){
 string Senha::getSenha(){
     return this->senha;
 }
-void Senha::setCpf(string cpf){
+void Senha::setSenha(string senha){
 
-    this->validarCpf(cpf);
-    this->cpf = cpf;
+    this->validarSenha(senha);
+    this->senha = senha;
 }
-void Senha::validarCpf(string cpf){
+void Senha::validarSenha(string senha){
 
 }

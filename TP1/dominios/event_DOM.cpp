@@ -15,18 +15,7 @@ void Name::setName(string name){
 }
 
 
-//metodos cpf
-string Cpf::getCpf(){
-    return this->cpf;
-}
-void Cpf::validarCpf(string cpf ){
 
-}
-void Cpf::setCpf(string cpf){
-
-this->cpf = cpf;
-
-}
 
 //metodos Cidade
 string Cidade::getCidade(){
@@ -38,7 +27,7 @@ void Cidade::validarCidade(string cidade){
 }
 
 void Cidade::setCidade(string cidade){
-this->cidade  = cidade
+this->cidade  = cidade;
 }
 
 //metodos Estado
@@ -61,4 +50,22 @@ string Classe::getClasse(){
 }
 void Classe::validarClasse(string classe){
 
+}
+
+void Classe::setClasse(string classe){
+    this->classe = classe;
+}
+
+//metodo faixa
+string Faixa::getFaixa(){
+    return this->faixa;
+}
+
+void Faixa::validarFaixa(string faixa){
+
+}
+
+void Faixa::setFaixa(string faixa ){
+    validarFaixa(faixa);
+    this->faixa= faixa;
 }

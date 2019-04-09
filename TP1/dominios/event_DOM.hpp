@@ -1,6 +1,9 @@
 #ifndef DOM_EVENT_H
 #define DOM_EVENT_H
 
+#include<string>   // Incluindo biblioteca para uso de string
+using std::string;
+
 class Name{
 
 private:
