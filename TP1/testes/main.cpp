@@ -1,12 +1,23 @@
-#include "testes.hpp"   //Header com testes
-
+#include "dominios/TU_DOM.hpp"   //Header com testes
 #include<iostream>      // Notificações no console
 
 int main(int argc, char const *argv[]){
 
-    ExecTest::Testes_Ticket();
-    ExecTest::Testes_CreditCard();
-    ExecTest::Testes_Presentation();
+    //Testes De Unidade dos dominios
+    TUCodigoIngresso a;
+    a.runTestes();
+    
+    TUCodigoSeguranca b;
+    b.runTestes();
+
+    TUDataValidade c;
+    c.runTestes();
+
+    TUNumeroCartao d;
+    d.runTestes();
+
+    TUCodigoApresentacao e;
+    e.runTestes();
 
     std::cout << "Fim dos testes\n";
     return 0;

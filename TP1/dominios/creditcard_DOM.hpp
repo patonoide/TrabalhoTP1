@@ -3,7 +3,6 @@
 
 #include "abstract_DOM.hpp"
 
-class Abstracts::Codigo;
 
 /**
  * @brief Classe representante do Dominio data de validade

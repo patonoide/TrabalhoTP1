@@ -74,15 +74,17 @@ ${PathToObj}abstract_DOM.o: ${PathToDom}abstract_DOM.cpp ${PathToDom}abstract_DO
 ${PathToObj}maintestes.o: ${PathToTests}main.cpp
 	${CompileFull} ${MakeObj} ${PathToTests}main.cpp -o ${PathToObj}maintestes.o
 
-${PathToObj}ticket_testes.o: ${PathToTests}ticket_testes.cpp ${PathToTests}testes.hpp
-	$(call compile_obj_test,ticket_testes.cpp,ticket_testes.o)
-
-${PathToObj}creditcard_testes.o: ${PathToTests}creditcard_testes.cpp ${PathToTests}testes.hpp
-	$(call compile_obj_test,creditcard_testes.cpp,creditcard_testes.o)
-
 ${PathToObj}testes.o: ${PathToTests}testes.cpp ${PathToTests}testes.hpp
 	$(call compile_obj_test,testes.cpp,testes.o)
 
-${PathToObj}presentation_testes.o: ${PathToTests}presentation_testes.cpp ${PathToTests}testes.hpp
-	$(call compile_obj_test,presentation_testes.cpp,presentation_testes.o)
+#Testes de Dominios
+${PathToObj}ticket_testes.o: ${PathToTests}dominios/ticket_testes.cpp ${PathToTests}testes.hpp
+	$(call compile_obj_test,dominios/ticket_testes.cpp,ticket_testes.o)
+
+${PathToObj}creditcard_testes.o: ${PathToTests}dominios/creditcard_testes.cpp ${PathToTests}testes.hpp
+	$(call compile_obj_test,dominios/creditcard_testes.cpp,creditcard_testes.o)
+
+${PathToObj}presentation_testes.o: ${PathToTests}dominios/presentation_testes.cpp ${PathToTests}testes.hpp
+	$(call compile_obj_test,dominios/presentation_testes.cpp,presentation_testes.o)
+
 #############################################################
