@@ -8,11 +8,11 @@ string Cpf::getCpf(){
 }
 void Cpf::setCpf(string cpf){
 
-    cpf = this->validarCpf(cpf);
+    this->validarCpf(cpf);
     this->cpf = cpf;
 }
-string Cpf::validarCpf(string cpf){
-    return cpf
+void Cpf::validarCpf(string cpf){
+
 }
 
 
@@ -22,9 +22,9 @@ string Senha::getSenha(){
 }
 void Senha::setCpf(string cpf){
 
-    cpf = validarCpf(cpf);
+    this->validarCpf(cpf);
     this->cpf = cpf;
 }
-string Senha::validarCpf(string cpf){
-    return cpf
+void Senha::validarCpf(string cpf){
+
 }

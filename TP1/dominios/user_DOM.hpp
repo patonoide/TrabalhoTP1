@@ -1,12 +1,12 @@
-#ifndef DOM_TICKET_H
-#define DOM_TICKET_H
+#ifndef DOM_USER_H
+#define DOM_USER_H
 
 
 class Cpf {
 
 private:
     string cpf;
-    string validarCpf(string);
+    void validarCpf(string);
 public:
     string getCpf();
     void setCpf(string);
@@ -18,7 +18,7 @@ class Senha {
 
 private:
     string senha;
-    string validarSenha(string);
+    void validarSenha(string);
 public:
     string getSenha();
     void setSenha(string);
