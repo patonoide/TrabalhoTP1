@@ -14,7 +14,7 @@ int Abstracts::Codigo::MaxTam(){
  * 
  * Sendo a quatidade de X's determinada pelo atributo TAMANHO da instancia.
  */
-void Abstracts::Codigo::validarCodigo(string aValidar){
+void Abstracts::Codigo::validarValor(string aValidar){
 
     int tamanhoInput = (int)aValidar.length();
 
@@ -34,11 +34,11 @@ void Abstracts::Codigo::validarCodigo(string aValidar){
 /**
  * @param codigo String a ser colocada efetivada 
  */
-void Abstracts::Codigo::setCodigo(string codigo){// throw(invalid_argument){
-    this->validarCodigo(codigo);
-    this->codigo = codigo;
+void Abstracts::Codigo::setValor(string str){// throw(invalid_argument){
+    this->validarValor(str);
+    this->valor = str;
 }
 
-string Abstracts::Codigo::getCodigo(){
-    return this->codigo;
+string Abstracts::Codigo::getValor(){
+    return this->valor;
 }

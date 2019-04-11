@@ -9,6 +9,7 @@
  */
 class CodigoIngresso : public Abstracts::Codigo{
   public:
+    static const string classname;
     /**
      * @brief Constrói uma nova instacia do Codigo Seguranca, 
      * com o tamanho do codigo sendo como 5. 

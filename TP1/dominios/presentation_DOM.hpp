@@ -9,6 +9,7 @@
  */
 class CodigoApresentacao : public Abstracts::Codigo{
   public:
+    static const string classname;
     /**
      * @brief Constrói uma nova instacia do Codigo Seguranca, 
      * com o tamanho do codigo sendo como 4. 
@@ -19,12 +20,11 @@ class CodigoApresentacao : public Abstracts::Codigo{
     }
 };
 
-class Data{
+class Data: public Abstracts::Dominio{
   private:
-    string data;
   public:
-    void setData(string);// throw(invalid_argument);
-    string getData();
+    void setValor(string);// throw(invalid_argument);
+    string getValor();
 };
 
 class Horario{
@@ -41,7 +41,7 @@ class Preco{
 
 };
 
-class NumeroSala :public Abstracts::Numero{
+class NumeroSala : public Abstracts::Dominio{
   private:
   public:
   void setNumero(int);// throw(invalid_argument);

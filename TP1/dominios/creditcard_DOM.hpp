@@ -7,15 +7,15 @@
 /**
  * @brief Classe representante do Dominio data de validade
  */
-class DataValidade{
-  private:
-    string data;              ///< Atributo primário
+class DataValidade: public Abstracts::Dominio{
+  protected:
     string mes;               ///< Mês correspondente da data
     string ano;               ///< Ano correspondente da data
-    void validarData(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
   public:
-    void setData(string);     ///< Tenta validar e posteriormente efetivar valor da string passada 
-    string getData();         ///< Retorna atributo data da instancia
+    static const string classname;
+    void setValor(string);     ///< Tenta validar e posteriormente efetivar valor da string passada 
+    string getValor();         ///< Retorna atributo data da instancia
     string getMes();          ///< Retorna atributo mês da instancia
     string getAno();          ///< Retorna atributo ano da instancia
 };
@@ -25,6 +25,7 @@ class DataValidade{
  */
 class CodigoSeguranca : public Abstracts::Codigo{
   public:
+    static const string classname;
     /**
      * @brief Constrói uma nova instacia do Codigo Seguranca, 
      * com o tamanho do codigo sendo como 3. 
@@ -36,12 +37,13 @@ class CodigoSeguranca : public Abstracts::Codigo{
 };
 
 
-class NumeroCartao{
-  private:
-    string numero;
+class NumeroCartao : public Abstracts::Dominio{
+  protected:
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
   public:
-    void setNumero(string);// throw(invalid_argument);
-    string getNumero();
+    static const string classname;
+    void setValor(string);// throw(invalid_argument);
+    string getValor();
 };
 
 
