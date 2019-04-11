@@ -20,7 +20,7 @@ class CodigoApresentacao : public Abstracts::Codigo{
     }
 };
 
-class Data: public Abstracts::Codigo{
+class Data: public Abstracts::Dominio{
   private:
   public:
     void setValor(string);// throw(invalid_argument);
@@ -41,7 +41,7 @@ class Preco{
 
 };
 
-class NumeroSala : public Abstracts::Codigo{
+class NumeroSala : public Abstracts::Dominio{
   private:
   public:
   void setNumero(int);// throw(invalid_argument);
