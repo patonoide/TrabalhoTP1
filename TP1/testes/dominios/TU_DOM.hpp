@@ -2,19 +2,19 @@
 #define TESTE_UNIDADE_H
 #include "../testes.hpp"
 
-/// Classe Base para testes de Unidade  
+/// Classe Base para testes de Unidade
 class TesteUnidadeDOM{
     public:
-        Testes estado;  
+        Testes estado;
         template<class T> void SetValorInvalido(string codInvalido);
-        
+
         template<class T> void SetValorValido(string codValido);
 
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         virtual void runTestes()=0;
 };
 
-/// Classe para Teste de Unidade de CodigoIngresso;   
+/// Classe para Teste de Unidade de CodigoIngresso;
 class TUCodigoIngresso: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
@@ -53,6 +53,12 @@ class TUCodigoApresentacao: public TesteUnidadeDOM{
 
 /// Classe para Teste de Unidade de Data;
 class TUData: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+/// Classe para Teste de Unidade de Faixa;
+class TUFaixa: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
