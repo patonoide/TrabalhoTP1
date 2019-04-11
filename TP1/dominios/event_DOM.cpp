@@ -67,7 +67,7 @@ void Faixa::setValor(string faixa){
         validarValor(faixa);
         this->faixa = faixa;
     }catch(std::invalid_argument){
-        throw std::invalid_argument("deu merda");
+        throw std::invalid_argument("Nenhuma das opções possíveis");
     }
 }
 string Faixa::getValor(){
@@ -82,6 +82,6 @@ void Faixa::validarValor(string faixa){
     if(faixa.compare("14")!=0)
     if(faixa.compare("16")!=0)
     if(faixa.compare("18")!=0)
-    throw std::invalid_argument("deu merda");
+    throw std::invalid_argument("Nenhuma das opções possíveis");
 
 }
