@@ -62,20 +62,20 @@ void Classe::setClasse(string classe){
 
 const string Faixa::classname = "Faixa";
 //metodo faixa
-void Faixa::setFaixa(string faixa){
+void Faixa::setValor(string faixa){
     try{
-        validarFaixa(faixa);
+        validarValor(faixa);
         this->faixa = faixa;
     }catch(std::invalid_argument){
-
+        throw std::invalid_argument("deu merda");
     }
 }
-string Faixa::getFaixa(){
+string Faixa::getValor(){
     return this->faixa;
 }
 
 
-void Faixa::validarFaixa(string faixa){
+void Faixa::validarValor(string faixa){
     if(faixa.compare("L")!=0)
     if(faixa.compare("10")!=0)
     if(faixa.compare("12")!=0)
