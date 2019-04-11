@@ -52,9 +52,10 @@ public:
 class Faixa : public Abstracts::Dominio {
 
 private:
-
+    string faixa;
     void validarFaixa(string);
 public:
+    static const string classname;
     string getFaixa();
     void setFaixa(string);
 

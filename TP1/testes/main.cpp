@@ -6,7 +6,7 @@ int main(int argc, char const *argv[]){
     //Testes De Unidade dos dominios
     TUCodigoIngresso a;
     a.runTestes();
-    
+
     TUCodigoSeguranca b;
     b.runTestes();
 
@@ -18,6 +18,9 @@ int main(int argc, char const *argv[]){
 
     TUCodigoApresentacao e;
     e.runTestes();
+
+    TUFaixa f;
+    f.runTestes();
 
     std::cout << "Fim dos testes\n";
     return 0;
