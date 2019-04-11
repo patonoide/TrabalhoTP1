@@ -21,39 +21,50 @@ class CodigoApresentacao : public Abstracts::Codigo{
 };
 
 class Data: public Abstracts::Dominio{
-  private:
+  protected:
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
   public:
+    static const string classname;
     void setValor(string);// throw(invalid_argument);
     string getValor();
 };
 
-class Horario{
-  private:
-    string horario;
+class Horario: public Abstracts::Dominio{
+  protected:
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
   public:
+    static const string classname;
+    void setValor(string);// throw(invalid_argument);
+    string getValor();
+};
+
+class Preco: public Abstracts::Dominio{
+   protected:
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
+  public:
+    static const string classname;
+    void setValor(string);// throw(invalid_argument);
+    string getValor();
 
 };
 
-class Preco{
-  private:
-    float preco;
+class NumeroSala: public Abstracts::Dominio{
+  protected:
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
   public:
+    static const string classname;
+    void setValor(string);// throw(invalid_argument);
+    string getValor();
 
 };
 
-class NumeroSala : public Abstracts::Dominio{
-  private:
+class Disponibilidade: public Abstracts::Dominio{
+  protected:
+    void validarValor(string); ///< Verifica se a string passada é válida, devolvendo erros caso não seja
   public:
-  void setNumero(int);// throw(invalid_argument);
-  int getNumero();
-
-};
-
-class Disponibilidade{
-  private:
-    int disponibilidade;
-  public:
-  
+    static const string classname;
+    void setValor(string);// throw(invalid_argument);
+    string getValor();
 };
 
 #endif
