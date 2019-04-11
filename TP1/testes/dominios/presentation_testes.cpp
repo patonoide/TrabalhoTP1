@@ -26,7 +26,6 @@ void TUData::runTestes(){
     this->SetValorInvalido<Data>("99/99/99");
     this->SetValorInvalido<Data>("99/11/11");
     this->SetValorInvalido<Data>("11/99/11");
-    this->SetValorInvalido<Data>("11/11/99");
     this->SetValorInvalido<Data>("111/11/11");
     this->SetValorInvalido<Data>("11/111/11");
     this->SetValorInvalido<Data>("11/11/111");

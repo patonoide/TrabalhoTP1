@@ -7,10 +7,14 @@ const string CodigoApresentacao::classname = "Codigo de Apresentação";
 // Metodos de Data
 const string Data::classname = "Data";
 void Data::validarValor(string str){
-    if(str[2] != '/' || str[5] != '/'){
+    //TODO: Anos bissextos
+    if(str[2] != '/' || str[5] != '/' || str.length() > 8){
         throw std::invalid_argument("Formato de dadta invalido");
     }
     if(std::stoi(str.substr(0,2)) > 31 || std::stoi(str.substr(0,2)) == 0 ){
+        throw std::invalid_argument("Formato de dadta invalido");
+    }
+    if(std::stoi(str.substr(3,2)) > 12 || std::stoi(str.substr(3,2)) == 0 ){
         throw std::invalid_argument("Formato de dadta invalido");
     }
 }
