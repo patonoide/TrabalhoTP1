@@ -62,10 +62,17 @@ string Faixa::getFaixa(){
 }
 
 void Faixa::validarFaixa(string faixa){
+    
 
 }
 
 void Faixa::setFaixa(string faixa ){
-    validarFaixa(faixa);
-    this->faixa= faixa;
+
+    try{
+        validarFaixa(faixa);
+        this->faixa= faixa;
+    }catch(std::invalid_argument){
+
+    }
+
 }

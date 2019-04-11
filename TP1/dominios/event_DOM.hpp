@@ -3,6 +3,7 @@
 
 #include<string>   // Incluindo biblioteca para uso de string
 using std::string;
+#include <iostream>
 
 class Name{
 
