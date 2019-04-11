@@ -19,6 +19,9 @@ int main(int argc, char const *argv[]){
     TUCodigoApresentacao e;
     e.runTestes();
 
+    TUData f;
+    f.runTestes();
+    
     std::cout << "Fim dos testes\n";
     return 0;
 }
