@@ -1,18 +1,25 @@
 #include "presentation_DOM.hpp"
+#include <iostream>
 /************** COdigo Apresentacao ***************/
 const string CodigoApresentacao::classname = "Codigo de Apresentação";
 
 /************** Data ***************/
 // Metodos de Data
 const string Data::classname = "Data";
-void Data::validarValor(string){
-
+void Data::validarValor(string str){
+    if(str[2] != '/' || str[5] != '/'){
+        throw std::invalid_argument("Formato de dadta invalido");
+    }
+    if(std::stoi(str.substr(0,2)) > 31 || std::stoi(str.substr(0,2)) == 0 ){
+        throw std::invalid_argument("Formato de dadta invalido");
+    }
 }
-void Data::setValor(string){// throw(invalid_argument){
-
+void Data::setValor(string str){// throw(invalid_argument){
+    this->validarValor(str);
+    this->valor = str;
 }
 string Data::getValor(){
-    return "to implement";
+    return this->valor;
 }
 
 /************** Horario ***************/
