@@ -22,6 +22,9 @@ int main(int argc, char const *argv[]){
     TUFaixa f;
     f.runTestes();
 
+    TUSenha g;
+    g.runTestes();
+
     std::cout << "Fim dos testes\n";
     return 0;
 }

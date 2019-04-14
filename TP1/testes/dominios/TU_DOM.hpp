@@ -64,4 +64,12 @@ class TUFaixa: public TesteUnidadeDOM{
         void runTestes();
 };
 
+/// Classe para Teste de Unidade de Senha;
+class TUSenha: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+
 #endif
