@@ -12,10 +12,10 @@ void Data::validarValor(string str){
         throw std::invalid_argument("Formato de dadta invalido");
     }
     if(std::stoi(str.substr(0,2)) > 31 || std::stoi(str.substr(0,2)) == 0 ){
-        throw std::invalid_argument("Formato de dadta invalido");
+        throw std::invalid_argument("Formato de data invalido");
     }
     if(std::stoi(str.substr(3,2)) > 12 || std::stoi(str.substr(3,2)) == 0 ){
-        throw std::invalid_argument("Formato de dadta invalido");
+        throw std::invalid_argument("Formato de data invalido");
     }
 }
 void Data::setValor(string str){// throw(invalid_argument){
@@ -29,14 +29,31 @@ string Data::getValor(){
 /************** Horario ***************/
 // Metodos de Horario
 const string Horario::classname = "Horario";
-void Horario::validarValor(string){
-    
+void Horario::validarValor(string str){
+    if(str[2] != ':') throw std::invalid_argument("Formato de horário inválido");
+    if(std::stoi(str.substr(0,2))<7 || std::stoi(str.substr(0,2)) > 22)
+        throw std::invalid_argument("Horário inválido: hora invalida");
+    switch (std::stoi(str.substr(3,2)))
+    {
+        case 00:
+        break;
+        case 15:
+        break;
+        case 30:
+        break;
+        case 45:
+        break;
+        default:
+            throw std::invalid_argument("Horário inválido: minutos invalidos");
+        break;
+    }
 }
-void Horario::setValor(string){// throw(invalid_argument){
-
+void Horario::setValor(string str){// throw(invalid_argument){
+    validarValor(str);
+    this->valor = str;
 }
 string Horario::getValor(){
-    return "to implement";
+    return this->valor;
 }
 
 /************** Preco ***************/
