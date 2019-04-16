@@ -58,15 +58,20 @@ string Horario::getValor(){
 
 /************** Preco ***************/
 // Metodos de Preco
-void Preco::validarValor(string){
-    
+void Preco::validarValor(string str){
+    for(int i=0; i< (int)str.length(); i++){
+        if( ! (str[i] == ',' || std::isdigit(str.at(i)))  ){
+            throw std::invalid_argument("Preco: Formato inválido");
+        }
+    }
 }
 const string Preco::classname = "Preco";
-void Preco::setValor(string){// throw(invalid_argument){
-
+void Preco::setValor(string str){// throw(invalid_argument){
+    validarValor(str);
+    this->valor = str;
 }
 string Preco::getValor(){
-    return "to implement";
+    return this->valor;
 }
 
 /************** NumeroSala ***************/
