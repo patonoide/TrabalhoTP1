@@ -92,13 +92,18 @@ string NumeroSala::getValor(){
 
 /************** Disponibilidade ***************/
 // Metodos de Disponibilidade
-void Disponibilidade::validarValor(string){
-    
+void Disponibilidade::validarValor(string str){
+    if(std::stoi(str) < 0 || std::stoi(str) > 250){
+        throw std::invalid_argument("NumeroSala: Formato inválido");
+    }
+    if(str[0]=='0' && str.length() > 1)  
+        throw std::invalid_argument("NumeroSala: Numero não deve comoeçar com 0");
 }
 const string Disponibilidade::classname = "Disponibilidade";
-void Disponibilidade::setValor(string){// throw(invalid_argument){
-
+void Disponibilidade::setValor(string str){// throw(invalid_argument){
+    validarValor(str);
+    this->valor = str;
 }
 string Disponibilidade::getValor(){
-    return "to implement";
+    return this->valor;
 }
