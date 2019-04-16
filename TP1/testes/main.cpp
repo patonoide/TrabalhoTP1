@@ -25,6 +25,9 @@ int main(int argc, char const *argv[]){
     TUHorario gi;
     gi.runTestes();
     
+    TUPreco hi;
+    hi.runTestes();
+
     std::cout << "Fim dos testes\n";
     return 0;
 }

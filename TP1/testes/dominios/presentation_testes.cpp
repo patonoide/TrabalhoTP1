@@ -54,6 +54,21 @@ void TUHorario::runTestes(){
 }
 /******* Testes de Preco ********/
 
+void TUPreco::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<Preco>("1000,00");
+    this->SetValorValido<Preco>("3139,29");
+    this->SetValorInvalido<Preco>("qualquercoisa");
+    this->SetValorInvalido<Preco>("aa,bb");
+    this->SetValorInvalido<Preco>("13a45,98");
+    this->SetValorInvalido<Preco>("13445,a9");
+
+// Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Preco";
+    this->estado.logAllErros();
+}
+
+
 /******* Testes de Numero de Sala ********/
 
 /******* Testes de Disponibilidade ********/
