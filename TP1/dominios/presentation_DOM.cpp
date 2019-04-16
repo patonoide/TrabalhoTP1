@@ -76,15 +76,18 @@ string Preco::getValor(){
 
 /************** NumeroSala ***************/
 // Metodos de NumeroSala
-void NumeroSala::validarValor(string){
-    
+void NumeroSala::validarValor(string str){
+    if(std::stoi(str) < 1 || std::stoi(str) > 10){
+        throw std::invalid_argument("NumeroSala: Formato inválido");
+    }
 }
 const string NumeroSala::classname = "NumeroSala";
-void NumeroSala::setValor(string){// throw(invalid_argument){
-
+void NumeroSala::setValor(string str){// throw(invalid_argument){
+    validarValor(str);
+    this->valor = str;
 }
 string NumeroSala::getValor(){
-    return "to implement";
+    return this->valor;
 }
 
 /************** Disponibilidade ***************/
