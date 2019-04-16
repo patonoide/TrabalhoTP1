@@ -54,3 +54,6 @@ template void TesteUnidadeDOM::SetValorValido<Horario>(string codInvalido);
 
 template void TesteUnidadeDOM::SetValorInvalido<Preco>(string codInvalido);
 template void TesteUnidadeDOM::SetValorValido<Preco>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<NumeroSala>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<NumeroSala>(string codInvalido);

@@ -71,6 +71,21 @@ void TUPreco::runTestes(){
 
 /******* Testes de Numero de Sala ********/
 
+void TUNumeroSala::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<NumeroSala>("1");
+    this->SetValorValido<NumeroSala>("10");
+    this->SetValorInvalido<NumeroSala>("0");
+    this->SetValorInvalido<NumeroSala>("11");
+    this->SetValorInvalido<NumeroSala>("-1");
+    this->SetValorInvalido<NumeroSala>("a");
+
+// Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para NumeroSala";
+    this->estado.logAllErros();
+}
+
+
 /******* Testes de Disponibilidade ********/
 
 /****** Rodando todos os testes dessa entidade ********/

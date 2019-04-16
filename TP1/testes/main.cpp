@@ -28,6 +28,9 @@ int main(int argc, char const *argv[]){
     TUPreco hi;
     hi.runTestes();
 
+    TUNumeroSala ii;
+    ii.runTestes();
+
     std::cout << "Fim dos testes\n";
     return 0;
 }
