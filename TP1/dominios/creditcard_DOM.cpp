@@ -73,12 +73,30 @@ const string CodigoSeguranca::classname = "Codigo de Segurança";
 const string NumeroCartao::classname = "Numero de cartao";
 
 void NumeroCartao::validarValor(string aValidar){
-    return;
+    int nSum       = 0;
+    int nDigits    = aValidar.length();
+    int nParity    = (nDigits-1) % 2;
+    char cDigit[2] = "\0";
+    for (int i = nDigits; i > 0 ; i--)
+    {
+        cDigit[0]  = aValidar[i-1];
+        int nDigit = atoi(cDigit);
+
+        if (nParity == i % 2)
+            nDigit = nDigit * 2;
+
+        nSum += nDigit/10;
+        nSum += nDigit%10;
+    }
+    if(!(0 == nSum % 10)){
+        throw std::invalid_argument("hahah");
+    }
 }
 
 void NumeroCartao::setValor(string toSet){// throw(invalid_argument){
-    return;
+    validarValor(toSet);
+    this->valor = toSet;
 }
 string NumeroCartao::getValor(){
-    return "não implementado";
+    return this->valor;
 }
