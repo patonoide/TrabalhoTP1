@@ -73,6 +73,7 @@ const string CodigoSeguranca::classname = "Codigo de Segurança";
 const string NumeroCartao::classname = "Numero de cartao";
 
 void NumeroCartao::validarValor(string aValidar){
+    //TODO: Ler e entender se isso ta certo kkk
     int nSum       = 0;
     int nDigits    = aValidar.length();
     int nParity    = (nDigits-1) % 2;
