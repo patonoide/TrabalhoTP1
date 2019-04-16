@@ -21,6 +21,9 @@ int main(int argc, char const *argv[]){
 
     TUData f;
     f.runTestes();
+
+    TUHorario gi;
+    gi.runTestes();
     
     std::cout << "Fim dos testes\n";
     return 0;

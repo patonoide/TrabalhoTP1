@@ -36,7 +36,22 @@ void TUData::runTestes(){
 }
 
 /******* Testes de Horário ********/
+void TUHorario::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<Horario>("07:00");
+    this->SetValorValido<Horario>("22:30");
+    this->SetValorInvalido<Horario>("qualquercoisa");
+    this->SetValorInvalido<Horario>("07:10");
+    this->SetValorInvalido<Horario>("08:46");
+    this->SetValorInvalido<Horario>("99:99");
+    this->SetValorInvalido<Horario>("23:00");
+    this->SetValorInvalido<Horario>("06:00");
+    this->SetValorInvalido<Horario>("aa:bb");
 
+// Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Horario";
+    this->estado.logAllErros();
+}
 /******* Testes de Preco ********/
 
 /******* Testes de Numero de Sala ********/

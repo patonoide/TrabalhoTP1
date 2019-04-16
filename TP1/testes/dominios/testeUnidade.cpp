@@ -48,3 +48,6 @@ template void TesteUnidadeDOM::SetValorValido<NumeroCartao>(string codInvalido);
 
 template void TesteUnidadeDOM::SetValorInvalido<Data>(string codInvalido);
 template void TesteUnidadeDOM::SetValorValido<Data>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Horario>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Horario>(string codInvalido);
