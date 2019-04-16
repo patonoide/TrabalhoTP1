@@ -37,25 +37,31 @@ void Senha::setValor(string senha){
 
 void Senha::validarValor(string senha){
 
-    string::iterator it;
-    string::iterator id;
+    int it;
+    int id;
 
-    int counter;
+    int counter=0;
 
-    if(senha.length() < 6){
+    if(senha.length() != 6){
         throw std::invalid_argument("Senha menor que 6 caracteres");
     }
 
-    for (it=senha.begin(); it!=senha.end(); it++){
-        for (id=senha.begin(); id!=senha.end(); id++){
-            if(id == it){
+
+    for (it=0  ;it!=senha.length(); it++){
+
+
+        for (id=0; id!=senha.length(); id++){
+
+
+            if(senha.at(it) == senha.at(id)){
                 counter++;
+                
             }
             if(counter >= 2){
-                throw std::invalid_argument("Letras repetiram");
+                throw std::invalid_argument("Caracteres repetiram");
             }
-            counter = 0;
         }
+        counter = 0;
     }
 
 
@@ -63,16 +69,18 @@ void Senha::validarValor(string senha){
     int lowercount = 0;
     int numbercount = 0;
     int citerator;
-    char ch;
+
 
     for (citerator = 0; citerator != senha.length() ; citerator++){
-        if(isupper(ch = senha[citerator]) == true){
+
+        if(isupper(senha.at(citerator)) != 0){
+
             uppercount++;
         }
-        if(islower(ch = senha[citerator]) == true){
-            uppercount++;
+        if(islower(senha.at(citerator)) != 0){
+            lowercount++;
         }
-        if(isdigit(ch = senha[citerator]) == true){
+        if(isdigit(senha.at(citerator)) != 0){
             numbercount++;
         }
     }
