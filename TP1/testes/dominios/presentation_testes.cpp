@@ -88,4 +88,18 @@ void TUNumeroSala::runTestes(){
 
 /******* Testes de Disponibilidade ********/
 
+void TUDisponibilidade::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<Disponibilidade>("0");
+    this->SetValorValido<Disponibilidade>("250");
+    this->SetValorInvalido<Disponibilidade>("-1");
+    this->SetValorInvalido<Disponibilidade>("251");
+    this->SetValorInvalido<Disponibilidade>("abc");
+    this->SetValorInvalido<Disponibilidade>("045");
+
+// Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Disponibilidade";
+    this->estado.logAllErros();
+}
+
 /****** Rodando todos os testes dessa entidade ********/

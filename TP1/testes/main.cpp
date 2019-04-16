@@ -31,6 +31,9 @@ int main(int argc, char const *argv[]){
     TUNumeroSala ii;
     ii.runTestes();
 
+    TUDisponibilidade ji;
+    ji.runTestes();
+    
     std::cout << "Fim dos testes\n";
     return 0;
 }
