@@ -58,24 +58,28 @@ class TUData: public TesteUnidadeDOM{
         void runTestes();
 };
 
+/// Classe para Teste de Unidade de Horario;
 class TUHorario: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
 };
 
+/// Classe para Teste de Unidade de Preco;
 class TUPreco: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
 };
 
+/// Classe para Teste de Unidade de NumeroSala;
 class TUNumeroSala: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
 };
 
+/// Classe para Teste de Unidade de Disponibilidade;
 class TUDisponibilidade: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
