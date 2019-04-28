@@ -40,7 +40,8 @@ int main(int argc, char const *argv[]){
     std::cout << "\n##### Inicio dos testes de Entidade #####\n";
     TUTicket ticket;
     ticket.runTestes();
-
+    TUCreditCard card;
+    card.runTestes();
 
     std::cout << "Fim dos testes\n";
     return 0;

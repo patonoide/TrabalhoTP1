@@ -7,10 +7,20 @@ class TUTicket{
   private:
     Ticket testando;
     Testes estado;
-  public:
     void setCodigoValido(CodigoIngresso &valid);
+  public:
     void runTestes();
 };
 
+class TUCreditCard{
+  private:
+    Card testando;
+    Testes estado;
+    void setDataValida(DataValidade &valid);
+    void setCodigoValido(CodigoSeguranca &valid);
+    void setNumeroCartao(NumeroCartao &valid);
+  public:
+    void runTestes();
+};
 
 #endif
