@@ -26,11 +26,19 @@ OBJ_DIR_TESTE_DOM := TP1/bin/test_dom
 SRC_FILES_TESTE_DOM := $(wildcard $(SRC_DIR_TESTE_DOM)/*.cpp)
 OBJ_FILES_TESTE_DOM := $(patsubst $(SRC_DIR_TESTE_DOM)/%.cpp,$(OBJ_DIR_TESTE_DOM)/%.o,$(SRC_FILES_TESTE_DOM))
 
+# Teste_ent
+SRC_DIR_TESTE_ENT := TP1/testes/entidades
+OBJ_DIR_TESTE_ENT := TP1/bin/test_ent
+
+SRC_FILES_TESTE_ENT := $(wildcard $(SRC_DIR_TESTE_ENT)/*.cpp)
+OBJ_FILES_TESTE_ENT := $(patsubst $(SRC_DIR_TESTE_ENT)/%.cpp,$(OBJ_DIR_TESTE_ENT)/%.o,$(SRC_FILES_TESTE_ENT))
+
+
 # Flags
 CPPFLAGS := -Wall -pedantic -std=c++11
 
 # Compilation rules
-teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_ENT)
+teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT)
 	g++ $(LDFLAGS) -o $@ $^
 
 clean: 
@@ -46,8 +54,11 @@ $(OBJ_DIR_DOM)/%.o: $(SRC_DIR_DOM)/%.cpp $(SRC_DIR_DOM)/%.hpp
 $(OBJ_DIR_TESTE)/%.o: $(SRC_DIR_TESTE)/%.cpp $(SRC_DIR_TESTE)/testes.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<
 
+$(OBJ_DIR_ENT)/%.o: $(SRC_DIR_ENT)/%.cpp $(SRC_DIR_ENT)/%.hpp
+	g++ $(CPPFLAGS) -c -o $@ $<
+
 $(OBJ_DIR_TESTE_DOM)/%.o: $(SRC_DIR_TESTE_DOM)/%.cpp $(SRC_DIR_TESTE_DOM)/TU_DOM.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<
 
-$(OBJ_DIR_ENT)/%.o: $(SRC_DIR_ENT)/%.cpp $(SRC_DIR_ENT)/%.hpp
+$(OBJ_DIR_TESTE_ENT)/%.o: $(SRC_DIR_TESTE_ENT)/%.cpp $(SRC_DIR_TESTE_ENT)/TU_ENT.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<

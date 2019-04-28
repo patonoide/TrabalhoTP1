@@ -1,5 +1,5 @@
-#ifndef TESTE_UNIDADE_H
-#define TESTE_UNIDADE_H
+#ifndef TESTE_UNIDADE_DOM_H
+#define TESTE_UNIDADE_DOM_H
 #include "../testes.hpp"
 
 /// Classe Base para testes de Unidade  
