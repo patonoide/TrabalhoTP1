@@ -25,6 +25,9 @@ int main(int argc, char const *argv[]){
     TUSenha g;
     g.runTestes();
 
+    TUCpf h;
+    h.runTestes();
+
     std::cout << "Fim dos testes\n";
     return 0;
 }

@@ -3,18 +3,20 @@
 
 #include "abstract_DOM.hpp"
 #include <iostream>
-#include <cstring>
+
 #include<string>   // Incluindo biblioteca para uso de string
+#include <algorithm>
 using std::string;
-class Cpf {
+class Cpf : public Abstracts::Dominio {
 
 
 private:
     string cpf;
-    void validarCpf(string);
+    void validarValor(string);
 public:
-    string getCpf();
-    void setCpf(string);
+    static const string classname;
+    string getValor();
+    void setValor(string);
 
 
 

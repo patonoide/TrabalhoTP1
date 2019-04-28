@@ -1,6 +1,6 @@
 #include "TU_DOM.hpp"
 
-/****** Testes de Senha etária ********/
+/****** Testes de Senha  ********/
 void TUSenha::runTestes(){
     /***** Chamando funções de testes *****/
     this->SetValorValido<Senha>("AbcDe1");             // Testando um valor valido
@@ -16,5 +16,20 @@ void TUSenha::runTestes(){
 
     // Mostrando resultado no terminal
     std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Senha.";
+    this->estado.logAllErros();
+}
+
+
+/****** Testes de Cpf ********/
+void TUCpf::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<Cpf>("018.065.571-00");             // Testando um valor valido
+    this->SetValorInvalido<Cpf>("000.000.000-00");
+    this->SetValorInvalido<Cpf>("dasfasdsa");
+    this->SetValorInvalido<Cpf>("999.999.999-99");
+
+    this->SetValorInvalido<Cpf>("090.699.989-09");
+    // Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para CPF.";
     this->estado.logAllErros();
 }

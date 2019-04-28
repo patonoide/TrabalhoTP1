@@ -51,3 +51,6 @@ template void TesteUnidadeDOM::SetValorValido<Faixa>(string codInvalido);
 
 template void TesteUnidadeDOM::SetValorInvalido<Senha>(string codInvalido);
 template void TesteUnidadeDOM::SetValorValido<Senha>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Cpf>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Cpf>(string codInvalido);
