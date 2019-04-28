@@ -1,0 +1,5 @@
+#ifndef ENTIDADES_TICKET_H
+#define ENTIDADES_TICKET_H
+
+
+#endif

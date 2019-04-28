@@ -5,6 +5,13 @@ OBJ_DIR_DOM := TP1/bin/dom
 SRC_FILES_DOM := $(wildcard $(SRC_DIR_DOM)/*.cpp)
 OBJ_FILES_DOM := $(patsubst $(SRC_DIR_DOM)/%.cpp,$(OBJ_DIR_DOM)/%.o,$(SRC_FILES_DOM))
 
+# Entidades 
+SRC_DIR_ENT := TP1/model
+OBJ_DIR_ENT := TP1/bin/entidades
+
+SRC_FILES_ENT := $(wildcard $(SRC_DIR_ENT)/*.cpp)
+OBJ_FILES_ENT := $(patsubst $(SRC_DIR_ENT)/%.cpp,$(OBJ_DIR_ENT)/%.o,$(SRC_FILES_ENT))
+
 # Teste
 SRC_DIR_TESTE := TP1/testes
 OBJ_DIR_TESTE := TP1/bin/test
@@ -23,13 +30,14 @@ OBJ_FILES_TESTE_DOM := $(patsubst $(SRC_DIR_TESTE_DOM)/%.cpp,$(OBJ_DIR_TESTE_DOM
 CPPFLAGS := -Wall -pedantic -std=c++11
 
 # Compilation rules
-teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_TESTE_DOM)
+teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_ENT)
 	g++ $(LDFLAGS) -o $@ $^
 
 clean: 
 	rm -f TP1/bin/dom/*.o
-	rm -f TP1/bin//test/*.o
+	rm -f TP1/bin/test/*.o
 	rm -f TP1/bin/test_dom/*.o
+	rm -f TP1/bin/entidades/*.o
 
 # Generalize compile files
 $(OBJ_DIR_DOM)/%.o: $(SRC_DIR_DOM)/%.cpp $(SRC_DIR_DOM)/%.hpp
@@ -41,3 +49,5 @@ $(OBJ_DIR_TESTE)/%.o: $(SRC_DIR_TESTE)/%.cpp $(SRC_DIR_TESTE)/testes.hpp
 $(OBJ_DIR_TESTE_DOM)/%.o: $(SRC_DIR_TESTE_DOM)/%.cpp $(SRC_DIR_TESTE_DOM)/TU_DOM.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<
 
+$(OBJ_DIR_ENT)/%.o: $(SRC_DIR_ENT)/%.cpp $(SRC_DIR_ENT)/%.hpp
+	g++ $(CPPFLAGS) -c -o $@ $<

@@ -3,5 +3,6 @@ TP1/bin/*.o
 TP1/bin/dom/*.o
 TP1/bin/test/*.o
 TP1/bin/test_dom/*.o
+TP1/bin/entidades/*.o
 teste
 doxygen/*
