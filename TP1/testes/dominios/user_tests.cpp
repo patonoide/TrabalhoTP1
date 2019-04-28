@@ -27,6 +27,7 @@ void TUCpf::runTestes(){
     this->SetValorInvalido<Cpf>("000.000.000-00");
     this->SetValorInvalido<Cpf>("dasfasdsa");
     this->SetValorInvalido<Cpf>("999.999.999-99");
+    this->SetValorValido<Cpf>("033.419.661-29"); 
 
     this->SetValorInvalido<Cpf>("090.699.989-09");
     // Mostrando resultado no terminal
