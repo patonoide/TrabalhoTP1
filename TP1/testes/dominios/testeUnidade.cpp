@@ -45,3 +45,18 @@ template void TesteUnidadeDOM::SetValorValido<DataValidade>(string codInvalido);
 
 template void TesteUnidadeDOM::SetValorInvalido<NumeroCartao>(string codInvalido);
 template void TesteUnidadeDOM::SetValorValido<NumeroCartao>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Data>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Data>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Horario>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Horario>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Preco>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Preco>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<NumeroSala>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<NumeroSala>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Disponibilidade>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Disponibilidade>(string codInvalido);

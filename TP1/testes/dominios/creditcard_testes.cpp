@@ -62,6 +62,7 @@ void TUDataValidade::runTestes(){
 /****** Testes de Numero do cartão ********/
 void TUNumeroCartao::runTestes(){
     /***** Chamando funções de testes *****/
+    this->SetValorValido<NumeroCartao>("4863231001094886");            // Testando um valor valido
     this->SetValorInvalido<NumeroCartao>("1");                // Valor inválido: tamanho menor
     this->SetValorInvalido<NumeroCartao>("12345678901234567");// Valor inválido: tamanho maior
     this->SetValorInvalido<NumeroCartao>("xx3456789012345xx");// Valor inválido: tamanho maior

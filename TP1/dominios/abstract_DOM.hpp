@@ -17,11 +17,11 @@ namespace Abstracts{
    */
   class Dominio{
     protected:
-      string valor;                   ///< Atributo Primário
-      virtual void validarValor(string aValidar)=0;    ///< Verifica se parametro passado é valido, devolvendo erro std::invalid_argument caso não seja
+      string valor;                                 ///< Atributo Primário dos domínios que herdem dessa classe
+      virtual void validarValor(string aValidar)=0; ///< Verifica se parametro passado é valido, devolvendo erro std::invalid_argument caso não seja
     public:
-      virtual void setValor(string str)=0;  ///< Verifica se string é válida, e salva-o no atributo valor
-      virtual string getValor()=0;      ///< Retorna valor
+      virtual void setValor(string str)=0;          ///< Verifica se string é válida, e salva-o no atributo valor
+      virtual string getValor()=0;                  ///< Retorna atributo valor
   };
   
   /**
@@ -29,13 +29,13 @@ namespace Abstracts{
    */
   class Codigo : public Dominio{
     protected:
-      int TAMANHO;                ///< Tamanho do código
+      int TAMANHO;                        ///< Tamanho do código
       void validarValor(string aValidar); ///< Verifica se parametro passado é valido, devolvendo erro std::invalid_argument caso não seja
     public:
-      static const string classname;
-      int MaxTam();               ///< Retorna váriavel de instancia TAMANHO
+      static const string classname;      ///< Nome da classe
+      int MaxTam();                       ///< Retorna váriavel de instancia TAMANHO
       void setValor(string str); 
-      string getValor();         ///< Retorna valor do codigo
+      string getValor();                  ///< Retorna valor do codigo
   };
 } // Abstracts
 
