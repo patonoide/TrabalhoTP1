@@ -2,8 +2,8 @@
 #define ENTIDADES_PRESENTATION_H
 
 #include "../dominios/presentation_DOM.hpp"
-
-class Presentation{
+#include "model.hpp"
+class Presentation: public Model{
     private:
     CodigoApresentacao codigo;
     Data data;

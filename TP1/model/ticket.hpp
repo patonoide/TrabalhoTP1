@@ -2,8 +2,8 @@
 #define ENTIDADES_TICKET_H
 
 #include "../dominios/ticket_DOM.hpp"
-
-class Ticket{
+#include "model.hpp"
+class Ticket : public Model{
     private:
     CodigoIngresso codigo;
     public:

@@ -2,8 +2,9 @@
 #define ENTIDADES_CARD_H
 
 #include "../dominios/creditcard_DOM.hpp"
+#include "model.hpp"
 
-class Card{
+class Card : public Model{
     private:
     DataValidade validade;
     CodigoSeguranca codigo;
