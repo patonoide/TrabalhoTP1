@@ -7,6 +7,7 @@
 #include "../dominios/creditcard_DOM.hpp"
 #include "../model/ticket.hpp"
 #include "../model/card.hpp"
+#include "../model/presentation.hpp"
 #include <list>
 #include <iostream>
 

@@ -23,4 +23,18 @@ class TUCreditCard{
     void runTestes();
 };
 
+class TUPresentation{
+  private:
+  Presentation testando;
+  Testes estado;
+  void testeDataValida(Data& valid);
+  void testeCodigoApresentacaoValida(CodigoApresentacao& valid);
+  void testeHorarioValida(Horario& valid);
+  void testePrecoValida(Preco& valid);
+  void testeNumeroSalaValida(NumeroSala& valid);
+  void testeDisponibilidadeValida(Disponibilidade& valid);
+  public:
+  void runTestes();
+};
+
 #endif

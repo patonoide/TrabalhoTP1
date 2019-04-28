@@ -42,7 +42,9 @@ int main(int argc, char const *argv[]){
     ticket.runTestes();
     TUCreditCard card;
     card.runTestes();
-
+    TUPresentation presentation;
+    presentation.runTestes();
+    
     std::cout << "Fim dos testes\n";
     return 0;
 }
