@@ -7,12 +7,10 @@ string Cpf::getValor(){
     return this->cpf;
 }
 void Cpf::setValor(string cpf){
-    try{
+
         validarValor(cpf);
         this->cpf = cpf;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 }
 void Cpf::validarValor(string cpf){
 
@@ -66,9 +64,6 @@ void Cpf::validarValor(string cpf){
     for (it=0  ;it!=10; it++){
 
 
-
-
-
         if((float)((somador*10) % 11) == (float)10 &&  it == 9){
 
             temp = 0.0;
@@ -95,7 +90,10 @@ void Cpf::validarValor(string cpf){
         }
 
     }
+
+
     multi = 11;
+    
     //checando segundo digito
     for (it=0  ;it!=11; it++){
 
@@ -144,12 +142,9 @@ string Senha::getValor(){
 }
 void Senha::setValor(string senha){
 
-    try{
         validarValor(senha);
         this->senha = senha;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 
 
 
