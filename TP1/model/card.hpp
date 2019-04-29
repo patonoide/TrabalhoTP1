@@ -4,6 +4,11 @@
 #include "../dominios/creditcard_DOM.hpp"
 #include "model.hpp"
 
+/**
+ * @brief Classe representante da entidade Cartão de Credito
+ * 
+ * Armazena Valores de DataValidade, CodigoSeguranca e NumeroCartao
+ */
 class Card : public Model{
     private:
     DataValidade validade;
