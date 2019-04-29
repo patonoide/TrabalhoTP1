@@ -64,3 +64,9 @@ template void TesteUnidadeDOM::SetValorValido<Estado>(string codInvalido);
 
 template void TesteUnidadeDOM::SetValorInvalido<Cidade>(string codInvalido);
 template void TesteUnidadeDOM::SetValorValido<Cidade>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<Name>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<Name>(string codInvalido);
+
+template void TesteUnidadeDOM::SetValorInvalido<CodigoEvento>(string codInvalido);
+template void TesteUnidadeDOM::SetValorValido<CodigoEvento>(string codInvalido);

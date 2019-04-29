@@ -7,6 +7,21 @@ using std::string;
 #include <iostream>
 
 
+
+class CodigoEvento: public Abstracts::Codigo{
+  public:
+    static const string classname;
+    /**
+     * @brief Constrói uma nova instacia do Codigo Seguranca,
+     * com o tamanho do codigo sendo como 3.
+     *
+     */
+    CodigoEvento(){
+      TAMANHO = 3;
+    }
+};
+
+
 class Name: public Abstracts::Dominio{
 
 private:

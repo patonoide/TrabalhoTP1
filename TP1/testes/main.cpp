@@ -37,6 +37,13 @@ int main(int argc, char const *argv[]){
     TUCidade k;
     k.runTestes();
 
+    TUName l;
+    l.runTestes();
+
+    TUCodigoEvento m;
+    m.runTestes();
+
+
 
     std::cout << "Fim dos testes\n";
     return 0;

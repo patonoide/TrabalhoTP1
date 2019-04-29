@@ -96,4 +96,15 @@ class TUCidade: public TesteUnidadeDOM{
         void runTestes();
 };
 
+class TUName: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUCodigoEvento: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
 #endif

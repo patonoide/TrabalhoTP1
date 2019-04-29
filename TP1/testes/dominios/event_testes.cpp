@@ -52,6 +52,30 @@ void TUCidade::runTestes(){
     this->SetValorInvalido<Cidade>(". ");
     this->SetValorInvalido<Cidade>("dsakndhsakdkasndkandadknakdnasks");
     // Mostrando resultado no terminal
-    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para cidade";
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Cidade";
+    this->estado.logAllErros();
+}
+
+
+/****** Testes de Nome ********/
+void TUName::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<Name>("RS");             // Testando um valor valido
+    this->SetValorInvalido<Name>("  ");
+    this->SetValorInvalido<Name>("5."); // Valor invalido: absurdo
+    this->SetValorInvalido<Name>(" dsadsad43232fadsadasdvavgrbnbfvbghxgdethugybkf");
+    // Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Name";
+    this->estado.logAllErros();
+}
+
+/****** Testes de Codigo de Evento ********/
+void TUCodigoEvento::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<CodigoEvento>("111");             // Testando um valor valido
+
+    this->SetValorInvalido<CodigoEvento>(" dsadsad43232fadsadasdvavgrbnbfvbghxgdethugybkf");
+    // Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Codigo Evento";
     this->estado.logAllErros();
 }

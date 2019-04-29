@@ -1,19 +1,56 @@
 #include "event_DOM.hpp"
 
+
+//metodos codigo evento
+const string CodigoEvento::classname = "CodigoEvento";
+
+
+
+
 //metodos name
+const string Name::classname = "Name";
 string Name::getValor(){
     return this->name;
 
 }
 void Name::validarValor(string name){
 
+    if(name.length() > 20){
+        throw std::invalid_argument("Muito Grande");
+    }
+
+    bool hasLetter = false;
+    bool hasDigit = false;
+    for (int i = 0; i < name.size(); i++) {
+
+        if (isalpha(name.at(i))) { hasLetter = true; }
+
+        if(name.at(i)== '.'){
+
+                throw std::invalid_argument("Não tem letra após ponto");
+
+        }
+
+        if(name.at(i)== ' '){
+            if(name.at(i+1)== ' '){
+                throw std::invalid_argument("Tem dois espaços em branco");
+            }
+        }
+    }
+    if(hasLetter == false){
+        throw std::invalid_argument("Não tem letra");
+    }
 
 
 }
 
 void Name::setValor(string name){
-
-    this->name = name;
+    try{
+        validarValor(name);
+        this->name = name;
+    }catch(std::invalid_argument){
+        throw std::invalid_argument("Nenhuma das opções possíveis");
+    }
 }
 
 
