@@ -4,6 +4,7 @@
 
 int main(int argc, char const *argv[]){
 
+    std::cout << "\n##### Inicio dos testes de Dominios #####\n";
     // Testes De Unidade dos dominios
     // Ticket
     TUCodigoIngresso codigoIng;
