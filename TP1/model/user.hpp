@@ -9,10 +9,10 @@ class User: public Model{
         Cpf cpf;
         Senha senha;
     public:
-    inline void setCpf(Cpf &toSet);
-    inline Cpf getCpf();
+    inline void setCpf(Cpf &toSet){this->cpf = toSet;}
+    inline Cpf getCpf(){return this->cpf;}
 
-    inline void setSenha(Senha &toSet);
-    inline Senha getSenha();
+    inline void setSenha(Senha &toSet){this->senha = toSet;}
+    inline Senha getSenha(){return this->senha;}
 };
 #endif

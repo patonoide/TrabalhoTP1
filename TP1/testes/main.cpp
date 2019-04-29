@@ -58,6 +58,8 @@ int main(int argc, char const *argv[]){
     TUPresentation presentation;
     TUCreditCard card;
     TUEvent event;
+    TUUser user;
+    user.runTestes();
     event.runTestes();
     ticket.runTestes();
     card.runTestes();

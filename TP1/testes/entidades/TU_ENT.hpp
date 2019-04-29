@@ -79,5 +79,20 @@ class TUEvent{
   void runTestes();
 };
 
+class TUUser{
+  private:
+  User testando;  /// Instancia da classe a ser testada
+  Testes estado;          /// Salva o estado do teste e os logs dos possiveis erros
+  void testeCpfValida(Cpf& valid);
+  void testeSenhaValida(Senha& valid);
+  public:
+  /**
+   * @brief Executa os testes criados para esse teste de unidade. Testa o efetivamento de objetos validos
+   * de todos seus atributos.
+   */
+  void runTestes();
+};
+
+
 
 #endif
