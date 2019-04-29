@@ -7,7 +7,7 @@ int main(int argc, char const *argv[]){
     //Testes De Unidade dos dominios
     TUCodigoIngresso a;
     a.runTestes();
-    
+
     TUCodigoSeguranca b;
     b.runTestes();
 
@@ -19,6 +19,31 @@ int main(int argc, char const *argv[]){
 
     TUCodigoApresentacao e;
     e.runTestes();
+
+    TUFaixa f;
+    f.runTestes();
+
+    TUSenha g;
+    g.runTestes();
+
+    TUCpf h;
+    h.runTestes();
+
+    TUClasse i;
+    i.runTestes();
+
+    TUEstado j;
+    j.runTestes();
+
+    TUCidade k;
+    k.runTestes();
+
+    TUName l;
+    l.runTestes();
+
+    TUCodigoEvento m;
+    m.runTestes();
+
 
     TUData f;
     f.runTestes();

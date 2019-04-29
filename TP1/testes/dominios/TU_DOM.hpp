@@ -2,7 +2,7 @@
 #define TESTE_UNIDADE_DOM_H
 #include "../testes.hpp"
 
-/// Classe Base para testes de Unidade  
+/// Classe Base para testes de Unidade
 class TesteUnidadeDOM{
     public:
         Testes estado; /// Salva o estado do teste e os logs de possiveis erros
@@ -30,7 +30,7 @@ class TesteUnidadeDOM{
         virtual void runTestes()=0;
 };
 
-/// Classe para Teste de Unidade de CodigoIngresso;   
+/// Classe para Teste de Unidade de CodigoIngresso;
 class TUCodigoIngresso: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
@@ -73,6 +73,33 @@ class TUData: public TesteUnidadeDOM{
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
 };
+/// Classe para Teste de Unidade de Faixa;
+class TUFaixa: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+/// Classe para Teste de Unidade de Senha;
+class TUSenha: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+/// Classe para Teste de Unidade de Cpf;
+class TUCpf: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUClasse: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
 
 /// Classe para Teste de Unidade de Horario;
 class TUHorario: public TesteUnidadeDOM{
@@ -81,12 +108,14 @@ class TUHorario: public TesteUnidadeDOM{
         void runTestes();
 };
 
+
 /// Classe para Teste de Unidade de Preco;
 class TUPreco: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
 };
+
 
 /// Classe para Teste de Unidade de NumeroSala;
 class TUNumeroSala: public TesteUnidadeDOM{
@@ -97,6 +126,30 @@ class TUNumeroSala: public TesteUnidadeDOM{
 
 /// Classe para Teste de Unidade de Disponibilidade;
 class TUDisponibilidade: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUEstado: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUCidade: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUName: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUCodigoEvento: public TesteUnidadeDOM{
     public:
         /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
         void runTestes();
