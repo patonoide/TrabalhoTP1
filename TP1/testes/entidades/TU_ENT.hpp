@@ -28,6 +28,10 @@ class TUTicket{
     void runTestes();
 };
 
+/**
+ * @brief Classe feita para executar os testes de unidade da Entidade Card
+ * 
+ */
 class TUCreditCard{
   private:
     Card testando;    /// Instancia da classe a ser testada
@@ -43,6 +47,10 @@ class TUCreditCard{
     void runTestes();
 };
 
+/**
+ * @brief Classe feita para executar os testes de unidade da Entidade Presentation
+ * 
+ */
 class TUPresentation{
   private:
   Presentation testando;  /// Instancia da classe a ser testada
@@ -61,6 +69,10 @@ class TUPresentation{
   void runTestes();
 };
 
+/**
+ * @brief Classe feita para executar os testes de unidade da Entidade Event
+ * 
+ */
 class TUEvent{
   private:
   Event testando;  /// Instancia da classe a ser testada
@@ -79,6 +91,10 @@ class TUEvent{
   void runTestes();
 };
 
+/**
+ * @brief Classe feita para executar os testes de unidade da Entidade User
+ * 
+ */
 class TUUser{
   private:
   User testando;  /// Instancia da classe a ser testada

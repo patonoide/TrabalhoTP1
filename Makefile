@@ -35,7 +35,7 @@ OBJ_FILES_TESTE_ENT := $(patsubst $(SRC_DIR_TESTE_ENT)/%.cpp,$(OBJ_DIR_TESTE_ENT
 
 
 # Flags
-CPPFLAGS := -Wall -pedantic -std=c++11
+CPPFLAGS := -Wall -pedantic -std=c++11 -o3
 
 # Compilation rules
 teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT)
