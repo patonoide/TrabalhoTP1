@@ -4,70 +4,61 @@
 
 int main(int argc, char const *argv[]){
 
-    //Testes De Unidade dos dominios
-    TUCodigoIngresso a;
-    a.runTestes();
+    // Testes De Unidade dos dominios
+    // Ticket
+    TUCodigoIngresso codigoIng;
+    codigoIng.runTestes();
 
-    TUCodigoSeguranca b;
-    b.runTestes();
+    // Presentation
+    TUCodigoApresentacao codigoPres;
+    TUData data;
+    TUHorario horario;
+    TUNumeroSala numeroSala;
+    TUDisponibilidade disp;
+    TUPreco preco;
+    preco.runTestes();
+    disp.runTestes();
+    numeroSala.runTestes();
+    horario.runTestes();
+    codigoPres.runTestes();
+    data.runTestes();
 
-    TUDataValidade c;
-    c.runTestes();
+    // Credit card
+    TUCodigoSeguranca codigoSeg;
+    TUDataValidade dataVal;
+    TUNumeroCartao numeroCartao;
+    numeroCartao.runTestes();
+    dataVal.runTestes();
+    codigoSeg.runTestes();
 
-    TUNumeroCartao d;
-    d.runTestes();
+    // Event
+    TUFaixa faixa;
+    TUClasse classe;
+    TUEstado estado;
+    TUCidade cidade;
+    TUName name;
+    TUCodigoEvento codigoEvnt;
+    codigoEvnt.runTestes();
+    name.runTestes();
+    cidade.runTestes();
+    estado.runTestes();
+    classe.runTestes();
+    faixa.runTestes();
 
-    TUCodigoApresentacao e;
-    e.runTestes();
+    // User
+    TUSenha senha;
+    TUCpf cpf;
+    cpf.runTestes();
+    senha.runTestes();
 
-    TUFaixa f;
-    f.runTestes();
-
-    TUSenha g;
-    g.runTestes();
-
-    TUCpf h;
-    h.runTestes();
-
-    TUClasse i;
-    i.runTestes();
-
-    TUEstado j;
-    j.runTestes();
-
-    TUCidade k;
-    k.runTestes();
-
-    TUName l;
-    l.runTestes();
-
-    TUCodigoEvento m;
-    m.runTestes();
-
-
-    TUData f;
-    f.runTestes();
-
-    TUHorario gi;
-    gi.runTestes();
-    
-    TUPreco hi;
-    hi.runTestes();
-
-    TUNumeroSala ii;
-    ii.runTestes();
-
-    TUDisponibilidade ji;
-    ji.runTestes();
-    
 
     /// Testes de Entidade /// 
     std::cout << "\n##### Inicio dos testes de Entidade #####\n";
     TUTicket ticket;
-    ticket.runTestes();
-    TUCreditCard card;
-    card.runTestes();
     TUPresentation presentation;
+    TUCreditCard card;
+    ticket.runTestes();
+    card.runTestes();
     presentation.runTestes();
     
     std::cout << "Fim dos testes\n";
