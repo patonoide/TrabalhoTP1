@@ -20,16 +20,60 @@ void Name::setValor(string name){
 
 
 //metodos Cidade
+const string Cidade::classname = "Cidade";
 string Cidade::getValor(){
     return this->cidade;
 }
 
 void Cidade::validarValor(string cidade){
 
+    if(cidade.length() > 15){
+        throw std::invalid_argument("Muito Grande");
+    }
+
+    bool hasLetter = false;
+    bool hasDigit = false;
+    for (int i = 0; i < cidade.size(); i++) {
+        if (isdigit(cidade.at(i))) { hasDigit = true; }
+        if (isalpha(cidade.at(i))) { hasLetter = true; }
+
+        if(cidade.at(i)== '.'){
+            if(cidade.at(i+1)== '.' || cidade.at(i+1)== ' '){
+                throw std::invalid_argument("Não tem letra após ponto");
+            }
+        }
+
+        if(cidade.at(i)== ' '){
+            if(cidade.at(i+1)== ' '){
+                throw std::invalid_argument("Tem dois espaços em branco");
+            }
+        }
+    }
+    if(hasLetter == false){
+        throw std::invalid_argument("Não tem letra");
+    }
+    if(hasDigit == true){
+        throw std::invalid_argument("Tem número");
+    }
+
+
+
+    // if (s.find('[') != std::string::npos){
+    //
+    // }else{
+    //
+    // }
+
+
 }
 
 void Cidade::setValor(string cidade){
-this->cidade  = cidade;
+    try{
+        validarValor(cidade);
+        this->cidade = cidade;
+    }catch(std::invalid_argument){
+        throw std::invalid_argument("Nenhuma das opções possíveis");
+    }
 }
 
 //metodos Estado

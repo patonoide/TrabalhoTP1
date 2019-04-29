@@ -34,6 +34,10 @@ int main(int argc, char const *argv[]){
     TUEstado j;
     j.runTestes();
 
+    TUCidade k;
+    k.runTestes();
+
+
     std::cout << "Fim dos testes\n";
     return 0;
 }

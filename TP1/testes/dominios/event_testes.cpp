@@ -40,3 +40,18 @@ void TUEstado::runTestes(){
     std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para Estado";
     this->estado.logAllErros();
 }
+
+/****** Testes de Cidade ********/
+void TUCidade::runTestes(){
+    /***** Chamando funções de testes *****/
+    this->SetValorValido<Cidade>("RS");             // Testando um valor valido
+    this->SetValorValido<Cidade>("sdada.dsad asda");
+    this->SetValorInvalido<Cidade>("5"); // Valor invalido: absurdo
+    this->SetValorInvalido<Cidade>("  ");
+    this->SetValorInvalido<Cidade>("..");
+    this->SetValorInvalido<Cidade>(". ");
+    this->SetValorInvalido<Cidade>("dsakndhsakdkasndkandadknakdnasks");
+    // Mostrando resultado no terminal
+    std::cout << "Foram feitos " << this->estado.totalTestes() << " testes para cidade";
+    this->estado.logAllErros();
+}

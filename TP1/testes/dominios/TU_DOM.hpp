@@ -90,4 +90,10 @@ class TUEstado: public TesteUnidadeDOM{
         void runTestes();
 };
 
+class TUCidade: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
 #endif
