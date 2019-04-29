@@ -17,7 +17,7 @@ class Testes{
         int totalErros;
         std::list<string> todosErros;
     public:
-    Testes(){
+    Testes(){                               ///< Construtor que inicializa os atributos da classe.
         this->total = 0;
         this->totalErros = 0;
     }                                       ///< Inicializando variaveis dps da criação da instancia

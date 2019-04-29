@@ -44,7 +44,21 @@ int main(int argc, char const *argv[]){
     m.runTestes();
 
 
+    TUData f;
+    f.runTestes();
 
+    TUHorario gi;
+    gi.runTestes();
+    
+    TUPreco hi;
+    hi.runTestes();
+
+    TUNumeroSala ii;
+    ii.runTestes();
+
+    TUDisponibilidade ji;
+    ji.runTestes();
+    
     std::cout << "Fim dos testes\n";
     return 0;
 }

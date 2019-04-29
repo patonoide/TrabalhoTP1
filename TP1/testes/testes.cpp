@@ -32,13 +32,13 @@ bool Testes::stringIsNotEq(string a, string b, string message){
 // Após mostrar mensagem no terminal
 void Testes::logAllErros(){
     if(this->totalErros == 0){
-        std::cout << "\nTudo OK\n";
+        std::cout << "\n\033[1;32mTudo OK\033[0m\n";
     }
     else{
-        std::cout << "\nContagem total de erros foi de: " << this->totalErros <<"\n";
+        std::cout << "\n\033[1;31mContagem total de erros foi de: " << this->totalErros <<"\033[0m\n";
         std::cout << "[Log dos Erros]:\n";
         while( !this->todosErros.empty() ){
-            std::cout<<"-> " << this->todosErros.front() << "\n";
+            std::cout<<"\033[1;31m-> \033[0m" << this->todosErros.front() << "\n";
             this->todosErros.pop_front();
         }
         this->totalErros = 0;
