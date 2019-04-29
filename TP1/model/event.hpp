@@ -12,23 +12,23 @@ class Event: public Model{
     Name nome;
     CodigoEvento codigo;
   public:
-    inline void setFaixa(Faixa &toSet);
-    inline Faixa getFaixa();
-    
-    inline void setClasse(Classe &toSet);
-    inline Classe getClasse();
-    
-    inline void setEstado(Estado &toSet);
-    inline Estado getEstado();
+    void setFaixa(Faixa &toSet){this->faixa = toSet;}
+    Faixa getFaixa(){return this->faixa;}
 
-    inline void setCidade(Cidade &toSet);
-    inline Cidade getCidade();
+    void setClasse(Classe &toSet){this->classe = toSet;}
+    Classe getClasse(){return this->classe;}
 
-    inline void setName(Name &toSet);
-    inline Name getName();
+    void setEstado(Estado &toSet){this->estado = toSet;}
+    Estado getEstado(){return this->estado;}
 
-    inline void setCodigoEvento(CodigoEvento &toSet);
-    inline CodigoEvento getCodigoEvento();
+    void setCidade(Cidade &toSet){this->cidade = toSet;}
+    Cidade getCidade(){return this->cidade;}
+
+    void setName(Name &toSet){this->nome = toSet;}
+    Name getName(){return this->nome;}
+
+    void setCodigoEvento(CodigoEvento &toSet){this->codigo = toSet;}
+    CodigoEvento getCodigoEvento(){return this->codigo;}
 };
 
 

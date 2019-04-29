@@ -61,4 +61,23 @@ class TUPresentation{
   void runTestes();
 };
 
+class TUEvent{
+  private:
+  Event testando;  /// Instancia da classe a ser testada
+  Testes estado;          /// Salva o estado do teste e os logs dos possiveis erros
+  void testeFaixaValida(Faixa& valid);
+  void testeClasseValida(Classe& valid);
+  void testeEstadoValida(Estado& valid);
+  void testeCidadeValida(Cidade& valid);
+  void testeNameValida(Name& valid);
+  void testeCodigoEventoValida(CodigoEvento& valid);
+  public:
+  /**
+   * @brief Executa os testes criados para esse teste de unidade. Testa o efetivamento de objetos validos
+   * de todos seus atributos.
+   */
+  void runTestes();
+};
+
+
 #endif

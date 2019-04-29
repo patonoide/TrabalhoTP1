@@ -10,6 +10,8 @@
 #include "../model/ticket.hpp"
 #include "../model/card.hpp"
 #include "../model/presentation.hpp"
+#include "../model/event.hpp"
+#include "../model/user.hpp"
 #include <list>
 #include <iostream>
 

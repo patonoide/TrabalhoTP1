@@ -12,23 +12,29 @@ class Presentation: public Model{
         NumeroSala numero;
         Disponibilidade disponibilidade;
     public:
-        inline void setCodigoApresentacao(CodigoApresentacao &toSet);
-        inline CodigoApresentacao getCodigoApresentacao();
+        
+        void setCodigoApresentacao(CodigoApresentacao &toSet){this->codigo = toSet;}
+        CodigoApresentacao getCodigoApresentacao(){return this->codigo;}
 
-        inline void setData(Data &toSet);
-        inline Data getData();
+        void setData(Data &toSet){this->data = toSet;}
+        Data getData(){return this->data;}
 
-        inline void setHorario(Horario &toSet);
-        inline Horario getHorario();
 
-        inline void setPreco(Preco &toSet);
-        inline Preco getPreco();
+        void setHorario(Horario &toSet){this->horario = toSet;}
+        Horario getHorario(){return this->horario;}
 
-        inline void setNumeroSala(NumeroSala &toSet);
-        inline NumeroSala getNumeroSala();
 
-        inline void setDisponibilidade(Disponibilidade &toSet);
-        inline Disponibilidade getDisponibilidade();
+        void setNumeroSala(NumeroSala &toSet){this->numero = toSet;}
+        NumeroSala getNumeroSala(){return this->numero;}
+
+
+        void setPreco(Preco &toSet){this->preco = toSet;}
+        Preco getPreco(){return this->preco;}
+
+
+        void setDisponibilidade(Disponibilidade &toSet){this->disponibilidade = toSet;}
+        Disponibilidade getDisponibilidade(){return this->disponibilidade;}
+
 };
 
 #endif

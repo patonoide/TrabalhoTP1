@@ -45,6 +45,7 @@ clean:
 	rm -f TP1/bin/dom/*.o
 	rm -f TP1/bin/test/*.o
 	rm -f TP1/bin/test_dom/*.o
+	rm -f TP1/bin/test_ent/*.o
 	rm -f TP1/bin/entidades/*.o
 
 # Generalize compile files
