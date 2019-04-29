@@ -7,46 +7,50 @@ using std::string;
 #include <iostream>
 
 
-class Name{
+class Name: public Abstracts::Dominio{
 
 private:
     string name;
-    void validarName(string);
+    void validarValor(string);
 public:
-    string getName();
-    void setName(string);
+    static const string classname;
+    string getValor();
+    void setValor(string);
 
 };
 
-class Cidade{
+class Cidade: public Abstracts::Dominio{
 
 private:
     string cidade;
-    void validarCidade(string);
+    void validarValor(string);
 public:
-    string getCidade();
-    void setCidade(string);
+    static const string classname;
+    string getValor();
+    void setValor(string);
 
 };
 
-class Estado{
+class Estado: public Abstracts::Dominio{
 
 private:
     string estado;
-    void validarEstado(string);
+    void validarValor(string);
 public:
-    string getEstado();
-    void setEstado(string);
+    static const string classname;
+    string getValor();
+    void setValor(string);
 
 };
-class Classe{
+class Classe: public Abstracts::Dominio{
 
 private:
     string classe;
-    void validarClasse(string);
+    void validarValor(string);
 public:
-    string getClasse();
-    void setClasse(string);
+    static const string classname;
+    string getValor();
+    void setValor(string);
 
 };
 class Faixa : public Abstracts::Dominio {

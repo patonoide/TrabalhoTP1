@@ -28,6 +28,12 @@ int main(int argc, char const *argv[]){
     TUCpf h;
     h.runTestes();
 
+    TUClasse i;
+    i.runTestes();
+
+    TUEstado j;
+    j.runTestes();
+
     std::cout << "Fim dos testes\n";
     return 0;
 }

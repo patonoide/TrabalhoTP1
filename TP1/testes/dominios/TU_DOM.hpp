@@ -78,5 +78,16 @@ class TUCpf: public TesteUnidadeDOM{
         void runTestes();
 };
 
+class TUClasse: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
+
+class TUEstado: public TesteUnidadeDOM{
+    public:
+        /// @brief Roda todos os testes de unidade, mostrando resultados no terminal
+        void runTestes();
+};
 
 #endif
