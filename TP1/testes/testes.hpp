@@ -5,6 +5,9 @@
 #include "../dominios/ticket_DOM.hpp"
 #include "../dominios/presentation_DOM.hpp"
 #include "../dominios/creditcard_DOM.hpp"
+#include "../model/ticket.hpp"
+#include "../model/card.hpp"
+#include "../model/presentation.hpp"
 #include <list>
 #include <iostream>
 

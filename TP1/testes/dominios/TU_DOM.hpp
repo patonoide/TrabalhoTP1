@@ -1,11 +1,11 @@
-#ifndef TESTE_UNIDADE_H
-#define TESTE_UNIDADE_H
+#ifndef TESTE_UNIDADE_DOM_H
+#define TESTE_UNIDADE_DOM_H
 #include "../testes.hpp"
 
 /// Classe Base para testes de Unidade  
 class TesteUnidadeDOM{
     public:
-        Testes estado; 
+        Testes estado; /// Salva o estado do teste e os logs de possiveis erros
 
         /**
          * @brief Tenta setar um valor inválido e espera o retorno de erros e falha na

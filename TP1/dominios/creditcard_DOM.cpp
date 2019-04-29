@@ -27,16 +27,12 @@ void DataValidade::validarValor(string toValidate){
 
     // Se o primeiro caracter da data não for 0 nem 1, o numero será maior ou igual a 20
     // O que caracteriza essa data como fora de formato
-    if(toValidate[0] != '0' && toValidate[1] != '1'){
-        throw std::invalid_argument("Mês deve ser entre 01 e 12");
-    }
-    // Erro caso do mes ser maior que 12
-    if(toValidate[0] == '1' && (int)toValidate[1] > 2){
-        throw std::invalid_argument("Mês deve ser entre 01 e 12");
+    if(std::stoi(toValidate.substr(0,2)) > 12 ){
+        throw std::invalid_argument("Formato de data invalido");
     }
     // Erro caso do mes ser 00
-    if(toValidate[0] == '0' && toValidate[1] == '0'){
-        throw std::invalid_argument("Mês deve ser entre 01 e 12");
+    if(std::stoi(toValidate.substr(0,2)) == 0 ){
+        throw std::invalid_argument("Formato de data invalido");
     }
 }
 
