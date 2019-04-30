@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="codeblocks" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/codeblocks" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/codeblocks" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../controller/card.cpp" />
+		<Unit filename="../controller/event.cpp" />
+		<Unit filename="../controller/presentation.cpp" />
+		<Unit filename="../controller/ticket.cpp" />
+		<Unit filename="../controller/user.cpp" />
+		<Unit filename="../db/database.cpp" />
+		<Unit filename="../dominios/abstract_DOM.cpp" />
+		<Unit filename="../dominios/abstract_DOM.hpp" />
+		<Unit filename="../dominios/creditcard_DOM.cpp" />
+		<Unit filename="../dominios/creditcard_DOM.hpp" />
+		<Unit filename="../dominios/event_DOM.cpp" />
+		<Unit filename="../dominios/event_DOM.hpp" />
+		<Unit filename="../dominios/presentation_DOM.cpp" />
+		<Unit filename="../dominios/presentation_DOM.hpp" />
+		<Unit filename="../dominios/ticket_DOM.cpp" />
+		<Unit filename="../dominios/ticket_DOM.hpp" />
+		<Unit filename="../dominios/user_DOM.cpp" />
+		<Unit filename="../dominios/user_DOM.hpp" />
+		<Unit filename="../model/card.cpp" />
+		<Unit filename="../model/card.hpp" />
+		<Unit filename="../model/event.cpp" />
+		<Unit filename="../model/event.hpp" />
+		<Unit filename="../model/model.cpp" />
+		<Unit filename="../model/model.hpp" />
+		<Unit filename="../model/presentation.cpp" />
+		<Unit filename="../model/presentation.hpp" />
+		<Unit filename="../model/ticket.cpp" />
+		<Unit filename="../model/ticket.hpp" />
+		<Unit filename="../model/user.cpp" />
+		<Unit filename="../model/user.hpp" />
+		<Unit filename="../testes/dominios/TU_DOM.hpp" />
+		<Unit filename="../testes/dominios/creditcard_testes.cpp" />
+		<Unit filename="../testes/dominios/event_testes.cpp" />
+		<Unit filename="../testes/dominios/presentation_testes.cpp" />
+		<Unit filename="../testes/dominios/testeUnidade.cpp" />
+		<Unit filename="../testes/dominios/ticket_testes.cpp" />
+		<Unit filename="../testes/dominios/user_tests.cpp" />
+		<Unit filename="../testes/entidades/TU_ENT.hpp" />
+		<Unit filename="../testes/entidades/creditcard_testes.cpp" />
+		<Unit filename="../testes/entidades/event_testes.cpp" />
+		<Unit filename="../testes/entidades/presentation_testes.cpp" />
+		<Unit filename="../testes/entidades/ticket_testes.cpp" />
+		<Unit filename="../testes/entidades/user_testes.cpp" />
+		<Unit filename="../testes/main.cpp" />
+		<Unit filename="../testes/testes.cpp" />
+		<Unit filename="../testes/testes.hpp" />
+		<Unit filename="../view/card.cpp" />
+		<Unit filename="../view/event.cpp" />
+		<Unit filename="../view/presentation.cpp" />
+		<Unit filename="../view/ticket.cpp" />
+		<Unit filename="../view/user.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

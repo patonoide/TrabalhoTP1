@@ -5,9 +5,12 @@
 #include "model.hpp"
 
 /**
- * @brief Classe representante da entidade Cartão de Credito
+ * @brief Classe Representante da entidade Cartão de Credito
  * 
- * Armazena Valores de DataValidade, CodigoSeguranca e NumeroCartao
+ *  Possui atributos:
+ *  DataValidade, CodigoSeguranca, NumeroCartao
+ * 
+ *  O salvamento dos atributos e retornos de seus valores são feitos através de set
  */
 class Card : public Model{
     private:
@@ -15,14 +18,22 @@ class Card : public Model{
     CodigoSeguranca codigo;
     NumeroCartao numero;
     public:
+
+    /// Recebe uma instancia de DataValidade e salva no seu respectivo atibuto da classe
     inline void setDataValidade(DataValidade &toSet);
+    /// Retorna atributo DataValidade
     inline DataValidade getDataValidade();
 
+    /// Recebe uma instancia de CodigoSeguranca e salva no seu respectivo atibuto da classe
     inline void setCodigoSeguranca(CodigoSeguranca &toSet);
+    /// Retorna atributo CodigoSeguranca
     inline CodigoSeguranca getCodigoSeguranca();
 
+    /// Recebe uma instancia de NumeroCartao e salva no seu respectivo atibuto da classe
     inline void setNumeroCartao(NumeroCartao &toSet);
+    /// Retorna atributo NumeroCartao
     inline NumeroCartao getNumeroCartao();
+
 };
 
 void Card::setDataValidade(DataValidade &toSet){

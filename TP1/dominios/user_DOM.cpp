@@ -29,7 +29,7 @@ void Cpf::validarValor(string cpf){
         throw std::invalid_argument("Não tem só numeros nessa parada");
     }
     //colocando cpf no array
-    for (it=0  ;it!=cpf.length(); it++){
+    for (it=0  ;it!=(int)cpf.length(); it++){
 
         cpfarray[it] = (cpf.at(it)) - '0';
 
@@ -93,7 +93,6 @@ void Cpf::validarValor(string cpf){
 
 
     multi = 11;
-    
     //checando segundo digito
     for (it=0  ;it!=11; it++){
 
@@ -164,10 +163,10 @@ void Senha::validarValor(string senha){
     }
 
 
-    for (it=0  ;it!=senha.length(); it++){
+    for (it=0  ;it!=(int)senha.length(); it++){
 
 
-        for (id=0; id!=senha.length(); id++){
+        for (id=0; id!=(int)senha.length(); id++){
 
 
             if(senha.at(it) == senha.at(id)){
@@ -188,7 +187,7 @@ void Senha::validarValor(string senha){
     int citerator;
 
 
-    for (citerator = 0; citerator != senha.length() ; citerator++){
+    for (citerator = 0; citerator != (int)senha.length() ; citerator++){
 
         if(isupper(senha.at(citerator)) != 0){
 

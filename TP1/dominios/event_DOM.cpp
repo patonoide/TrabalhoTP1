@@ -20,8 +20,7 @@ void Name::validarValor(string name){
     }
 
     bool hasLetter = false;
-    bool hasDigit = false;
-    for (int i = 0; i < name.size(); i++) {
+    for (int i = 0; i < (int)name.size(); i++) {
 
         if (isalpha(name.at(i))) { hasLetter = true; }
 
@@ -68,7 +67,7 @@ void Cidade::validarValor(string cidade){
 
     bool hasLetter = false;
     bool hasDigit = false;
-    for (int i = 0; i < cidade.size(); i++) {
+    for (int i = 0; i < (int)cidade.size(); i++) {
         if (isdigit(cidade.at(i))) { hasDigit = true; }
         if (isalpha(cidade.at(i))) { hasLetter = true; }
 
