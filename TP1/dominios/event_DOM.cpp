@@ -20,8 +20,7 @@ void Name::validarValor(string name){
     }
 
     bool hasLetter = false;
-    bool hasDigit = false;
-    for (int i = 0; i < name.size(); i++) {
+    for (int i = 0; i < (int)name.size(); i++) {
 
         if (isalpha(name.at(i))) { hasLetter = true; }
 
@@ -45,12 +44,10 @@ void Name::validarValor(string name){
 }
 
 void Name::setValor(string name){
-    try{
+
         validarValor(name);
         this->name = name;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 }
 
 
@@ -70,7 +67,7 @@ void Cidade::validarValor(string cidade){
 
     bool hasLetter = false;
     bool hasDigit = false;
-    for (int i = 0; i < cidade.size(); i++) {
+    for (int i = 0; i < (int)cidade.size(); i++) {
         if (isdigit(cidade.at(i))) { hasDigit = true; }
         if (isalpha(cidade.at(i))) { hasLetter = true; }
 
@@ -95,22 +92,16 @@ void Cidade::validarValor(string cidade){
 
 
 
-    // if (s.find('[') != std::string::npos){
-    //
-    // }else{
-    //
-    // }
+
 
 
 }
 
 void Cidade::setValor(string cidade){
-    try{
+
         validarValor(cidade);
         this->cidade = cidade;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 }
 
 //metodos Estado
@@ -149,12 +140,10 @@ void Estado::validarValor(string estado){
     throw std::invalid_argument("Nenhuma das opções possíveis");
 }
 void Estado::setValor(string estado){
-    try{
+
         validarValor(estado);
         this->estado = estado;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 }
 
 //metodos classe
@@ -176,12 +165,10 @@ void Classe::validarValor(string classe){
 }
 
 void Classe::setValor(string classe){
-    try{
+
         validarValor(classe);
         this->classe = classe;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 }
 
 
@@ -189,12 +176,10 @@ void Classe::setValor(string classe){
 const string Faixa::classname = "Faixa";
 //metodo faixa
 void Faixa::setValor(string faixa){
-    try{
+
         validarValor(faixa);
         this->faixa = faixa;
-    }catch(std::invalid_argument){
-        throw std::invalid_argument("Nenhuma das opções possíveis");
-    }
+
 }
 string Faixa::getValor(){
     return this->faixa;
