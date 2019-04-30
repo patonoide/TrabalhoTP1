@@ -93,7 +93,6 @@ void Cpf::validarValor(string cpf){
 
 
     multi = 11;
-
     //checando segundo digito
     for (it=0  ;it!=11; it++){
 
