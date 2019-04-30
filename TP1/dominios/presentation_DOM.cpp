@@ -7,7 +7,6 @@ const string CodigoApresentacao::classname = "Codigo de Apresentação";
 // Metodos de Data
 const string Data::classname = "Data";
 void Data::validarValor(string str){
-    //TODO: Anos bissextos
     if(str[2] != '/' || str[5] != '/' || str.length() > 8){
         throw std::invalid_argument("Formato de dadta invalido");
     }
