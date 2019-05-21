@@ -33,9 +33,19 @@ OBJ_DIR_TESTE_ENT := TP1/bin/test_ent
 SRC_FILES_TESTE_ENT := $(wildcard $(SRC_DIR_TESTE_ENT)/*.cpp)
 OBJ_FILES_TESTE_ENT := $(patsubst $(SRC_DIR_TESTE_ENT)/%.cpp,$(OBJ_DIR_TESTE_ENT)/%.o,$(SRC_FILES_TESTE_ENT))
 
+#Views
+SRC_DIR_VIEW := TP1/view
+OBJ_DIR_VIEW := TP1/bin/view
+
+SRC_FILES_VIEW := $(wildcard $(SRC_DIR_VIEW)/*.cpp)
+OBJ_FILES_VIEW := $(patsubst $(SRC_DIR_VIEW)/%.cpp,$(OBJ_DIR_VIEW)/%.o,$(SRC_FILES_VIEW))
+
 
 # Flags
 CPPFLAGS := -Wall -pedantic -std=c++11 -o3
+
+views: $(OBJ_FILES_VIEW)
+	g++ $(LDFLAGS) -o $@ $^ TP1/main.cpp
 
 # Compilation rules
 teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT)
@@ -62,4 +72,7 @@ $(OBJ_DIR_TESTE_DOM)/%.o: $(SRC_DIR_TESTE_DOM)/%.cpp $(SRC_DIR_TESTE_DOM)/TU_DOM
 	g++ $(CPPFLAGS) -c -o $@ $<
 
 $(OBJ_DIR_TESTE_ENT)/%.o: $(SRC_DIR_TESTE_ENT)/%.cpp $(SRC_DIR_TESTE_ENT)/TU_ENT.hpp
+	g++ $(CPPFLAGS) -c -o $@ $<
+
+$(OBJ_DIR_VIEW)/%.o: $(SRC_DIR_VIEW)/%.cpp $(SRC_DIR_VIEW)/%.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<
