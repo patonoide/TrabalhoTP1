@@ -40,12 +40,19 @@ OBJ_DIR_VIEW := TP1/bin/view
 SRC_FILES_VIEW := $(wildcard $(SRC_DIR_VIEW)/*.cpp)
 OBJ_FILES_VIEW := $(patsubst $(SRC_DIR_VIEW)/%.cpp,$(OBJ_DIR_VIEW)/%.o,$(SRC_FILES_VIEW))
 
+#Main
+SRC_DIR_MAIN := TP1
+OBJ_DIR_MAIN := TP1/bin
+
+SRC_FILES_MAIN := $(wildcard $(SRC_DIR_MAIN)/*.cpp)
+OBJ_FILES_MAIN := $(patsubst $(SRC_DIR_MAIN)/%.cpp,$(OBJ_DIR_MAIN)/%.o,$(SRC_FILES_MAIN))
 
 # Flags
 CPPFLAGS := -Wall -pedantic -std=c++11 -o3
+VIEWFLAG := -lncurses
 
-views: $(OBJ_FILES_VIEW)
-	g++ $(LDFLAGS) -o $@ $^ TP1/main.cpp
+views: $(OBJ_FILES_VIEW) $(OBJ_FILES_MAIN)
+	g++ TP1/bin/libncurses.a $(LDFLAGS) -o $@ $^  $(VIEWFLAG)
 
 # Compilation rules
 teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT)
@@ -57,6 +64,7 @@ clean:
 	rm -f TP1/bin/test_dom/*.o
 	rm -f TP1/bin/test_ent/*.o
 	rm -f TP1/bin/entidades/*.o
+	rm -f TP1/bin/view/*.o
 
 # Generalize compile files
 $(OBJ_DIR_DOM)/%.o: $(SRC_DIR_DOM)/%.cpp $(SRC_DIR_DOM)/%.hpp
@@ -75,4 +83,7 @@ $(OBJ_DIR_TESTE_ENT)/%.o: $(SRC_DIR_TESTE_ENT)/%.cpp $(SRC_DIR_TESTE_ENT)/TU_ENT
 	g++ $(CPPFLAGS) -c -o $@ $<
 
 $(OBJ_DIR_VIEW)/%.o: $(SRC_DIR_VIEW)/%.cpp $(SRC_DIR_VIEW)/%.hpp
+	g++ $(CPPFLAGS) -c -o $@ $<
+
+$(OBJ_DIR_MAIN)/%.o: $(SRC_DIR_MAIN)/%.cpp
 	g++ $(CPPFLAGS) -c -o $@ $<

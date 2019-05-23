@@ -20,8 +20,6 @@
 1556545979 c:\users\thibo\documents\trabalhotp1-master\tp1\dominios\abstract_dom.hpp
 	<string>
 
-1556545979 
-
 1556545979 source:c:\users\thibo\documents\trabalhotp1-master\tp1\dominios\creditcard_dom.cpp
 	"creditcard_DOM.hpp"
 	<iostream>
@@ -198,4 +196,133 @@
 
 1556545978 /home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/abstract_DOM.hpp
 	<string>
+
+1556545978 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/ticket_DOM.cpp
+	"ticket_DOM.hpp"
+	<iostream>
+
+1556545978 /home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/ticket_DOM.hpp
+	"abstract_DOM.hpp"
+
+1554212905 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/model/card.cpp
+
+1556509779 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/model/event.cpp
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/model/model.cpp
+
+1556509784 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/model/presentation.cpp
+
+1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/model/ticket.cpp
+
+1556510494 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/model/user.cpp
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/creditcard_testes.cpp
+	"TU_DOM.hpp"
+
+1556506732 /home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/TU_DOM.hpp
+	"../testes.hpp"
+
+1556508565 /home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/testes.hpp
+	"../dominios/ticket_DOM.hpp"
+	"../dominios/presentation_DOM.hpp"
+	"../dominios/creditcard_DOM.hpp"
+	"../dominios/event_DOM.hpp"
+	"../dominios/user_DOM.hpp"
+	"../model/ticket.hpp"
+	"../model/card.hpp"
+	"../model/presentation.hpp"
+	"../model/event.hpp"
+	"../model/user.hpp"
+	<list>
+	<iostream>
+
+1556545978 /home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/presentation_DOM.hpp
+	"abstract_DOM.hpp"
+
+1556545978 /home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/creditcard_DOM.hpp
+	"abstract_DOM.hpp"
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/event_DOM.hpp
+	"abstract_DOM.hpp"
+	<string>
+	<iostream>
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/user_DOM.hpp
+	"abstract_DOM.hpp"
+	<iostream>
+	<string>
+	<algorithm>
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/model/ticket.hpp
+	"../dominios/ticket_DOM.hpp"
+	"model.hpp"
+
+1556506569 /home/thiago/Documents/UNB/TP1/Trab1/TP1/model/model.hpp
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/model/card.hpp
+	"../dominios/creditcard_DOM.hpp"
+	"model.hpp"
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/model/presentation.hpp
+	"../dominios/presentation_DOM.hpp"
+	"model.hpp"
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/model/event.hpp
+	"../dominios/event_DOM.hpp"
+	"model.hpp"
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/model/user.hpp
+	"../dominios/user_DOM.hpp"
+	"model.hpp"
+
+1556506732 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/event_testes.cpp
+	"TU_DOM.hpp"
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/presentation_testes.cpp
+	"TU_DOM.hpp"
+
+1556506732 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/testeUnidade.cpp
+	"TU_DOM.hpp"
+
+1554841511 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/ticket_testes.cpp
+	"TU_DOM.hpp"
+
+1556506732 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/dominios/user_tests.cpp
+	"TU_DOM.hpp"
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/entidades/creditcard_testes.cpp
+	"TU_ENT.hpp"
+
+1556589821 /home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/entidades/TU_ENT.hpp
+	"../testes.hpp"
+
+1556509979 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/entidades/event_testes.cpp
+	"TU_ENT.hpp"
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/entidades/presentation_testes.cpp
+	"TU_ENT.hpp"
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/entidades/ticket_testes.cpp
+	"TU_ENT.hpp"
+
+1556510322 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/entidades/user_testes.cpp
+	"TU_ENT.hpp"
+
+1556510662 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/main.cpp
+	"dominios/TU_DOM.hpp"
+	"entidades/TU_ENT.hpp"
+	<iostream>
+
+1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/testes.cpp
+	"testes.hpp"
+
+1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/card.cpp
+
+1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/event.cpp
+
+1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/presentation.cpp
+
+1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/ticket.cpp
+
+1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/user.cpp
 
