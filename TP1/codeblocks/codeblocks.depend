@@ -313,7 +313,7 @@
 	"entidades/TU_ENT.hpp"
 	<iostream>
 
-1556506569 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/testes.cpp
+1557092436 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/testes/testes.cpp
 	"testes.hpp"
 
 1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/card.cpp
@@ -324,5 +324,24 @@
 
 1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/ticket.cpp
 
-1553178295 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/user.cpp
+1559064984 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/view/user.cpp
+	"Application.hpp"
+
+1556629748 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/creditcard_DOM.cpp
+	"creditcard_DOM.hpp"
+	<iostream>
+
+1556589821 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/event_DOM.cpp
+	"event_DOM.hpp"
+
+1556629766 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/presentation_DOM.cpp
+	"presentation_DOM.hpp"
+	<iostream>
+
+1556589821 source:/home/thiago/Documents/UNB/TP1/Trab1/TP1/dominios/user_DOM.cpp
+	"user_DOM.hpp"
+
+1558623106 /home/thiago/Documents/UNB/TP1/Trab1/TP1/view/Application.hpp
+	"ncurses.h"
+	<iostream>
 
