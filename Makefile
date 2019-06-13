@@ -5,7 +5,7 @@ OBJ_DIR_DOM := TP1/bin/dom
 SRC_FILES_DOM := $(wildcard $(SRC_DIR_DOM)/*.cpp)
 OBJ_FILES_DOM := $(patsubst $(SRC_DIR_DOM)/%.cpp,$(OBJ_DIR_DOM)/%.o,$(SRC_FILES_DOM))
 
-# Entidades 
+# Entidades
 SRC_DIR_ENT := TP1/model
 OBJ_DIR_ENT := TP1/bin/entidades
 
@@ -19,7 +19,7 @@ OBJ_DIR_TESTE := TP1/bin/test
 SRC_FILES_TESTE := $(wildcard $(SRC_DIR_TESTE)/*.cpp)
 OBJ_FILES_TESTE := $(patsubst $(SRC_DIR_TESTE)/%.cpp,$(OBJ_DIR_TESTE)/%.o,$(SRC_FILES_TESTE))
 
-# Teste_dom 
+# Teste_dom
 SRC_DIR_TESTE_DOM := TP1/testes/dominios
 OBJ_DIR_TESTE_DOM := TP1/bin/test_dom
 
@@ -35,13 +35,13 @@ OBJ_FILES_TESTE_ENT := $(patsubst $(SRC_DIR_TESTE_ENT)/%.cpp,$(OBJ_DIR_TESTE_ENT
 
 
 # Flags
-CPPFLAGS := -Wall -pedantic -std=c++11 -o3
+CPPFLAGS := -lsqlite3 -Wall -pedantic -std=c++11 -o3
 
 # Compilation rules
 teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT)
-	g++ $(LDFLAGS) -o $@ $^
+	g++ -lsqlite3 $(LDFLAGS) -o $@ $^
 
-clean: 
+clean:
 	rm -f TP1/bin/dom/*.o
 	rm -f TP1/bin/test/*.o
 	rm -f TP1/bin/test_dom/*.o
