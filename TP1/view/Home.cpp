@@ -1,5 +1,5 @@
 #include "Home.hpp"
-#include "user.hpp"
+#include "logar.hpp"
 
 
 void HomeView::printTitulo(){
@@ -9,7 +9,7 @@ void HomeView::printTitulo(){
 
 
 void HomeView::processarOpcao(int ch){
-    UserView userview;
+    LogarView userview;
     switch (ch)
     {
     case this->SAIR:

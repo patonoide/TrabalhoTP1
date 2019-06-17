@@ -4,7 +4,7 @@
 #include "Application.hpp"
 
 
-class UserView : public ApplicationView{
+class LogarView : public ApplicationView{
     private:
     void processarOpcao(int); /// Processa uma opção pega pelo getch() 
     void mostrarOpcoes();     /// Printa as opções dessa tela  

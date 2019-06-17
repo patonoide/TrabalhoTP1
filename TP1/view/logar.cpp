@@ -1,12 +1,12 @@
-#include "user.hpp"
+#include "logar.hpp"
 #include "Home.hpp"
 
-void UserView::printTitulo(){
+void LogarView::printTitulo(){
   printw("\t\t\t%s\n", "Logar");
   refresh();
 }
 
-void UserView::processarOpcao(int ch){
+void LogarView::processarOpcao(int ch){
   HomeView Hview;
 
   switch (ch)
@@ -39,6 +39,11 @@ void UserView::processarOpcao(int ch){
   case 27: // Esc key
     this->redirectTo(Hview);
     break;
+  case KEY_ENTER:
+    //! TODO: Confirmar o usuário
+
+
+    break;
   default:
     if (editing == USERNAME){
       echochar(ch);
@@ -51,7 +56,7 @@ void UserView::processarOpcao(int ch){
   }
 }
 
-void  UserView::mostrarOpcoes(){
+void  LogarView::mostrarOpcoes(){
 
   // Printa as opções
   printw("\t (ESC) VOLTAR PARA INICIO\n");
@@ -67,7 +72,7 @@ void  UserView::mostrarOpcoes(){
   refresh();
 }
 
-void UserView::handleInput(){
+void LogarView::handleInput(){
   int ch;
   while(true){
     ch = getch();
