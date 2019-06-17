@@ -10,7 +10,7 @@ class Persistence {
 protected:
 sqlite3 *db;
 void conectarBanco();
-void desconectarBanco(sqlite3 &db);
+void desconectarBanco(sqlite3&);
 
 
 
