@@ -37,7 +37,7 @@ OBJ_FILES_TESTE_ENT := $(patsubst $(SRC_DIR_TESTE_ENT)/%.cpp,$(OBJ_DIR_TESTE_ENT
 SRC_DIR_VIEW := TP1/view
 OBJ_DIR_VIEW := TP1/bin/view
 
-SRC_FILES_VIEW := $(wildcard $(SRC_DIR_VIEW)/*.cpp)
+SRC_FILES_VIEW := $(wildcard $(SRC_DIR_VIEW)/*/*.cpp $(SRC_DIR_VIEW)/*.cpp)
 OBJ_FILES_VIEW := $(patsubst $(SRC_DIR_VIEW)/%.cpp,$(OBJ_DIR_VIEW)/%.o,$(SRC_FILES_VIEW))
 
 #Main

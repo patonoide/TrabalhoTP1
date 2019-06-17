@@ -1,5 +1,5 @@
 #include "logar.hpp"
-#include "Home.hpp"
+#include "../Home.hpp"
 
 void LogarView::printTitulo(){
   printw("\t\t\t%s\n", "Logar");

@@ -1,7 +1,7 @@
 #ifndef VIEWS_USER_HPP
 #define VIEWS_USER_HPP
 
-#include "Application.hpp"
+#include "../Application.hpp"
 
 
 class LogarView : public ApplicationView{
