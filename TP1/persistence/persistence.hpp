@@ -1,5 +1,5 @@
-#ifndef MODEL_H
-#define MODEL_H
+#ifndef PER_H
+#define PER_H
 #include <iostream>
 #include <sqlite3.h>
 
