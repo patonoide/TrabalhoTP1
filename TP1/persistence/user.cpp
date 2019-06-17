@@ -42,3 +42,7 @@ void UserPer::excluir(User user){
   }
   desconectarBanco();
 }
+
+list<User> UserPer::pesquisarporCPF(string){
+
+}
