@@ -1,3 +1,10 @@
+# Persistence dir:
+SRC_DIR_PER := TP1/persistence
+OBJ_DIR_PER := TP1/bin/persistence
+
+SRC_FILES_PER := $(wildcard $(SRC_DIR_PER)/*.cpp)
+OBJ_FILES_PER := $(patsubst $(SRC_DIR_PER)/%.cpp,$(OBJ_DIR_PER)/%.o,$(SRC_FILES_PER))
+
 # Dominio dir:
 SRC_DIR_DOM := TP1/dominios
 OBJ_DIR_DOM := TP1/bin/dom
@@ -35,10 +42,10 @@ OBJ_FILES_TESTE_ENT := $(patsubst $(SRC_DIR_TESTE_ENT)/%.cpp,$(OBJ_DIR_TESTE_ENT
 
 
 # Flags
-CPPFLAGS := -lsqlite3 -Wall -pedantic -std=c++11 -o3
+CPPFLAGS := -lsqlite3  -Wall -pedantic -std=c++11 -o3
 
 # Compilation rules
-teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT)
+teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DOM) $(OBJ_FILES_TESTE_ENT) $(OBJ_FILES_PER)
 	g++   $(LDFLAGS) -o $@ $^ -lsqlite3
 
 clean:
@@ -47,9 +54,13 @@ clean:
 	rm -f TP1/bin/test_dom/*.o
 	rm -f TP1/bin/test_ent/*.o
 	rm -f TP1/bin/entidades/*.o
+	rm -f TP1/bin/persistence/*.o
 
 # Generalize compile files
 $(OBJ_DIR_DOM)/%.o: $(SRC_DIR_DOM)/%.cpp $(SRC_DIR_DOM)/%.hpp
+	g++ $(CPPFLAGS) -c -o $@ $<
+
+$(OBJ_DIR_PER)/%.o: $(SRC_DIR_PER)/%.cpp $(SRC_DIR_PER)/%.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<
 
 $(OBJ_DIR_TESTE)/%.o: $(SRC_DIR_TESTE)/%.cpp $(SRC_DIR_TESTE)/testes.hpp
