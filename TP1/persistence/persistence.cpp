@@ -12,9 +12,8 @@ void Persistence::conectarBanco(){
    }
 }
 
-void Persistence::desconectarBanco(sqlite3 &db){
+void Persistence::desconectarBanco(){
 
-  sqlite3_close(&db);
-
+  sqlite3_close(db);
 
 }

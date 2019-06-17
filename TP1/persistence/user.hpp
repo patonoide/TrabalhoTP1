@@ -7,8 +7,11 @@
 class UserPer : Persistence {
 private:
 UserPer();
+
 public:
+
 void cadastrar(User);
+void excluir(User);
 
 
 
