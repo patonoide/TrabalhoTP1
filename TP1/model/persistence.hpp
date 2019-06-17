@@ -9,8 +9,8 @@ class Persistence {
 
 protected:
 sqlite3 *db;
-virtual void conectarBanco();
-virtual void desconectarBanco();
+void conectarBanco();
+void desconectarBanco();
 virtual void inserir() = 0;
 virtual void deletar() = 0;
 virtual void pesquisar() = 0;

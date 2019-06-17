@@ -13,4 +13,7 @@ void Persistence::conectarBanco(){
 
 void Persistence::desconectarBanco(){
 
+  sqlite3_close(db);
+  
+
 }
