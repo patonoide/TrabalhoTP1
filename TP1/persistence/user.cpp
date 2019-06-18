@@ -49,7 +49,7 @@ list<User> UserPer::pesquisarporCPF(string cpf){
 
       comandoSQL = "SELECT * FROM user WHERE (cpf =";
       comandoSQL += "'"+ user.getCpf().getValor() +"')";
-
+      
 
 
 
