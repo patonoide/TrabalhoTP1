@@ -43,6 +43,14 @@ void UserPer::excluir(User user){
   desconectarBanco();
 }
 
-list<User> UserPer::pesquisarporCPF(string){
+list<User> UserPer::pesquisarporCPF(string cpf){
+      list<User> list;
+      string comandoSQL;
+
+      comandoSQL = "SELECT * FROM user WHERE (cpf =";
+      comandoSQL += "'"+ user.getCpf().getValor() +"')";
+
+
+
 
 }
