@@ -7,7 +7,9 @@
 
 class UserPer : Persistence {
 private:
+  
 UserPer();
+static int callback(void *, int, char **, char **);
 
 public:
 
