@@ -1,5 +1,5 @@
-#ifndef APPLICATIONS_HOME_HPP
-#define APPLICATIONS_HOME_HPP
+#ifndef APPLICATIONS_VIEW_HPP
+#define APPLICATIONS_VIEW_HPP
 #include "ncurses.h"
 #include <iostream>
 

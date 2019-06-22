@@ -31,8 +31,20 @@ void  EventListView::mostrarOpcoes(){
 
   // Printa as opções
   printw("\t (ESC) VOLTAR\n\t (1) Ver Todos\n");
-  printw("\nLista de eventos: \n");
-  
+  printw("\n\t\tLista de eventos: \n");
+  printw("|\tFaixa\t|\tCidade\t|\tClasse\t|\tEstado\t|\tNome\t|\tCodigo\t|\n");
+  printw("\n");
+  std::list<Event>::iterator it;
+  for(it = this->todosEventos.begin(); it != this->todosEventos.end(); it++){
+    printw("|\t%s\t|\t%s\t|\t%s\t|\t%s\t|\t%s\t|\t%s\t|\n", it->getFaixa().getValor().c_str(),
+    it->getCidade().getValor().c_str(), 
+    it->getClasse().getValor().c_str(),
+    it->getEstado().getValor().c_str(),
+    it->getName().getValor().c_str(),
+    it->getCodigoEvento().getValor().c_str()
+    );
+  }
+
   // Move o cursor
   noecho();
 

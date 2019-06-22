@@ -51,7 +51,7 @@ OBJ_FILES_MAIN := $(patsubst $(SRC_DIR_MAIN)/%.cpp,$(OBJ_DIR_MAIN)/%.o,$(SRC_FIL
 CPPFLAGS := -Wall -pedantic -std=c++11 -o3
 VIEWFLAG := -lncurses
 
-views: $(OBJ_FILES_VIEW) $(OBJ_FILES_MAIN)
+views: $(OBJ_FILES_DOM) $(OBJ_FILES_ENT) $(OBJ_FILES_VIEW) $(OBJ_FILES_MAIN)
 	g++ TP1/bin/libncurses.a $(LDFLAGS) -o $@ $^  $(VIEWFLAG)
 
 # Compilation rules
