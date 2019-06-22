@@ -1,6 +1,6 @@
 #include "Home.hpp"
-#include "logar.hpp"
-
+#include "./user/logar.hpp"
+#include "./user/cadastrar.hpp"
 
 void HomeView::printTitulo(){
     printw("\t\t\t%s\n", "Sistema");
@@ -10,6 +10,7 @@ void HomeView::printTitulo(){
 
 void HomeView::processarOpcao(int ch){
     LogarView userview;
+    CadastrarView cadastro;
     switch (ch)
     {
     case this->SAIR:
@@ -19,6 +20,11 @@ void HomeView::processarOpcao(int ch){
         break;
     case this->LOGAR:
         this->redirectTo(userview);
+        this->render();
+        break;
+    case '2':
+        this->redirectTo(cadastro);
+        this->render();
         break;
     default:
         break;
@@ -28,8 +34,8 @@ void HomeView::processarOpcao(int ch){
 void HomeView::mostrarOpcoes(){
     noecho();
     printw("\t (0) SAIR \n");
-    printw("\t (1) LOGAR \n");
-    
+    printw("\t (1) LOGAR \t (2) CADASTRAR \n");
+
     refresh();
 }
 

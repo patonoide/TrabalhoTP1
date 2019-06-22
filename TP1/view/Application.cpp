@@ -1,6 +1,7 @@
 #include "Application.hpp"
 
 void ApplicationView::render(){
+    erase();
     initscr();
     this->printTitulo();
     this->mostrarOpcoes();

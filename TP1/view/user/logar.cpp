@@ -6,7 +6,7 @@ void LogarView::printTitulo(){
   refresh();
 }
 
-void LogarView::processarOpcao(int ch){
+int LogarView::processarOpcao(int ch){
   HomeView Hview;
 
   switch (ch)
@@ -37,7 +37,7 @@ void LogarView::processarOpcao(int ch){
     }
     break;
   case 27: // Esc key
-    this->redirectTo(Hview);
+    return Return;
     break;
   case KEY_ENTER:
     //! TODO: Confirmar o usuário
@@ -54,6 +54,8 @@ void LogarView::processarOpcao(int ch){
       this->password.push_back(ch);
     }
   }
+
+  return Ok;
 }
 
 void  LogarView::mostrarOpcoes(){
@@ -74,8 +76,10 @@ void  LogarView::mostrarOpcoes(){
 
 void LogarView::handleInput(){
   int ch;
+  int ret;
   while(true){
     ch = getch();
-    this->processarOpcao(ch);
+    ret = this->processarOpcao(ch);
+    if(ret == Return)return;
   }
 }

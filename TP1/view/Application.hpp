@@ -5,7 +5,10 @@
 
 class ApplicationView{
     private:
-
+    protected:
+    int cursorX;
+    int cursorY;
+    
     public:
     static const int SAIR = '0';
     static const int LOGAR = '1';
