@@ -20,6 +20,7 @@ void CadastrarView::mostrarOpcoes(){
   printw(" Codigo de Seguranca: \n");
   printw(" Numero do Cartão: \n ");
 
+  curs_set(1);
   cursorY = 3;
   cursorX = 6;
   keypad(stdscr, TRUE);

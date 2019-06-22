@@ -1,6 +1,7 @@
 #include "Home.hpp"
 #include "./user/logar.hpp"
 #include "./user/cadastrar.hpp"
+#include "./event/listevents.hpp"
 
 void HomeView::printTitulo(){
     printw("\t\t\t%s\n", "Sistema");
@@ -9,8 +10,10 @@ void HomeView::printTitulo(){
 
 
 void HomeView::processarOpcao(int ch){
+    //! Deve-se criar Objetos de controller
     LogarView userview;
     CadastrarView cadastro;
+    EventListView list;
     switch (ch)
     {
     case this->SAIR:
@@ -26,6 +29,10 @@ void HomeView::processarOpcao(int ch){
         this->redirectTo(cadastro);
         this->render();
         break;
+    case '3':
+        this->redirectTo(list);
+        this->render();
+        break;
     default:
         break;
     }
@@ -34,8 +41,9 @@ void HomeView::processarOpcao(int ch){
 void HomeView::mostrarOpcoes(){
     noecho();
     printw("\t (0) SAIR \n");
-    printw("\t (1) LOGAR \t (2) CADASTRAR \n");
+    printw("\t (1) LOGAR \t\t (2) CADASTRAR \n\t (3) LISTAR EVENTOS");
 
+    curs_set(0);
     refresh();
 }
 

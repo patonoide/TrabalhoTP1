@@ -42,7 +42,7 @@ int LogarView::processarOpcao(int ch){
     break;
   case KEY_ENTER:
     //! TODO: Confirmar o usuário
-
+    //? Mandar "POST" pro controller De user com as informações
 
     break;
   default:
@@ -68,6 +68,7 @@ void  LogarView::mostrarOpcoes(){
   printw(" Senha: \n");
   
   // Move o cursor
+  curs_set(1);
   move(2, 11);
   this->editing = this->USERNAME;
 
