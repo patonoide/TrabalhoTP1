@@ -1,5 +1,6 @@
 #include "cadastrar.hpp"
 #include "../Home.hpp"
+#include <ctype.h>
 
 void CadastrarView::printTitulo(){
   printw("\t\t\t%s\n", "Cadastrar");
@@ -92,7 +93,7 @@ int CadastrarView::processarOpcao(int ch){
       case 2:
         editing-=1;
         cursorY-=1 ;
-        cursorX = 8 + this->cpf.length() ;
+        cursorX = 6 + this->cpf.length() ;
 
         move(cursorY, cursorX);
         break;
@@ -135,6 +136,7 @@ int CadastrarView::processarOpcao(int ch){
     return 1;
     break;
   default:
+    if(!isalnum(ch))break;
     switch (editing){
       case 2:
         echochar((int)'*');

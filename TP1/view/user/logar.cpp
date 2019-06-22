@@ -1,5 +1,6 @@
 #include "logar.hpp"
 #include "../Home.hpp"
+#include <ctype.h>
 
 void LogarView::printTitulo(){
   printw("\t\t\t%s\n", "Logar");
@@ -45,6 +46,7 @@ int LogarView::processarOpcao(int ch){
 
     break;
   default:
+    if(!isalnum(ch))break;
     if (editing == USERNAME){
       echochar(ch);
       this->username.push_back(ch);
