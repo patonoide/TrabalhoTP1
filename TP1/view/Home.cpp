@@ -2,6 +2,7 @@
 #include "./user/logar.hpp"
 #include "./user/cadastrar.hpp"
 #include "./event/listevents.hpp"
+#include "./event/searchevents.hpp"
 
 void HomeView::printTitulo(){
     printw("\t\t\t%s\n", "Sistema");
@@ -14,6 +15,7 @@ void HomeView::processarOpcao(int ch){
     LogarView userview;
     CadastrarView cadastro;
     EventListView list;
+    EventSearchView search;
     switch (ch)
     {
     case this->SAIR:
@@ -33,6 +35,9 @@ void HomeView::processarOpcao(int ch){
         this->redirectTo(list);
         this->render();
         break;
+    case '4':
+        this->redirectTo(search);
+        this->render();
     default:
         break;
     }
@@ -41,7 +46,7 @@ void HomeView::processarOpcao(int ch){
 void HomeView::mostrarOpcoes(){
     noecho();
     printw("\t (0) SAIR \n");
-    printw("\t (1) LOGAR \t\t (2) CADASTRAR \n\t (3) LISTAR EVENTOS");
+    printw("\t (1) LOGAR \t\t (2) CADASTRAR \n\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO");
 
     curs_set(0);
     refresh();

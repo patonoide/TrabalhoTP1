@@ -13,6 +13,7 @@ class EventListView : public ApplicationView{
     std::list <Event> todosEventos;
 
     public:
+    EventListView(){}
     EventListView(std::list <Event> &toAdd){
         todosEventos = toAdd;
     }
