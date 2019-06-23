@@ -12,11 +12,11 @@ class LogarView : public ApplicationView{
     std::string username;
     std::string password;
     
-    const int USERNAME = 1;
-    const int PASSWORD = 2;
     const int Return = 1;
     const int Ok = 0;
     int editing;
+
+    void ConfirmarDados();
 
     public:
     void printTitulo();

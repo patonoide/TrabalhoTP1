@@ -28,7 +28,7 @@ class UserController : public ApplicationController{
     }
 
     void POST_signup(std::string *information);
-
+    void POST_login(std::string *information);
 };
 
 #endif
