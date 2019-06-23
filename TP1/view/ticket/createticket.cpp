@@ -1,46 +1,41 @@
-#include "createevents.hpp"
+#include "createticket.hpp"
 #include "../Home.hpp"
 #include <ctype.h>
 
-void EventCreateView::printTitulo(){
-  printw("\t\t\t%s\n", "Criar eventos");
+void TicketCreateView::printTitulo(){
+  printw("\t\t\t%s\n", "Criar Ticketos");
   refresh();
 }
 
-void EventCreateView::setAttrs(){
-  faixa = arr[0];
-  classe = arr[1];
-  estado = arr[2];
-  cidade = arr[3];
-  nome = arr[4];
-  codigo = arr[5];
+void TicketCreateView::setAttrs(){
+  codigo = arr[0];
+  quantidade = arr[1];
 }
 
-int EventCreateView::processarOpcao(int ch){
+int TicketCreateView::processarOpcao(int ch){
   switch (ch)
   { 
     case KEY_DOWN:
-      if(editing == 5){
+      if(editing == 1){
         editing +=1;
         cursorY +=1;
         cursorX = 21;
 
         move(cursorY, cursorX);
       }
-      if(editing < 5){
+      if(editing < 1){
         editing += 1;
         cursorY += 1;
-        cursorX = 11 + arr[editing].length();
+        cursorX = 14 + arr[editing].length();
         
         move(cursorY, cursorX);
       }
-
       break;
     case KEY_UP:
       if(editing > 0){
         editing -= 1;
         cursorY -= 1;
-        cursorX = 11 + arr[editing].length();
+        cursorX = 14 + arr[editing].length();
         
         move(cursorY, cursorX);
       }
@@ -61,21 +56,17 @@ int EventCreateView::processarOpcao(int ch){
   return 0;
 }
 
-void  EventCreateView::renderCreateOptions(){
+void  TicketCreateView::renderCreateOptions(){
 
   // Procura
   printw("  ### Dados de criação ### \n");
-  printw(" Faixa : \n");
-  printw(" Classe: \n");
-  printw(" Estado: \n");
-  printw(" Cidade: \n");
-  printw(" Nome: \n");
   printw(" Codigo: \n");
+  printw(" Quantidade: \n");
   printw(" CONFIRMAR [ENTER]: ");
 
 }
 
-void  EventCreateView::mostrarOpcoes(){
+void  TicketCreateView::mostrarOpcoes(){
 
   // Printa as opções
   printw("\t\t\t (ESC) VOLTAR\n");
@@ -96,7 +87,7 @@ void  EventCreateView::mostrarOpcoes(){
   refresh();
 }
 
-void EventCreateView::handleInput(){
+void TicketCreateView::handleInput(){
   int ch;
   int ret;
   while(true){
