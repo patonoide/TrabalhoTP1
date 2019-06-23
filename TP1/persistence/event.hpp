@@ -36,6 +36,7 @@ class EventoPer : public Persistence {
 
 private:
 static list<CombinationUE> lista;
+void checarQuantidade(Cpf);
 
 public:
 void addEvent(Event, User);
