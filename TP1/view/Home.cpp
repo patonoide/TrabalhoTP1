@@ -44,7 +44,11 @@ void HomeView::mostrarOpcoes(){
     noecho();
     printw("\t (0) SAIR \n");
     printw("\t (1) LOGAR \t\t (2) CADASTRAR \n");
-    printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO");
+    printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO\n");
+    
+    if(flash.length() > 0){
+        printw("Message: %s", flash.c_str());
+    }
 
     curs_set(0);
     refresh();

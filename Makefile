@@ -68,6 +68,7 @@ teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DO
 clean: 
 	rm -f TP1/bin/*/*.o
 	rm -f TP1/bin/*.o
+	rm -f TP1/bin/*/*/*.o
 
 # Generalize compile files
 $(OBJ_DIR_DOM)/%.o: $(SRC_DIR_DOM)/%.cpp $(SRC_DIR_DOM)/%.hpp
