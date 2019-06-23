@@ -62,6 +62,8 @@ int LogarView::processarOpcao(int ch){
   case 10: // Enter
     if( editing == 3){
       ConfirmarDados();
+
+      return Return;
     }
     break;
   default:
