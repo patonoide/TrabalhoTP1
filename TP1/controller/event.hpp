@@ -15,11 +15,8 @@ class EventController : public ApplicationController{
 
 
     }
-    void GET_index(){
-        EventListView newView;
-        newView.render();
-
-    }
+    void GET_index();
+    
     void GET_search(){
         EventListView newView;
         newView.render();

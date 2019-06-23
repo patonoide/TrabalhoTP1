@@ -40,6 +40,13 @@ OBJ_DIR_VIEW := TP1/bin/view
 SRC_FILES_VIEW := $(wildcard $(SRC_DIR_VIEW)/*/*.cpp $(SRC_DIR_VIEW)/*.cpp)
 OBJ_FILES_VIEW := $(patsubst $(SRC_DIR_VIEW)/%.cpp,$(OBJ_DIR_VIEW)/%.o,$(SRC_FILES_VIEW))
 
+#Controllers
+SRC_DIR_CONTROLLER := TP1/controller
+OBJ_DIR_CONTROLLER := TP1/bin/controller
+
+SRC_FILES_CONTROLLER := $(wildcard $(SRC_DIR_CONTROLLER)/*.cpp)
+OBJ_FILES_CONTROLLER := $(patsubst $(SRC_DIR_CONTROLLER)/%.cpp,$(OBJ_DIR_CONTROLLER)/%.o,$(SRC_FILES_CONTROLLER))
+
 #Main
 SRC_DIR_MAIN := TP1
 OBJ_DIR_MAIN := TP1/bin
@@ -51,7 +58,7 @@ OBJ_FILES_MAIN := $(patsubst $(SRC_DIR_MAIN)/%.cpp,$(OBJ_DIR_MAIN)/%.o,$(SRC_FIL
 CPPFLAGS := -Wall -pedantic -std=c++11 -o3
 VIEWFLAG := -lncurses
 
-views: $(OBJ_FILES_DOM) $(OBJ_FILES_ENT) $(OBJ_FILES_VIEW) $(OBJ_FILES_MAIN)
+views: $(OBJ_FILES_CONTROLLER) $(OBJ_FILES_DOM) $(OBJ_FILES_ENT) $(OBJ_FILES_VIEW) $(OBJ_FILES_MAIN)
 	g++ TP1/bin/libncurses.a $(LDFLAGS) -o $@ $^  $(VIEWFLAG)
 
 # Compilation rules
@@ -83,6 +90,9 @@ $(OBJ_DIR_TESTE_ENT)/%.o: $(SRC_DIR_TESTE_ENT)/%.cpp $(SRC_DIR_TESTE_ENT)/TU_ENT
 	g++ $(CPPFLAGS) -c -o $@ $<
 
 $(OBJ_DIR_VIEW)/%.o: $(SRC_DIR_VIEW)/%.cpp $(SRC_DIR_VIEW)/%.hpp
+	g++ $(CPPFLAGS) -c -o $@ $<
+
+$(OBJ_DIR_CONTROLLER)/%.o: $(SRC_DIR_CONTROLLER)/%.cpp $(SRC_DIR_CONTROLLER)/%.hpp
 	g++ $(CPPFLAGS) -c -o $@ $<
 
 $(OBJ_DIR_MAIN)/%.o: $(SRC_DIR_MAIN)/%.cpp
