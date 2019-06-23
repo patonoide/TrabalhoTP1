@@ -44,8 +44,11 @@ void EventoPer::addEvent(Event evento, User user){
 
 void EventoPer::removeEvent(CodigoEvento cod){
         list<CombinationUE>::iterator it;
-
         list<Event>::iterator ite;
+
+        PresentationPer per;
+        per.removePresentionwithEvent(cod);
+
         CombinationUE comb;
         for (it = lista.begin(); it != lista.end();) {
                 comb = (*it);
