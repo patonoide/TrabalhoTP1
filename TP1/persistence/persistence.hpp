@@ -21,3 +21,18 @@
 //
 //
 // #endif
+
+#ifndef PER_H
+#define PER_H
+#include <iostream>
+#include <sqlite3.h>
+using namespace std;
+
+
+class Persistence {
+
+};
+
+
+
+#endif

@@ -32,12 +32,13 @@
 #include <list>
 #include "../model/user.hpp"
 #include "../dominios/user_DOM.hpp"
+#include "persistence.hpp"
 #include <iostream>
 #include<string>
 using namespace std;
 
 
-class UserPer {
+class UserPer: public Persistence{
 
 private:
 static list<User> lista;
