@@ -1,5 +1,7 @@
 #include "cadastrar.hpp"
 #include "../Home.hpp"
+#include "../../controller/user.hpp"
+
 #include <ctype.h>
 
 void CadastrarView::printTitulo(){
@@ -7,6 +9,19 @@ void CadastrarView::printTitulo(){
   refresh();
 }
 
+
+void CadastrarView::ConfirmarDados(){
+  UserController newctr;
+  std::string toPost[5];
+  toPost[0] = cpf;
+  toPost[1] = password;
+  toPost[2] = dataval;
+  toPost[3] = codcart;
+  toPost[4] = numcart;
+
+  newctr.POST_signup(toPost);
+
+}
 
 void CadastrarView::mostrarOpcoes(){
   printw("\t (ESC) VOLTAR PARA INICIO\n");
@@ -40,8 +55,6 @@ void CadastrarView::handleInput(){
 }
 
 int CadastrarView::processarOpcao(int ch){
-  HomeView Hview;
-
   switch (ch){
   //! Caso Seta para Baixo
   case KEY_DOWN:
@@ -130,8 +143,9 @@ int CadastrarView::processarOpcao(int ch){
     break;
   case 10:
     //? TODO: Confirmar o usuário
-
-
+    if (editing ==  6){
+      ConfirmarDados();
+    }
     break;
   case 27: // Esc key
     return 1;

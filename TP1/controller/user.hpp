@@ -26,6 +26,9 @@ class UserController : public ApplicationController{
       newView.render();
 
     }
+
+    void POST_signup(std::string *information);
+
 };
 
 #endif

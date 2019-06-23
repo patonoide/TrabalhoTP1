@@ -25,9 +25,12 @@ class CadastrarView : public ApplicationView{
     const int AllOk = 0;
     int editing;
 
+    void ConfirmarDados();
+
     public:
     void printTitulo();
     void handleInput();
+
 };
 
 
