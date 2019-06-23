@@ -1,0 +1,58 @@
+#include "event.hpp"
+
+list<CombinationUE> EventoPer::lista;
+
+CombinationUE::CombinationUE(){
+  list<Event> listac;
+  this->lista = listac;
+}
+
+void CombinationUE::addEvent(Event evento){
+   this->lista.push_back(evento);
+}
+
+void CombinationUE::deleteEvent(CodigoEvento cod){
+  list<Event>::iterator it;
+  list<Event>::iterator ittemp;
+
+  for (it = this->lista.begin(); it != this->lista.end();) {
+
+          if((*it).getCodigoEvento().getValor() == cod.getValor()) {
+                  ittemp = it++;
+                  lista.erase(it);
+                  it = ittemp;
+          }else{
+
+                  it++;
+          }
+
+  }
+}
+
+list<Event> CombinationUE::getEvents(){
+  return this->lista;
+}
+
+void EventoPer::addEvent(Event evento, User user){
+   CombinationUE comb;
+   comb.setUser(user);
+   comb.addEvent(evento);
+   lista.push_back(comb);
+
+}
+
+void EventoPer::removeEvent(CodigoEvento cod){
+  list<CombinationUE>::iterator it;
+
+  list<Event>::iterator ite;
+  CombinationUE comb;
+  for (it = lista.begin(); it != lista.end();) {
+    comb = (*it);
+    comb.deleteEvent(cod);
+    it++;
+  }
+}
+
+list<CombinationUE> EventoPer::listEvent(){
+  return lista;
+}
