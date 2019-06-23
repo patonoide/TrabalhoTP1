@@ -66,12 +66,8 @@ teste: $(OBJ_FILES_DOM) $(OBJ_FILES_TESTE) $(OBJ_FILES_ENT) $(OBJ_FILES_TESTE_DO
 	g++ $(LDFLAGS) -o $@ $^
 
 clean: 
-	rm -f TP1/bin/dom/*.o
-	rm -f TP1/bin/test/*.o
-	rm -f TP1/bin/test_dom/*.o
-	rm -f TP1/bin/test_ent/*.o
-	rm -f TP1/bin/entidades/*.o
-	rm -f TP1/bin/view/*.o
+	rm -f TP1/bin/*/*.o
+	rm -f TP1/bin/*.o
 
 # Generalize compile files
 $(OBJ_DIR_DOM)/%.o: $(SRC_DIR_DOM)/%.cpp $(SRC_DIR_DOM)/%.hpp
