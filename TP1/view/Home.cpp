@@ -1,8 +1,6 @@
 #include "Home.hpp"
-#include "./user/logar.hpp"
-#include "./user/cadastrar.hpp"
-#include "./event/listevents.hpp"
-#include "./event/searchevents.hpp"
+#include "../controller/user.hpp"
+#include "../controller/event.hpp"
 
 void HomeView::printTitulo(){
     printw("\t\t\t%s\n", "Sistema");
@@ -12,10 +10,9 @@ void HomeView::printTitulo(){
 
 void HomeView::processarOpcao(int ch){
     //! Deve-se criar Objetos de controller
-    LogarView userview;
-    CadastrarView cadastro;
-    EventListView list;
-    EventSearchView search;
+    UserController usrControll;
+    EventController evntContoll;
+
     switch (ch)
     {
     case this->SAIR:
@@ -24,19 +21,19 @@ void HomeView::processarOpcao(int ch){
         std::exit(0);
         break;
     case this->LOGAR:
-        this->redirectTo(userview);
+        usrControll.GET_login();
         this->render();
         break;
     case '2':
-        this->redirectTo(cadastro);
+        usrControll.GET_signup();
         this->render();
         break;
     case '3':
-        this->redirectTo(list);
+        evntContoll.GET_index();
         this->render();
         break;
     case '4':
-        this->redirectTo(search);
+        evntContoll.GET_search();
         this->render();
     default:
         break;
@@ -46,7 +43,8 @@ void HomeView::processarOpcao(int ch){
 void HomeView::mostrarOpcoes(){
     noecho();
     printw("\t (0) SAIR \n");
-    printw("\t (1) LOGAR \t\t (2) CADASTRAR \n\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO");
+    printw("\t (1) LOGAR \t\t (2) CADASTRAR \n");
+    printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO");
 
     curs_set(0);
     refresh();
