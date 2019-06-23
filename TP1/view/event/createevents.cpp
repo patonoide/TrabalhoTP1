@@ -53,7 +53,7 @@ int EventCreateView::processarOpcao(int ch){
       break;
     default: 
       if(!isalnum(ch))break;
-      if(editing == 7)break;
+      if(editing > 5)break;
       echochar(ch);
       arr[editing].push_back(ch);
   }

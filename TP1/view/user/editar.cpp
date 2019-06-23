@@ -1,33 +1,25 @@
-#include "createticket.hpp"
+#include "editar.hpp"
 #include "../Home.hpp"
 #include <ctype.h>
 
-void TicketCreateView::printTitulo(){
-  printw("\t\t\t%s\n", "Criar Ticketos");
+void UserEditView::printTitulo(){
+  printw("\t\t\t%s\n", "Editar Usuario");
   refresh();
 }
 
-void TicketCreateView::setAttrs(){
-  codigo = arr[0];
-  quantidade = arr[1];
+void UserEditView::setAttrs(){
+  senha = arr[0];
 }
 
-int TicketCreateView::processarOpcao(int ch){
+int UserEditView::processarOpcao(int ch){
   switch (ch)
   { 
     case KEY_DOWN:
-      if(editing == 1){
+      if(editing == 0){
         editing +=1;
         cursorY +=1;
         cursorX = 21;
 
-        move(cursorY, cursorX);
-      }
-      if(editing < 1){
-        editing += 1;
-        cursorY += 1;
-        cursorX = 14 + arr[editing].length();
-        
         move(cursorY, cursorX);
       }
       break;
@@ -48,7 +40,7 @@ int TicketCreateView::processarOpcao(int ch){
       break;
     default: 
       if(!isalnum(ch))break;
-      if(editing > 1)break;
+      if(editing > 0)break;
       echochar(ch);
       arr[editing].push_back(ch);
   }
@@ -56,17 +48,16 @@ int TicketCreateView::processarOpcao(int ch){
   return 0;
 }
 
-void  TicketCreateView::renderCreateOptions(){
+void  UserEditView::renderCreateOptions(){
 
   // Procura
-  printw("  ### Dados de criação ### \n");
-  printw(" Codigo: \n");
-  printw(" Quantidade: \n");
+  printw("  ### Dados de edição ### \n");
+  printw(" Senha: \n");
   printw(" CONFIRMAR [ENTER]: ");
 
 }
 
-void  TicketCreateView::mostrarOpcoes(){
+void  UserEditView::mostrarOpcoes(){
 
   // Printa as opções
   printw("\t\t\t (ESC) VOLTAR\n");
@@ -87,7 +78,7 @@ void  TicketCreateView::mostrarOpcoes(){
   refresh();
 }
 
-void TicketCreateView::handleInput(){
+void UserEditView::handleInput(){
   int ch;
   int ret;
   while(true){
