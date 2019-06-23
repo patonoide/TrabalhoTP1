@@ -11,86 +11,29 @@ int EventSearchView::processarOpcao(int ch){
   switch (ch)
   { 
     case KEY_DOWN:
-      switch (editing){
-        case 1:
-          editing +=1;
-          cursorY +=1 ;
-          cursorX = 17 + this->finshDate.length() ;
+      if(editing == 4){
+        editing +=1;
+        cursorY +=1;
+        cursorX = 21;
 
-          move(cursorY, cursorX);
-          break;
-        case 2:
-          editing+=1;
-          cursorY+=1 ;
-          cursorX=11 + this->cidade.length();
-
-          move(cursorY, cursorX);
-          break;
-        case 3:
-          editing+=1;
-          cursorY+=1 ;
-          cursorX=10 + this->sigla.length();
-
-          move(cursorY, cursorX);
-          break;
-        case 4:
-          editing+=1;
-          cursorY+=1 ;
-          cursorX= 11  + this->estado.length();
-
-          move(cursorY, cursorX);
-          break;
-        case 5:
-          editing +=1;
-          cursorY +=1;
-          cursorX = 21;
-
-          move(cursorY, cursorX);
-          break;
-        case 6:
-          break;
+        move(cursorY, cursorX);
+      }
+      if(editing < 4){
+        editing += 1;
+        cursorY += 1;
+        cursorX = 19 + arr[editing].length();
+        
+        move(cursorY, cursorX);
       }
 
       break;
     case KEY_UP:
-      switch (editing){
-        case 1:
-          break;
-        case 2:
-          editing-=1;
-          cursorY-=1 ;
-          cursorX = 21 + this->inicDate.length() ;
-
-          move(cursorY, cursorX);
-          break;
-        case 3:
-          editing-=1;
-          cursorY-=1 ;
-          cursorX= 17 + this->finshDate.length();
-
-          move(cursorY, cursorX);
-          break;
-        case 4:
-          editing-=1;
-          cursorY-=1 ;
-          cursorX=11 + this->cidade.length();
-
-          move(cursorY, cursorX);
-          break;
-        case 5:
-          editing -=1;
-          cursorY -=1 ;
-          cursorX= 10 + this->sigla.length();
-
-          move(cursorY, cursorX);
-          break;
-        case 6:
-          editing -=1;
-          cursorY -= 1;
-          cursorX= 11  + this->estado.length();
-
-          move(cursorY, cursorX);
-          break;
+      if(editing > 0){
+        editing -= 1;
+        cursorY -= 1;
+        cursorX = 19 + arr[editing].length();
+        
+        move(cursorY, cursorX);
       }
       break;
     case 27: // Esc key
@@ -98,34 +41,12 @@ int EventSearchView::processarOpcao(int ch){
       break;
     case KEY_ENTER:
       //! TODO: Confirmar o usuário
-      if(editing == 6){
-        filterSearch();
-      }
       break;
     default: 
       if(!isalnum(ch))break;
-      switch (editing){
-        case 1:
-          echochar(ch);
-          this->inicDate.push_back(ch);
-          break;
-        case 2:
-          echochar(ch);
-          this->finshDate.push_back(ch);
-          break;
-        case 3:
-          echochar(ch);
-          this->cidade.push_back(ch);
-          break;
-        case 4:
-          echochar(ch);
-          this->sigla.push_back(ch);
-          break;
-        case 5:
-          echochar(ch);
-          this->estado.push_back(ch);
-          break;
-      }
+      if(editing > 4)break;
+      echochar(ch);
+      arr[editing].push_back(ch);
   }
 
   return 0;
@@ -168,9 +89,9 @@ void  EventSearchView::mostrarOpcoes(){
 
   curs_set(1);
   cursorY = 3;
-  cursorX = 21;
+  cursorX = 19;
   keypad(stdscr, TRUE);
-  this->editing = 1;
+  this->editing = 0;
   // Move o cursor
   move(cursorY, cursorX);
 
