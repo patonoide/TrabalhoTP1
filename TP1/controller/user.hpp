@@ -8,7 +8,7 @@
 
 class UserController : public ApplicationController{
     private:
-    protected:
+    User current_user;
 
     public:
     void GET_login(){
@@ -25,6 +25,11 @@ class UserController : public ApplicationController{
       UserEditView newView;
       newView.render();
 
+    }
+
+    void GET_perfil(){
+      PerfilView newView(current_user);
+      newView.render();
     }
 
     void POST_signup(std::string *information);
