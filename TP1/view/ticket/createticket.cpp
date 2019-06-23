@@ -1,4 +1,5 @@
 #include "createticket.hpp"
+#include "../../controller/ticket.hpp"
 #include "../Home.hpp"
 #include <ctype.h>
 
@@ -12,6 +13,11 @@ void TicketCreateView::setAttrs(){
   quantidade = arr[1];
 }
 
+void TicketCreateView::ConfirmarOpcoes(){
+  TicketController toPost;
+
+  toPost.POST_create(arr);
+}
 int TicketCreateView::processarOpcao(int ch){
   switch (ch)
   { 
@@ -43,8 +49,12 @@ int TicketCreateView::processarOpcao(int ch){
     case 27: // Esc key
       return 1;
       break;
-    case KEY_ENTER:
-      //! TODO: Confirmar o usuário
+    case 10:
+      if(editing == 2){
+        ConfirmarOpcoes();
+
+        return 1;
+      }
       break;
     default: 
       if(!isalnum(ch))break;

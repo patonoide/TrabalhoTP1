@@ -1,5 +1,5 @@
 #include "perfil.hpp"
-
+#include "../../controller/ticket.hpp"
 void PerfilView::printTitulo(){
     printw("\t\t\t%s %s\n", "Bem vindo", this->current_user.getCpf().getValor().c_str());
     refresh();
@@ -8,11 +8,17 @@ void PerfilView::printTitulo(){
 
 int PerfilView::processarOpcao(int ch){
     //! Deve-se criar Objetos de controller
+    TicketController ticketCrt;
     switch (ch)
     {
+    case '0':
+      return 1;
+      break;
     case '1':
       break;
     case '2':
+      ticketCrt.GET_create();
+      render();
       break;
     case '3':
       break;
@@ -20,10 +26,6 @@ int PerfilView::processarOpcao(int ch){
       break;
     case '5':
       break;
-    case 27:
-        return 1;
-        break;
-    
     default:
         break;
     }
@@ -32,8 +34,8 @@ int PerfilView::processarOpcao(int ch){
 
 void PerfilView::mostrarOpcoes(){
     noecho();
-    printw("\t (ESC) DESLOGAR \n");
-    printw("\t (1) CADASTRAR EVENTO \t\t (2) COMOPRAR TICKET \n");
+    printw("\t (0) DESLOGAR \n");
+    printw("\t (1) CADASTRAR EVENTO \t (2) COMPRAR TICKET \n");
     printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO\n");
     printw("\t (5) EDITAR CADASTRO");
     curs_set(0);

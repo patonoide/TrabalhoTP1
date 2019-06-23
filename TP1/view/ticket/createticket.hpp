@@ -10,6 +10,8 @@ class TicketCreateView : public ApplicationView{
   void mostrarOpcoes();     /// Printa as opções dessa tela  
   
   void renderCreateOptions();
+  void ConfirmarOpcoes();
+
 
   std::string codigo;
   std::string quantidade;
