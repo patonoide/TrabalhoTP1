@@ -27,3 +27,39 @@ void TicketPer::removeTicket(CodigoIngresso cod){
 
   }
 }
+
+void TicketPer::removeTicketwithUser(Cpf cpf){
+  list<CombinationUPT>::iterator it;
+  list<CombinationUPT>::iterator ittemp;
+
+  for (it = this->lista.begin(); it != this->lista.end();) {
+
+          if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+                  ittemp = it++;
+                  lista.erase(it);
+                  it = ittemp;
+          }else{
+
+                  it++;
+          }
+
+  }
+}
+
+void TicketPer::removeTicketwithPresentation(CodigoApresentacao cod){
+  list<CombinationUPT>::iterator it;
+  list<CombinationUPT>::iterator ittemp;
+
+  for (it = this->lista.begin(); it != this->lista.end();) {
+
+          if((*it).getPresentation().getCodigoApresentacao().getValor() == cod.getValor()) {
+                  ittemp = it++;
+                  lista.erase(it);
+                  it = ittemp;
+          }else{
+
+                  it++;
+          }
+
+  }
+}

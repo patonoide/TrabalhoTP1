@@ -5,6 +5,10 @@
 #include "../model/user.hpp"
 #include "../model/ticket.hpp"
 #include "../model/presentation.hpp"
+#include "presentation.hpp"
+#include "user.hpp"
+#include "../dominios/user_DOM.hpp"
+#include "../dominios/presentation_DOM.hpp"
 #include "persistence.hpp"
 #include "../dominios/ticket_DOM.hpp"
 #include <iostream>
@@ -55,6 +59,8 @@ public:
 void addTicket(Presentation, Ticket, User);
 void removeTicket(CodigoIngresso);
 list<CombinationUPT> listTicket();
+void removeTicketwithUser(Cpf);
+void removeTicketwithPresentation(CodigoApresentacao);
 
 
 };
