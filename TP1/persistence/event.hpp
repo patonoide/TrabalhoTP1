@@ -11,7 +11,7 @@
 using namespace std;
 
 
-class CombinationUE {
+class CombinationUE :public Persistence{
 
 private:
 User user;
