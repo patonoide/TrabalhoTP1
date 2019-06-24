@@ -33,6 +33,9 @@
 #include "../model/user.hpp"
 #include "../dominios/user_DOM.hpp"
 #include "persistence.hpp"
+#include "event.hpp"
+#include "ticket.hpp"
+#include "card.hpp"
 #include <iostream>
 #include<string>
 using namespace std;

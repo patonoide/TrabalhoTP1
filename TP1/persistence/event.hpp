@@ -5,6 +5,7 @@
 #include "../model/user.hpp"
 #include "../model/event.hpp"
 #include "../dominios/event_DOM.hpp"
+#include "../dominios/user_DOM.hpp"
 #include "persistence.hpp"
 #include <iostream>
 #include <string>
@@ -43,6 +44,7 @@ public:
 void addEvent(Event, User);
 void removeEvent(CodigoEvento);
 list<CombinationUE> listEvent();
+void removeEventwithUser(Cpf);
 
 
 };

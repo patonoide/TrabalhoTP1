@@ -80,3 +80,21 @@ void EventoPer::checarQuantidade(Cpf cpf){
            throw std::invalid_argument("Já tem 5 no banco");
         }
 }
+
+void EventoPer::removeEventwithUser(Cpf cpf){
+  list<CombinationUE>::iterator it;
+  list<CombinationUE>::iterator ittemp;
+
+  for (it = this->lista.begin(); it != this->lista.end();) {
+
+          if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+                  ittemp = it++;
+                  lista.erase(it);
+                  it = ittemp;
+          }else{
+
+                  it++;
+          }
+
+  }
+}

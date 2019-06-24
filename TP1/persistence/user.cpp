@@ -10,6 +10,11 @@ void UserPer::deleteUser(Cpf cpf){
 
         list<User>::iterator it;
         list<User>::iterator ittemp;
+        CardPer card;
+        card.removeCardwithUser(cpf);
+        TicketPer ticket;
+        ticket.removeTicketwithUser(cpf);
+
 
         for (it = lista.begin(); it != lista.end();) {
 
