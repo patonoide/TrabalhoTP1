@@ -17,7 +17,9 @@ private:
 Event event;
 list<Presentation> lista;
 
+
 public:
+
 CombinationEA();
 inline void setEvent(Event event){
         this->event = event;
@@ -37,8 +39,12 @@ class PresentationPer : public Persistence {
 
 private:
 static list<CombinationEA> lista;
+static int n;
+PresentationPer();
+static PresentationPer *p;
 
 public:
+static PresentationPer* criar();
 void addPresentation(Presentation, Event);
 void removePresention(CodigoApresentacao);
 void removePresentionwithEvent(CodigoEvento);

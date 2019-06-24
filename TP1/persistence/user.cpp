@@ -2,6 +2,19 @@
 
 list<User> UserPer::lista;
 
+int UserPer::n = 0;
+UserPer* UserPer::u = NULL;
+UserPer::UserPer(){}
+
+UserPer* UserPer::criar(){
+        if(n == 0) {
+                n++;
+                u = new UserPer();
+        }
+        return u;
+}
+
+
 void UserPer::addUser(User user){
         lista.push_back(user);
 }
@@ -12,8 +25,8 @@ void UserPer::deleteUser(Cpf cpf){
         list<User>::iterator ittemp;
         CardPer card;
         card.removeCardwithUser(cpf);
-        TicketPer ticket;
-        ticket.removeTicketwithUser(cpf);
+        TicketPer *ticket = TicketPer::criar();
+        ticket->removeTicketwithUser(cpf);
         EventoPer event;
         event.removeEventwithUser(cpf);
 

@@ -13,7 +13,7 @@
 using namespace std;
 
 
-class CombinationUE :public Persistence{
+class CombinationUE : public Persistence {
 
 private:
 User user;
@@ -39,8 +39,12 @@ class EventoPer : public Persistence {
 private:
 static list<CombinationUE> lista;
 void checarQuantidade(Cpf);
+static int n;
+EventoPer();
+static EventoPer *e;
 
 public:
+static EventoPer* criar();
 void addEvent(Event, User);
 void removeEvent(CodigoEvento);
 list<CombinationUE> listEvent();

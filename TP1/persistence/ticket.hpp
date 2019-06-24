@@ -54,8 +54,12 @@ class TicketPer : public Persistence {
 
 private:
 static list<CombinationUPT> lista;
+static int n;
+TicketPer();
+static TicketPer *t;
 
 public:
+static TicketPer* criar();
 void addTicket(Presentation, Ticket, User);
 void removeTicket(CodigoIngresso);
 list<CombinationUPT> listTicket();

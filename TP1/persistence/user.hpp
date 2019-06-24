@@ -37,16 +37,20 @@
 #include "ticket.hpp"
 #include "card.hpp"
 #include <iostream>
-#include<string>
+#include <string>
 using namespace std;
 
 
-class UserPer: public Persistence{
+class UserPer : public Persistence {
 
 private:
 static list<User> lista;
+static int n;
+UserPer();
+static UserPer *u;
 
 public:
+static UserPer* criar();
 void addUser(User);
 void deleteUser(Cpf);
 list<User> listUser();

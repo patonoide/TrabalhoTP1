@@ -2,6 +2,19 @@
 
 list<CombinationUE> EventoPer::lista;
 
+int EventoPer::n = 0;
+EventoPer* EventoPer::e = NULL;
+EventoPer::EventoPer(){
+}
+
+EventoPer* EventoPer::criar(){
+        if(n == 0) {
+                n++;
+                e = new EventoPer();
+        }
+        return e;
+}
+
 CombinationUE::CombinationUE(){
         list<Event> listac;
         this->lista = listac;
@@ -46,8 +59,8 @@ void EventoPer::removeEvent(CodigoEvento cod){
         list<CombinationUE>::iterator it;
         list<Event>::iterator ite;
 
-        PresentationPer per;
-        per.removePresentionwithEvent(cod);
+        PresentationPer *per = PresentationPer::criar();
+        per->removePresentionwithEvent(cod);
 
         CombinationUE comb;
         for (it = lista.begin(); it != lista.end();) {

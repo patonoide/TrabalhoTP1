@@ -2,6 +2,18 @@
 
 list<CombinationUPT> TicketPer::lista;
 
+int TicketPer::n = 0;
+TicketPer* TicketPer::t = NULL;
+TicketPer::TicketPer(){}
+
+TicketPer* TicketPer::criar(){
+        if(n == 0) {
+                n++;
+                t = new TicketPer();
+        }
+        return t;
+}
+
 void TicketPer::addTicket(Presentation pres, Ticket ticket, User user){
         CombinationUPT comb;
         comb.setTicket(ticket);
@@ -83,8 +95,8 @@ Ticket TicketPer::searchTicketwithUser(Cpf cpf){
 }
 
 void TicketPer::addTicketwithCpfandCodigo(CodigoApresentacao codigo, Ticket ticket, Cpf cpf){
-        UserPer userper;
-        User user = userper.searchUser(cpf);
+        UserPer *userper = UserPer::criar();
+        User user = userper->searchUser(cpf);
         PresentationPer presper;
         Presentation pres = presper.searchPresentation(codigo);
         CombinationUPT comb;

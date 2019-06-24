@@ -2,6 +2,20 @@
 
 list<CombinationEA> PresentationPer::lista;
 
+int PresentationPer::n = 0;
+PresentationPer* PresentationPer::p = NULL;
+PresentationPer::PresentationPer(){
+}
+
+PresentationPer* PresentationPer::criar(){
+        if(n == 0) {
+                n++;
+                p = new PresentationPer();
+        }
+        return p;
+}
+
+
 CombinationEA::CombinationEA(){
         list<Presentation> listac;
         this->lista = listac;
