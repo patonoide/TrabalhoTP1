@@ -26,10 +26,6 @@ int PerfilView::processarOpcao(int ch){
       this->reinicia();
       break;
     case '3':
-      break;
-    case '4':
-      break;
-    case '5':
       usrCrt.GET_edit();
       this->reinicia();
       break;
@@ -43,8 +39,7 @@ void PerfilView::mostrarOpcoes(){
     noecho();
     printw("\t (0) DESLOGAR \n");
     printw("\t (1) CADASTRAR EVENTO \t (2) COMPRAR TICKET \n");
-    printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO\n");
-    printw("\t (5) EDITAR CADASTRO\n");
+    printw("\t (3) EDITAR CADASTRO\n");
 
     if(f_msg.length() > 0){
         printw("Mensagem: %s", f_msg.c_str());
