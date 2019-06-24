@@ -1,5 +1,6 @@
 #include "perfil.hpp"
 #include "../../controller/ticket.hpp"
+#include "../../controller/event.hpp"
 void PerfilView::printTitulo(){
     printw("\t\t\t%s %s\n", "Bem vindo", this->current_user.getCpf().getValor().c_str());
     refresh();
@@ -10,16 +11,19 @@ int PerfilView::processarOpcao(int ch){
     //! Deve-se criar Objetos de controller
     TicketController ticketCrt;
     UserController usrCrt;
+    EventController evntCrt;
     switch (ch)
     {
     case '0':
       return 1;
       break;
     case '1':
+      evntCrt.GET_create();
+      this->reinicia();
       break;
     case '2':
       ticketCrt.GET_create();
-      render();
+      this->reinicia();
       break;
     case '3':
       break;
@@ -27,7 +31,7 @@ int PerfilView::processarOpcao(int ch){
       break;
     case '5':
       usrCrt.GET_edit();
-      render();
+      this->reinicia();
       break;
     default:
         break;

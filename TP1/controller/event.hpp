@@ -11,12 +11,13 @@ class EventController : public ApplicationController{
     protected:
 
     public:
-    void GET_create(){
 
-
-    }
     void GET_index();
     
+    void GET_create();
+    void POST_create();
+
+
     void GET_search(){
         EventSearchView newView;
         newView.render();

@@ -32,3 +32,15 @@ void EventController::GET_index(){
   EventListView newView(eventos);
   newView.render();
 }
+
+void EventController::GET_create(){
+  EventCreateView newView;
+  newView.render();
+}
+
+void EventController::POST_create(){
+
+
+  PerfilView *createmsg = PerfilView::getInstance();
+  createmsg->f_msg = "KKKKKKKK izi clap";
+}

@@ -24,6 +24,6 @@ class ApplicationView{
 
     void render();
     void redirectTo(ApplicationView &newScreen);
-
+    void reinicia();
 };
 #endif

@@ -14,3 +14,11 @@ void ApplicationView::redirectTo(ApplicationView &newScreen){
     newScreen.render();
     refresh();
 }
+
+void ApplicationView::reinicia(){
+    erase();
+    initscr();
+    this->printTitulo();
+    this->mostrarOpcoes();
+    refresh();
+}

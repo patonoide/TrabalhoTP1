@@ -22,19 +22,19 @@ void HomeView::processarOpcao(int ch){
         break;
     case this->LOGAR:
         usrControll.GET_login();
-        this->render();
+        this->reinicia();
         break;
     case '2':
         usrControll.GET_signup();
-        this->render();
+        this->reinicia();
         break;
     case '3':
         evntContoll.GET_index();
-        this->render();
+        this->reinicia();
         break;
     case '4':
         evntContoll.GET_search();
-        this->render();
+        this->reinicia();
     default:
         break;
     }

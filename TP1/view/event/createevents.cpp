@@ -1,5 +1,6 @@
 #include "createevents.hpp"
 #include "../Home.hpp"
+#include "../../controller/event.hpp"
 #include <ctype.h>
 
 void EventCreateView::printTitulo(){
@@ -48,8 +49,13 @@ int EventCreateView::processarOpcao(int ch){
     case 27: // Esc key
       return 1;
       break;
-    case KEY_ENTER:
+    case 10:
       //! TODO: Confirmar o usuário
+      if (editing == 6){
+        EventController a;
+        a.POST_create();
+        return 1;
+      }
       break;
     default: 
       if(!isalnum(ch))break;
