@@ -26,7 +26,7 @@ class EventSearchView : public ApplicationView{
   std::string sigla;
   std::string estado;
 
-  std::string arr[5];
+  std::string arr[2];
 
   // Controlar cursor
   int editing;

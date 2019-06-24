@@ -11,14 +11,14 @@ int EventSearchView::processarOpcao(int ch){
   switch (ch)
   { 
     case KEY_DOWN:
-      if(editing == 4){
+      if(editing == 1){
         editing +=1;
         cursorY +=1;
         cursorX = 21;
 
         move(cursorY, cursorX);
       }
-      if(editing < 4){
+      if(editing < 1){
         editing += 1;
         cursorY += 1;
         cursorX = 19 + arr[editing].length();
@@ -44,7 +44,7 @@ int EventSearchView::processarOpcao(int ch){
       break;
     default: 
       if(!isalnum(ch))break;
-      if(editing > 4)break;
+      if(editing > 1)break;
       echochar(ch);
       arr[editing].push_back(ch);
   }
@@ -56,10 +56,7 @@ void  EventSearchView::renderSearchOptions(){
 
   // Procura
   printw("  ### Dados da procura ### \n");
-  printw(" Desde de [XX/XX]: \n");
-  printw(" Até [XX/XX]: \n");
   printw(" Cidade: \n");
-  printw(" Sigla: \n");
   printw(" Estado: \n");
   printw(" CONFIRMAR [ENTER]: ");
 
