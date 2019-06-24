@@ -42,6 +42,7 @@ static list<CombinationEA> lista;
 static int n;
 PresentationPer();
 static PresentationPer *p;
+void checarQuantidade(CodigoEvento);
 
 public:
 static PresentationPer* criar();

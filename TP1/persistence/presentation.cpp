@@ -119,3 +119,24 @@ Presentation PresentationPer::searchPresentation(CodigoApresentacao cod){
         }
         throw std::invalid_argument("Não existe");
 }
+
+void PresentationPer::checarQuantidade(CodigoEvento cod){
+
+  list<CombinationEA>::iterator it;
+  list<CombinationEA>::iterator ittemp;
+  int cont = 0;
+  for (it = this->lista.begin(); it != this->lista.end();) {
+
+          if((*it).getEvent().getCodigoEvento().getValor() == cod.getValor()) {
+                  cont++;
+          }else{
+
+                  it++;
+          }
+
+  }
+  if(cont >= 5) {
+          throw std::invalid_argument("Já tem 10 no banco");
+  }
+
+}
