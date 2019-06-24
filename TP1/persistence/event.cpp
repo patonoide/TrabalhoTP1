@@ -76,25 +76,51 @@ void EventoPer::checarQuantidade(Cpf cpf){
                 }
 
         }
-        if(cont >= 5){
-           throw std::invalid_argument("Já tem 5 no banco");
+        if(cont >= 5) {
+                throw std::invalid_argument("Já tem 5 no banco");
         }
 }
 
 void EventoPer::removeEventwithUser(Cpf cpf){
-  list<CombinationUE>::iterator it;
-  list<CombinationUE>::iterator ittemp;
+        list<CombinationUE>::iterator it;
+        list<CombinationUE>::iterator ittemp;
 
-  for (it = this->lista.begin(); it != this->lista.end();) {
+        for (it = this->lista.begin(); it != this->lista.end();) {
 
-          if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
-                  ittemp = it++;
-                  lista.erase(it);
-                  it = ittemp;
-          }else{
+                if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+                        ittemp = it++;
+                        lista.erase(it);
+                        it = ittemp;
+                }else{
 
-                  it++;
-          }
+                        it++;
+                }
 
-  }
+        }
+}
+
+list<Event> EventoPer::searchEventwith(Estado estado, Cidade cidade){
+        list<CombinationUE>::iterator it;
+        list<Event>::iterator ite;
+        list<Event> result;
+        CombinationUE comb;
+        for (it = this->lista.begin(); it != this->lista.end();) {
+
+                comb = (*it);
+                for (ite = comb.getEvents().begin(); ite != comb.getEvents().end();) {
+                        if((*ite).getEstado().getValor() == estado.getValor() && (*ite).getCidade().getValor() == cidade.getValor()) {
+                                result.push_back((*ite));
+                        }
+                        ite++;
+                }
+
+
+                it++;
+        }
+
+        if(!result.empty()) {
+                throw std::invalid_argument("Não existe");
+        }else{
+                return result;
+        }
 }

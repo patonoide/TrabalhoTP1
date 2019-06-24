@@ -61,6 +61,7 @@ void removeTicket(CodigoIngresso);
 list<CombinationUPT> listTicket();
 void removeTicketwithUser(Cpf);
 void removeTicketwithPresentation(CodigoApresentacao);
+Ticket searchTicketwithUser(Cpf);
 
 
 };

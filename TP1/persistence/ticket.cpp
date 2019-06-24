@@ -63,3 +63,21 @@ void TicketPer::removeTicketwithPresentation(CodigoApresentacao cod){
 
   }
 }
+
+Ticket TicketPer::searchTicketwithUser(Cpf cpf){
+  list<CombinationUPT>::iterator it;
+  Ticket result;
+
+  for (it = lista.begin(); it != lista.end();) {
+
+          if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+
+                  return (*it).getTicket();
+          }else{
+
+                  it++;
+          }
+
+  }
+  throw std::invalid_argument("Não existe");
+}
