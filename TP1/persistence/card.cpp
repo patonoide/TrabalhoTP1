@@ -2,6 +2,18 @@
 
 list<CombinationUC> CardPer::lista;
 
+int CardPer::n = 0;
+CardPer* CardPer::c = NULL;
+CardPer::CardPer(){}
+
+CardPer* CardPer::criar(){
+        if(n == 0) {
+                n++;
+                c = new CardPer();
+        }
+        return c;
+}
+
 void CardPer::addCard(Card card, User user){
 
         CombinationUC comb;

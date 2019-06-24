@@ -23,12 +23,12 @@ void UserPer::deleteUser(Cpf cpf){
 
         list<User>::iterator it;
         list<User>::iterator ittemp;
-        CardPer card;
-        card.removeCardwithUser(cpf);
+        CardPer *card = CardPer::criar();
+        card->removeCardwithUser(cpf);
         TicketPer *ticket = TicketPer::criar();
         ticket->removeTicketwithUser(cpf);
-        EventoPer event;
-        event.removeEventwithUser(cpf);
+        EventoPer *event = EventoPer::criar();
+        event->removeEventwithUser(cpf);
 
         for (it = lista.begin(); it != lista.end();) {
 

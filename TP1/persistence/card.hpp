@@ -38,8 +38,12 @@ class CardPer : public Persistence {
 
 private:
 static list<CombinationUC> lista;
+static int n;
+CardPer();
+static CardPer *c;
 
 public:
+static CardPer* criar();
 void addCard(Card, User);
 void removeCard(NumeroCartao);
 list<CombinationUC> listCard();

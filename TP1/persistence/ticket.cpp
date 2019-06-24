@@ -97,8 +97,8 @@ Ticket TicketPer::searchTicketwithUser(Cpf cpf){
 void TicketPer::addTicketwithCpfandCodigo(CodigoApresentacao codigo, Ticket ticket, Cpf cpf){
         UserPer *userper = UserPer::criar();
         User user = userper->searchUser(cpf);
-        PresentationPer presper;
-        Presentation pres = presper.searchPresentation(codigo);
+        PresentationPer *presper = PresentationPer::criar();
+        Presentation pres = presper->searchPresentation(codigo);
         CombinationUPT comb;
         comb.setTicket(ticket);
         comb.setUser(user);
