@@ -11,6 +11,10 @@ void UserEditView::setAttrs(){
   senha = arr[0];
 }
 
+void UserEditView::ConfirmaOpcao(){
+
+}
+
 int UserEditView::processarOpcao(int ch){
   switch (ch)
   { 
@@ -35,8 +39,12 @@ int UserEditView::processarOpcao(int ch){
     case 27: // Esc key
       return 1;
       break;
-    case KEY_ENTER:
+    case 10:
       //! TODO: Confirmar o usuário
+      if(editing == 1){
+        ConfirmaOpcao();
+        return 1;
+      }
       break;
     default: 
       if(!isalnum(ch))break;

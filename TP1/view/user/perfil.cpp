@@ -9,6 +9,7 @@ void PerfilView::printTitulo(){
 int PerfilView::processarOpcao(int ch){
     //! Deve-se criar Objetos de controller
     TicketController ticketCrt;
+    UserController usrCrt;
     switch (ch)
     {
     case '0':
@@ -25,6 +26,8 @@ int PerfilView::processarOpcao(int ch){
     case '4':
       break;
     case '5':
+      usrCrt.GET_edit();
+      render();
       break;
     default:
         break;
@@ -39,8 +42,9 @@ void PerfilView::mostrarOpcoes(){
     printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO\n");
     printw("\t (5) EDITAR CADASTRO\n");
 
-    if( f_msg.length() > 0 ){
-      printw("Mensagem: %s", f_msg.c_str());
+    if(f_msg.length() > 0){
+        printw("Mensagem: %s", f_msg.c_str());
+        f_msg = "";
     }
 
     curs_set(0);

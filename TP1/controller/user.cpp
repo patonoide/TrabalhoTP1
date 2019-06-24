@@ -31,3 +31,11 @@ void UserController::GET_perfil(){
   PerfilView *newView = PerfilView::getInstance(current_user);
   newView->render();
 }
+
+void UserController::POST_editar(std::string *params){
+
+
+  PerfilView *newView = PerfilView::getInstance(current_user);
+  newView->f_msg = "Usuario Atualizado";
+  // newView->render();
+}

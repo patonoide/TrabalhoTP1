@@ -16,6 +16,9 @@ class UserEditView : public ApplicationView{
   std::string arr[1];
   int editing;
   public:
+
+  void ConfirmaOpcao();
+
   void setAttrs();
   void printTitulo();
   void handleInput();

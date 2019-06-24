@@ -21,7 +21,7 @@ class UserController : public ApplicationController{
       newView.render();
 
     }
-    void GET_edit(User &toEdit){
+    void GET_edit(){
       UserEditView newView;
       newView.render();
 
@@ -29,6 +29,7 @@ class UserController : public ApplicationController{
 
     void GET_perfil();
 
+    void POST_editar(std::string *information);
     void POST_signup(std::string *information);
     void POST_login(std::string *information);
 };
