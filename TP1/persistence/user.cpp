@@ -14,7 +14,8 @@ void UserPer::deleteUser(Cpf cpf){
         card.removeCardwithUser(cpf);
         TicketPer ticket;
         ticket.removeTicketwithUser(cpf);
-
+        EventoPer event;
+        event.removeEventwithUser(cpf);
 
         for (it = lista.begin(); it != lista.end();) {
 
