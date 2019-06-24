@@ -17,3 +17,23 @@
 //   sqlite3_close(db);
 //
 // }
+// #include "persistence.hpp"
+//
+// int Persistence::n = 0;
+// Persistence* Persistence::p = NULL;
+//
+//
+// Persistence::Persistence(){
+//
+// }
+//
+//
+// Persistence* Persistence::criar(){
+//
+//         if(n==0) {
+//                 n++;
+//                 p = new Persistence();
+//         }
+//         return p;
+//
+// }

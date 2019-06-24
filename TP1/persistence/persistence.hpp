@@ -30,6 +30,14 @@ using namespace std;
 
 
 class Persistence {
+// private:
+//   Persistence();
+//   static int n;
+//   static Persistence *p;
+//
+// public:
+//   static Persistence* criar();
+
 
 };
 

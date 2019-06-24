@@ -28,7 +28,7 @@ inline Event getEvent(){
 
 void addPresentation(Presentation);
 void deletePresentation(CodigoApresentacao);
-
+Presentation searchPresentation(CodigoApresentacao);
 list<Presentation> getPresentations();
 
 };
@@ -43,6 +43,7 @@ void addPresentation(Presentation, Event);
 void removePresention(CodigoApresentacao);
 void removePresentionwithEvent(CodigoEvento);
 list<CombinationEA> listPresentation();
+Presentation searchPresentation(CodigoApresentacao);
 
 
 };

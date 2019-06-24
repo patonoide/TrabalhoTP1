@@ -6,6 +6,22 @@ CombinationEA::CombinationEA(){
         list<Presentation> listac;
         this->lista = listac;
 }
+Presentation CombinationEA::searchPresentation(CodigoApresentacao cod){
+        list<Presentation>::iterator it;
+        list<Presentation>::iterator ittemp;
+
+        for (it = this->lista.begin(); it != this->lista.end();) {
+
+                if((*it).getCodigoApresentacao().getValor() == cod.getValor()) {
+                        return (*it);
+                }
+
+                it++;
+
+
+        }
+        throw std::invalid_argument("Não existe");
+}
 
 void CombinationEA::addPresentation(Presentation pres){
         this->lista.push_back(pres);
@@ -75,4 +91,17 @@ void PresentationPer::removePresentionwithEvent(CodigoEvento cod){
 
 list<CombinationEA> PresentationPer::listPresentation(){
         return lista;
+}
+
+Presentation PresentationPer::searchPresentation(CodigoApresentacao cod){
+        list<CombinationEA>::iterator it;
+        Presentation result;
+
+        CombinationEA comb;
+        for (it = lista.begin(); it != lista.end();) {
+                comb = (*it);
+                return result = comb.searchPresentation(cod);
+                it++;
+        }
+        throw std::invalid_argument("Não existe");
 }

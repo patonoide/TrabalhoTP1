@@ -62,6 +62,7 @@ list<CombinationUPT> listTicket();
 void removeTicketwithUser(Cpf);
 void removeTicketwithPresentation(CodigoApresentacao);
 Ticket searchTicketwithUser(Cpf);
+void addTicketwithCpfandCodigo(CodigoApresentacao, Ticket,Cpf);
 
 
 };
