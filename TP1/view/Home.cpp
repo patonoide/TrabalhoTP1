@@ -46,6 +46,10 @@ void HomeView::mostrarOpcoes(){
     printw("\t (1) LOGAR \t\t (2) CADASTRAR \n");
     printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO\n");
 
+    if(f_msg.length() > 0){
+        printw("Mensagem: %s", f_msg.c_str());
+        f_msg = "";
+    }
     curs_set(0);
     refresh();
 }
@@ -58,13 +62,21 @@ void HomeView::handleInput(){
     }
 }
 
-// HomeView* HomeView::HomeViewCreate(){
-//     if(contador> 0){
-//         return ref;
-//     }
-//     else{
-//         contador++;
-//         ref = new HomeView();
-//         return ref;
-//     }
-// }
+int HomeView::contador = 0;
+HomeView* HomeView::ref = NULL;
+
+HomeView::HomeView(){
+    f_msg = "";
+    contador = 0;
+}
+
+HomeView* HomeView::HomeViewCreate(){
+    if(contador> 0){
+        return ref;
+    }
+    else{
+        contador++;
+        ref = new HomeView();
+        return ref;
+    }
+}

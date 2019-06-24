@@ -11,13 +11,15 @@ class HomeView : public ApplicationView{
     void processarOpcao(int); /// Processa uma opção pega pelo getch() 
     void mostrarOpcoes();     /// Printa as opções dessa tela  
 
-    HomeView* ref;
-    int contador = 0;
+    
     public:
+
+    static int contador;
+    static HomeView* ref;
+    std::string f_msg;
     
     HomeView();
-
-    HomeView* HomeViewCreate();
+    static HomeView* HomeViewCreate();
     void printTitulo();
     void handleInput();
 };

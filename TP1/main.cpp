@@ -5,10 +5,10 @@
 int main()
 {	
 
-    HomeView home;
-	home.render();
+    HomeView* home;
+	home = HomeView::HomeViewCreate();
 
-
+	home->render();
 
 
 

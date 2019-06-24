@@ -6,8 +6,9 @@ void UserController::POST_signup(std::string inf[5]){
   // Tenta salvar dados
 
 
-  HomeView newView;
-  newView.render();
+  HomeView* newView = HomeView::HomeViewCreate();
+  newView->f_msg = "Deu bom";
+  newView->render();
 }
 
 void UserController::POST_login(std::string params[2]){
