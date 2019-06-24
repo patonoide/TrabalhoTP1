@@ -5,6 +5,7 @@
 #include "../model/user.hpp"
 #include "../model/card.hpp"
 #include "persistence.hpp"
+#include "../dominios/user_DOM.hpp"
 #include "../dominios/creditcard_DOM.hpp"
 #include <iostream>
 #include <string>
@@ -42,7 +43,7 @@ public:
 void addCard(Card, User);
 void removeCard(NumeroCartao);
 list<CombinationUC> listCard();
-
+void removeCardwithUser(Cpf);
 
 };
 

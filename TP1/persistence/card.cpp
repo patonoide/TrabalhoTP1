@@ -32,3 +32,21 @@ void CardPer::removeCard(NumeroCartao cartao){
 list<CombinationUC> CardPer::listCard(){
   return lista;
 }
+
+void CardPer::removeCardwithUser(Cpf cpf){
+  list<CombinationUC>::iterator it;
+  list<CombinationUC>::iterator ittemp;
+
+  for (it = lista.begin(); it != lista.end();) {
+
+          if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+                  ittemp = it++;
+                  lista.erase(it);
+                  it = ittemp;
+          }else{
+
+                  it++;
+          }
+
+  }
+}
