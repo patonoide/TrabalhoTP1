@@ -4,6 +4,8 @@
 #include "Application.hpp"
 #include "../view/Home.hpp"
 #include "../view/ticket/createticket.hpp"
+#include "../view/user/perfil.hpp"
+#include "user.hpp"
 #include <iostream>
 
 class TicketController : public ApplicationController{

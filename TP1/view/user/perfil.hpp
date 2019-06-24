@@ -10,10 +10,19 @@ class PerfilView : public ApplicationView{
     void mostrarOpcoes();     /// Printa as opções dessa tela  
 
     User current_user;
+    
+
     public:
-    PerfilView(User &new_user){
-      current_user = new_user;
-    } 
+
+    std::string f_msg;
+    static int contador;
+    static PerfilView* ref;
+    
+    PerfilView(User &new_user);
+    PerfilView();
+
+    static PerfilView* getInstance(User &newUser);
+    static PerfilView* getInstance();
     void printTitulo();
     void handleInput();
 };

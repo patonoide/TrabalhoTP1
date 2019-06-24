@@ -27,10 +27,7 @@ class UserController : public ApplicationController{
 
     }
 
-    void GET_perfil(){
-      PerfilView newView(current_user);
-      newView.render();
-    }
+    void GET_perfil();
 
     void POST_signup(std::string *information);
     void POST_login(std::string *information);

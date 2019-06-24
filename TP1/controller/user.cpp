@@ -24,3 +24,10 @@ void UserController::POST_login(std::string params[2]){
   std::string msg = "Logo";
   GET_perfil();
 }
+
+void UserController::GET_perfil(){
+
+
+  PerfilView *newView = PerfilView::getInstance(current_user);
+  newView->render();
+}

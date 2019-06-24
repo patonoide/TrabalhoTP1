@@ -16,6 +16,9 @@ void TicketCreateView::setAttrs(){
 void TicketCreateView::ConfirmarOpcoes(){
   TicketController toPost;
 
+  //
+    User a;
+  //
   toPost.POST_create(arr);
 }
 int TicketCreateView::processarOpcao(int ch){

@@ -37,10 +37,51 @@ void PerfilView::mostrarOpcoes(){
     printw("\t (0) DESLOGAR \n");
     printw("\t (1) CADASTRAR EVENTO \t (2) COMPRAR TICKET \n");
     printw("\t (3) LISTAR EVENTOS\t (4) PROCURAR EVENTO\n");
-    printw("\t (5) EDITAR CADASTRO");
+    printw("\t (5) EDITAR CADASTRO\n");
+
+    if( f_msg.length() > 0 ){
+      printw("Mensagem: %s", f_msg.c_str());
+    }
+
     curs_set(0);
     refresh();
 }
+
+int PerfilView::contador = 0;
+PerfilView* PerfilView::ref =NULL;
+
+PerfilView::PerfilView(User &new_user){
+  current_user = new_user;
+  f_msg = "";
+} 
+
+
+PerfilView* PerfilView::getInstance(User &new_user){
+  if(contador> 0){
+        return ref;
+    }
+    else{
+        contador++;
+        ref = new PerfilView(new_user);
+        return ref;
+    }
+}
+
+PerfilView* PerfilView::getInstance(){
+  if(contador> 0){
+        return ref;
+    }
+    else{
+        contador++;
+        ref = new PerfilView();
+        return ref;
+    }
+}
+
+PerfilView::PerfilView(){
+
+  f_msg = "";
+} 
 
 void PerfilView::handleInput(){
     int ch;
