@@ -10,14 +10,14 @@ class HomeView : public ApplicationView{
     private:
     void processarOpcao(int); /// Processa uma opção pega pelo getch() 
     void mostrarOpcoes();     /// Printa as opções dessa tela  
-    
-    std::string flash;
+
+    HomeView* ref;
+    int contador = 0;
     public:
     
-    HomeView(){}
-    HomeView(std::string f_message){
-        flash = f_message;
-    }
+    HomeView();
+
+    HomeView* HomeViewCreate();
     void printTitulo();
     void handleInput();
 };

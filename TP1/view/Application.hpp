@@ -8,7 +8,7 @@ class ApplicationView{
     protected:
     int cursorX;
     int cursorY;
-    
+
     public:
     static const int SAIR = '0';
     static const int LOGAR = '1';
@@ -21,7 +21,6 @@ class ApplicationView{
      */
     virtual void handleInput() = 0;
     virtual void printTitulo() = 0;
-
 
     void render();
     void redirectTo(ApplicationView &newScreen);
