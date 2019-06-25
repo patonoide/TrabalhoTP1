@@ -1,4 +1,5 @@
 #include "event.hpp"
+#include "../persistence/event.hpp"
 
 void EventController::GET_index(){
   //! Pegar do BD lista de eventos
