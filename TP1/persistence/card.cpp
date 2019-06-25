@@ -14,11 +14,11 @@ CardPer* CardPer::criar(){
         return c;
 }
 
-void CardPer::addCard(Card card, User user){
+void CardPer::addCard(Card card, Cpf user){
 
         CombinationUC comb;
         comb.setCard(card);
-        comb.setUser(user);
+        comb.setCpf(user);
         lista.push_back(comb);
 
 }
@@ -51,7 +51,7 @@ void CardPer::removeCardwithUser(Cpf cpf){
 
         for (it = lista.begin(); it != lista.end();) {
 
-                if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+                if((*it).getCpf().getValor() == cpf.getValor()) {
                         ittemp = it++;
                         lista.erase(it);
                         it = ittemp;
