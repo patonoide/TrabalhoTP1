@@ -31,6 +31,10 @@ class EventSearchView : public ApplicationView{
   // Controlar cursor
   int editing;
 
+  //Confiimacao
+  void confirmar();
+
+
   public:
   EventSearchView(std::list <Event> &toSearch){
     toShow = toSearch;

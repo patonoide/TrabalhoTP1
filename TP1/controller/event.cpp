@@ -4,6 +4,10 @@
 void EventController::GET_index(){
   //! Pegar do BD lista de eventos
   std::list <Event> eventos;
+
+  EventoPer* pers = EventoPer::criar();
+
+  pers->listEvent();
   /// Stub:
     Faixa faixa;
     Classe classe;
@@ -44,4 +48,11 @@ void EventController::POST_create(){
 
   PerfilView *createmsg = PerfilView::getInstance();
   createmsg->f_msg = "KKKKKKKK izi clap";
+}
+
+void EventController::POST_search(std::string* params){
+  std::list <Event> eventos;
+  
+  EventSearchView n(eventos);
+  n.render();
 }

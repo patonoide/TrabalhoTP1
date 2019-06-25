@@ -1,12 +1,19 @@
 #include "searchevents.hpp"
 #include "../Home.hpp"
 #include <ctype.h>
+#include "../../controller/event.hpp"
+
 
 void EventSearchView::printTitulo(){
   printw("\t\t\t%s\n", "Procurar eventos");
   refresh();
 }
 
+void EventSearchView::confirmar(){
+  EventController evntCrt;
+
+  evntCrt.POST_search(arr);
+}
 int EventSearchView::processarOpcao(int ch){
   switch (ch)
   { 
@@ -37,10 +44,13 @@ int EventSearchView::processarOpcao(int ch){
       }
       break;
     case 27: // Esc key
-      return 1;
+        return 1;
       break;
-    case KEY_ENTER:
-      //! TODO: Confirmar o usuário
+    case 10: // ENTER
+      if(editing == 2){
+        confirmar();
+        return 1;
+      }
       break;
     default: 
       if(!isalnum(ch))break;

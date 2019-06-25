@@ -21,8 +21,8 @@ class EventController : public ApplicationController{
     void GET_search(){
         EventSearchView newView;
         newView.render();
-
     }
+    void POST_search(std::string*);
 };
 
 #endif
