@@ -53,7 +53,7 @@ int EventCreateView::processarOpcao(int ch){
       //! TODO: Confirmar o usuário
       if (editing == 6){
         EventController a;
-        a.POST_create();
+        a.POST_create(arr);
         return 1;
       }
       break;

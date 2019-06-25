@@ -15,7 +15,7 @@ class EventController : public ApplicationController{
     void GET_index();
     
     void GET_create();
-    void POST_create();
+    void POST_create(std::string *params);
 
 
     void GET_search(){
