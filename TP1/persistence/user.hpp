@@ -55,6 +55,7 @@ void addUser(User);
 void deleteUser(Cpf);
 list<User> listUser();
 User searchUser(Cpf);
+User editarUser(User);
 
 
 

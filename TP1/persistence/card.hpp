@@ -15,21 +15,21 @@ using namespace std;
 class CombinationUC {
 
 private:
-User user;
+Cpf cpf;
 Card card;
 
 public:
 inline void setCard(Card card){
         this->card = card;
 }
-inline void setUser(User user){
-        this->user = user;
+inline void setCpf(Cpf cpf){
+        this->cpf = cpf;
 }
 inline Card getCard(){
         return this->card;
 }
-inline User getUser(){
-        return this->user;
+inline Cpf getCpf(){
+        return this->cpf;
 }
 
 };
@@ -44,7 +44,7 @@ static CardPer *c;
 
 public:
 static CardPer* criar();
-void addCard(Card, User);
+void addCard(Card, Cpf);
 void removeCard(NumeroCartao);
 list<CombinationUC> listCard();
 void removeCardwithUser(Cpf);
