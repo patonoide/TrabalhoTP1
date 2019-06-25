@@ -6,7 +6,7 @@
 
 ### Informações e Instruções:
 
-###### O projeto foi feito com o sistema operacional Linux em mente. É necessário ter o pacote build-essential instalado. (build-essential para sistemas baseados em Ubuntu)
+ O projeto foi feito com o sistema operacional Linux em mente. É necessário ter o pacote build-essential instalado. (build-essential para sistemas baseados em Ubuntu)
 ##### Passo a passo
 
 1.  Acessar a raiz do projeto
