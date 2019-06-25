@@ -34,7 +34,7 @@ void CadastrarView::mostrarOpcoes(){
   printw(" Data de validade: \n");
   printw(" Codigo de Seguranca: \n");
   printw(" Numero do Cartão: \n ");
-
+  printw(" ==== Confirmar ====");
   curs_set(1);
   cursorY = 3;
   cursorX = 6;
@@ -151,6 +151,7 @@ int CadastrarView::processarOpcao(int ch){
     return 1;
     break;
   default:
+    if(ch != '/')
     if(!isalnum(ch))break;
     switch (editing){
       case 2:

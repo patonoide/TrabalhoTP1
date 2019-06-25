@@ -9,8 +9,8 @@ class PerfilView : public ApplicationView{
     int processarOpcao(int); /// Processa uma opção pega pelo getch() 
     void mostrarOpcoes();     /// Printa as opções dessa tela  
 
-    User current_user;
     
+    User current_user;
 
     public:
 
@@ -25,6 +25,11 @@ class PerfilView : public ApplicationView{
     static PerfilView* getInstance();
     void printTitulo();
     void handleInput();
+
+    User getCurrentUser(){
+        return current_user;
+    }
+
 };
 
 
