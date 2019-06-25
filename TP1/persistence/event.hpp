@@ -50,7 +50,7 @@ void removeEvent(CodigoEvento);
 list<CombinationUE> listEvent();
 void removeEventwithUser(Cpf);
 list<Event> searchEventwith(Estado, Cidade);
-
+list<Event> listEvents();
 
 };
 

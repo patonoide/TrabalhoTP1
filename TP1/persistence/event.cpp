@@ -137,3 +137,25 @@ list<Event> EventoPer::searchEventwith(Estado estado, Cidade cidade){
                 return result;
         }
 }
+
+list<Event> EventoPer::listEvents(){
+        list<Event> result;
+        list<CombinationUE>::iterator it;
+        list<Event>::iterator itevent;
+        list<Event> list;
+        for (it = this->lista.begin(); it != this->lista.end();) {
+                list = (*it).getEvents();
+
+                for (itevent = list.begin(); itevent != list.end();) {
+
+                        result.push_back((*itevent));
+
+                        itevent++;
+
+                }
+                it++;
+
+        }
+        return result;
+
+}
