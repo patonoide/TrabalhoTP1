@@ -65,9 +65,26 @@ User UserPer::searchUser(Cpf cpf){
 
         }
         throw std::invalid_argument("Não existe");
+}
 
+User UserPer::editarUser(User user){
+  list<User>::iterator it;
+  Senha senha;
 
+  for (it = lista.begin(); it != lista.end();) {
 
+          if((*it).getCpf().getValor() == user.getCpf().getValor()) {
+                  senha = user.getSenha();
+                  (*it).setSenha(senha);
+
+                  return (*it);
+          }else{
+
+                  it++;
+          }
+
+  }
+  throw std::invalid_argument("Não existe");
 }
 // #include "user.hpp"
 //
