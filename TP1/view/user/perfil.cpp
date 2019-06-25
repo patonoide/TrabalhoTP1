@@ -1,6 +1,7 @@
 #include "perfil.hpp"
 #include "../../controller/ticket.hpp"
 #include "../../controller/event.hpp"
+#include "../../controller/presentation.hpp"
 void PerfilView::printTitulo(){
     printw("\t\t\t%s %s\n", "Bem vindo", this->current_user.getCpf().getValor().c_str());
     refresh();
@@ -12,6 +13,7 @@ int PerfilView::processarOpcao(int ch){
     TicketController ticketCrt;
     UserController usrCrt;
     EventController evntCrt;
+    PresentationController presCrt;
     switch (ch)
     {
     case '0':
@@ -29,6 +31,10 @@ int PerfilView::processarOpcao(int ch){
       usrCrt.GET_edit();
       this->reinicia();
       break;
+    case '4':
+      presCrt.GET_create();
+      reinicia();
+      break;
     default:
         break;
     }
@@ -39,7 +45,7 @@ void PerfilView::mostrarOpcoes(){
     noecho();
     printw("\t (0) DESLOGAR \n");
     printw("\t (1) CADASTRAR EVENTO \t (2) COMPRAR TICKET \n");
-    printw("\t (3) EDITAR CADASTRO\n");
+    printw("\t (3) EDITAR CADASTRO \t (4) CRIAR APRESENTACAO \n");
 
     if(f_msg.length() > 0){
         printw("Mensagem: %s", f_msg.c_str());

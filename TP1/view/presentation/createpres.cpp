@@ -28,7 +28,7 @@ int PresentationCreateView::processarOpcao(int ch){
       if(editing < 6){
         editing += 1;
         cursorY += 1;
-        cursorX = 11 + arr[editing].length();
+        cursorX = 21 + arr[editing].length();
         
         move(cursorY, cursorX);
       }
@@ -38,7 +38,7 @@ int PresentationCreateView::processarOpcao(int ch){
       if(editing > 0){
         editing -= 1;
         cursorY -= 1;
-        cursorX = 11 + arr[editing].length();
+        cursorX = 21 + arr[editing].length();
         
         move(cursorY, cursorX);
       }
