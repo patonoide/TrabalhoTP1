@@ -1,5 +1,6 @@
 #include "editar.hpp"
 #include "../Home.hpp"
+#include "../../controller/user.hpp"
 #include <ctype.h>
 
 void UserEditView::printTitulo(){
@@ -12,7 +13,9 @@ void UserEditView::setAttrs(){
 }
 
 void UserEditView::ConfirmaOpcao(){
+  UserController usrCrt;
 
+  usrCrt.POST_editar(arr);
 }
 
 int UserEditView::processarOpcao(int ch){

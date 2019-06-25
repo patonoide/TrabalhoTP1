@@ -46,7 +46,7 @@ void UserController::POST_signup(std::string *params){
     newCard.setNumeroCartao(Nc);
 
     u->addUser(newUser);
-    card->addCard(newCard, newUser);
+    card->addCard(newCard, newUser.getCpf());
 
     newView->f_msg = "Usuario Cadastrado";
   }
@@ -104,7 +104,9 @@ void UserController::GET_perfil(){
 void UserController::POST_editar(std::string *params){
   PerfilView *newView = PerfilView::getInstance();
   PerfilView *createmsg = PerfilView::getInstance();
-
+  
+  UserPer* Uper = UserPer::criar();
+  
   User toEdit;
 
   toEdit = newView->getCurrentUser();
@@ -112,6 +114,13 @@ void UserController::POST_editar(std::string *params){
   try{
     toEdit.getSenha().setValor(params[0]);
     createmsg->f_msg = "Usuario atualizado";
+  }
+  catch(std::invalid_argument){
+    createmsg->f_msg = "Erro na atualização";
+  }
+
+  try{
+    Uper->editarUser(toEdit);
   }
   catch(std::invalid_argument){
     createmsg->f_msg = "Erro na atualização";
