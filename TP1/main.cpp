@@ -1,11 +1,16 @@
+#include <ncurses.h>
 #include <iostream>
-
-using namespace std;
+#include "view/Home.hpp"
 
 int main()
-{
-    cout << "Hello world!" << endl;
-    cout << "teste";
-    cout << "sdadsadasdsa";
-    return 0;
+{	
+
+    HomeView* home;
+	home = HomeView::HomeViewCreate();
+
+	home->render();
+
+
+
+	return 0;
 }

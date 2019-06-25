@@ -5,10 +5,10 @@
 #include "model.hpp"
 /**
  * @brief Classe Representante da entidade User
- * 
+ *
  *  Possui atributos:
  *  Cpf, Senha
- * 
+ *
  *  O salvamento dos atributos e retornos de seus valores são feitos através de set
  */
 class User: public Model{
@@ -20,7 +20,7 @@ class User: public Model{
     inline void setCpf(Cpf &toSet){this->cpf = toSet;}
     /// Retorna atributo Cpf
     inline Cpf getCpf(){return this->cpf;}
-    
+
     /// Recebe uma instancia de Senha e salva no seu respectivo atibuto da classe
     inline void setSenha(Senha &toSet){this->senha = toSet;}
     /// Retorna atributo Senha
