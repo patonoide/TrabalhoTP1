@@ -11,6 +11,8 @@ class PresentationController : public ApplicationController{
     public:
     void GET_index();
     
+    void POST_create(std::string *params);
+    void GET_create();
 };
 
 #endif

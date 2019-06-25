@@ -10,3 +10,13 @@ void PresentationController::GET_index(){
   PresentationListView newView(pres);
   newView.render();
 }
+
+void PresentationController::GET_create(){
+  PresentationCreateView nv;
+  nv.render();
+}
+
+void PresentationController::POST_create(std::string *params){
+
+
+}
