@@ -8,6 +8,7 @@ TP1/bin/entidades/*.o
 TP1/bin/view/*.o
 TP1/bin/view/*/*.o
 TP1/*/*/*.o
+TP1/bin/persistence/*.o
 teste
 doxygen/*
 TP1/codeblocks/*

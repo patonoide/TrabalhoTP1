@@ -45,7 +45,7 @@ void TUEstado::runTestes(){
 void TUCidade::runTestes(){
     /***** Chamando funções de testes *****/
     this->SetValorValido<Cidade>("RS");             // Testando um valor valido
-    this->SetValorValido<Cidade>("sdada.dsad asda");
+    this->SetValorValido<Cidade>("Brasília");
     this->SetValorInvalido<Cidade>("5"); // Valor invalido: absurdo
     this->SetValorInvalido<Cidade>("  ");
     this->SetValorInvalido<Cidade>("..");
@@ -60,6 +60,7 @@ void TUCidade::runTestes(){
 /****** Testes de Nome ********/
 void TUName::runTestes(){
     /***** Chamando funções de testes *****/
+    this->SetValorValido<Name>("Teste");
     this->SetValorValido<Name>("RS");             // Testando um valor valido
     this->SetValorInvalido<Name>("  ");
     this->SetValorInvalido<Name>("5."); // Valor invalido: absurdo
