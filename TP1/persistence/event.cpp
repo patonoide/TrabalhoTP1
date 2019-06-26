@@ -76,22 +76,22 @@ list<CombinationUE> EventoPer::listEvent(){
 
 void EventoPer::checarQuantidade(Cpf cpf){
 
-        list<CombinationUE>::iterator it;
-        list<CombinationUE>::iterator ittemp;
-        int cont = 0;
-        for (it = this->lista.begin(); it != this->lista.end();) {
-
-                if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
-                        cont++;
-                }else{
-
-                        it++;
-                }
-
-        }
-        if(cont >= 5) {
-                throw std::invalid_argument("Já tem 5 no banco");
-        }
+        // list<CombinationUE>::iterator it;
+        // list<CombinationUE>::iterator ittemp;
+        // int cont = 0;
+        // for (it = this->lista.begin(); it != this->lista.end();) {
+        //
+        //         if((*it).getUser().getCpf().getValor() == cpf.getValor()) {
+        //                 cont++;
+        //         }else{
+        //
+        //                 it++;
+        //         }
+        //
+        // }
+        // if(cont >= 5) {
+        //         throw std::invalid_argument("Já tem 5 no banco");
+        // }
 }
 
 void EventoPer::removeEventwithUser(Cpf cpf){

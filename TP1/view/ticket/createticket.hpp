@@ -6,9 +6,9 @@
 
 class TicketCreateView : public ApplicationView{
   private:
-  int processarOpcao(int); /// Processa uma opção pega pelo getch() 
-  void mostrarOpcoes();     /// Printa as opções dessa tela  
-  
+  int processarOpcao(int); /// Processa uma opção pega pelo getch()
+  void mostrarOpcoes();     /// Printa as opções dessa tela
+
   void renderCreateOptions();
   void ConfirmarOpcoes();
 

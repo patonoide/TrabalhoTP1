@@ -23,7 +23,7 @@ void TicketCreateView::ConfirmarOpcoes(){
 }
 int TicketCreateView::processarOpcao(int ch){
   switch (ch)
-  { 
+  {
     case KEY_DOWN:
       if(editing == 1){
         editing +=1;
@@ -36,7 +36,7 @@ int TicketCreateView::processarOpcao(int ch){
         editing += 1;
         cursorY += 1;
         cursorX = 14 + arr[editing].length();
-        
+
         move(cursorY, cursorX);
       }
       break;
@@ -45,7 +45,7 @@ int TicketCreateView::processarOpcao(int ch){
         editing -= 1;
         cursorY -= 1;
         cursorX = 14 + arr[editing].length();
-        
+
         move(cursorY, cursorX);
       }
       break;
@@ -59,7 +59,7 @@ int TicketCreateView::processarOpcao(int ch){
         return 1;
       }
       break;
-    default: 
+    default:
       if(!isalnum(ch))break;
       if(editing > 1)break;
       echochar(ch);
@@ -109,4 +109,3 @@ void TicketCreateView::handleInput(){
     if(ret == 1) return;
   }
 }
-
